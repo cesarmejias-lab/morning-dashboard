@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Morning — Tres Cantos</title>
+  <style>
+    :root {
+      --bg:         #0d1117;
+      --surface:    #161b22;
+      --surface2:   #21262d;
+      --border:     #30363d;
+      --text:       #e6edf3;
+      --muted:      #8b949e;
+      --accent:     #58a6ff;
+      --green:      #3fb950;
+      --red:        #f85149;
+      --yellow:     #d29922;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 20px 24px 32px;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────────── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .greeting h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    #header-date {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    #meta { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+
+    #last-updated { color: var(--muted); font-size: 0.78rem; }
+
+    #refresh-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    #refresh-btn:hover { background: var(--border); }
+
+    /* ── Grid ───────────────────────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .card-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .full-width { grid-column: 1 / -1; }
+
+    .placeholder {
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 12px 0;
+    }
+
+    .err { color: var(--red); font-size: 0.85rem; padding: 12px 0; }
+
+    /* ── Weather ────────────────────────────────────────────────────────── */
+    .w-current {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .w-icon { font-size: 3.2rem; line-height: 1; }
+
+    .w-temp { font-size: 2.8rem; font-weight: 300; line-height: 1; }
+
+    .w-desc { color: var(--muted); font-size: 0.88rem; margin-top: 4px; }
+
+    .w-stats {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+    }
+
+    .forecast {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    .fc-day {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 10px 4px;
+      text-align: center;
+    }
+
+    .fc-label { font-size: 0.68rem; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; }
+    .fc-icon  { font-size: 1.3rem; margin-bottom: 5px; }
+    .fc-hi    { font-size: 0.8rem; color: var(--text); }
+    .fc-lo    { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── Clocks ─────────────────────────────────────────────────────────── */
+    .clocks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .clock-item {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .clock-city {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-on   { background: var(--green); }
+    .dot-warn { background: var(--yellow); }
+    .dot-off  { background: var(--muted); opacity: 0.4; }
+
+    .clock-status {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+    .status-on   { color: var(--green); }
+    .status-warn { color: var(--yellow); }
+    .status-off  { color: var(--muted); }
+
+    .clock-time {
+      font-size: 1.4rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
+    }
+
+    .clock-date { font-size: 0.69rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── Rates ──────────────────────────────────────────────────────────── */
+    .rates-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .rate-item {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .rate-pair  { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
+    .rate-value { font-size: 1.5rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+    /* ── Quote ──────────────────────────────────────────────────────────── */
+    .quote-card {
+      background: linear-gradient(135deg, #161b22 0%, #1a2132 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote-text   { font-size: 0.95rem; font-style: italic; line-height: 1.65; }
+    .quote-author { font-size: 0.78rem; color: var(--accent); margin-top: 10px; }
+
+    /* ── HN ─────────────────────────────────────────────────────────────── */
+    .hn-list { list-style: none; }
+
+    .hn-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hn-item:last-child { border-bottom: none; }
+
+    .hn-n { font-size: 0.68rem; color: var(--muted); width: 16px; text-align: right; flex-shrink: 0; }
+
+    .hn-title a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+    .hn-title a:hover { color: var(--accent); }
+
+    .hn-meta { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── Daily Record ───────────────────────────────────────────────────── */
+    .record-card {
+      position: relative;
+      overflow: hidden;
+      background: #0f1318;
+    }
+
+    .record-bg {
+      position: absolute;
+      inset: -10px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(28px) brightness(0.18) saturate(1.8);
+      z-index: 0;
+    }
+
+    .record-card .card-title,
+    .record-body { position: relative; z-index: 1; }
+
+    .record-body {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .record-cover {
+      width: 160px;
+      height: 160px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+
+    .record-cover-placeholder {
+      width: 160px;
+      height: 160px;
+      border-radius: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      flex-shrink: 0;
+    }
+
+    .record-info { flex: 1; min-width: 0; }
+
+    .record-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .record-artist {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .record-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .record-tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .record-link {
+      display: inline-block;
+      padding: 5px 14px;
+      background: var(--accent);
+      color: #0d1117;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .record-link:hover { opacity: 0.85; }
+
+    .record-debug {
+      margin-top: 10px;
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .grid { grid-template-columns: 1fr; }
+      .full-width { grid-column: 1; }
+      .record-cover, .record-cover-placeholder { width: 100px; height: 100px; }
+      .greeting h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="greeting">
+    <h1>Good morning</h1>
+    <div id="header-date"></div>
+  </div>
+  <div id="meta">
+    <span id="last-updated">Loading&hellip;</span>
+    <button id="refresh-btn" onclick="refresh()">&#8635; Refresh</button>
+  </div>
+</header>
+
+<div class="grid">
+
+  <!-- Weather -->
+  <div class="card" id="weather-card">
+    <div class="card-title">Weather &mdash; Tres Cantos, Spain</div>
+    <div class="placeholder">Fetching weather&hellip;</div>
+  </div>
+
+  <!-- Clocks -->
+  <div class="card" id="clocks-card">
+    <div class="card-title">World Clocks</div>
+    <div class="clocks-grid" id="clocks-grid"></div>
+  </div>
+
+  <!-- Rates -->
+  <div class="card" id="rates-card">
+    <div class="card-title">Exchange Rates &mdash; EUR Base</div>
+    <div class="placeholder">Fetching rates&hellip;</div>
+  </div>
+
+  <!-- Quote -->
+  <div class="card quote-card" id="quote-card">
+    <div class="card-title">Inspiration</div>
+    <div class="placeholder">Loading quote&hellip;</div>
+  </div>
+
+  <!-- Daily Record -->
+  <div class="card full-width record-card" id="record-card">
+    <div class="card-title">Daily Record</div>
+    <div class="placeholder">Searching your collection&hellip;</div>
+  </div>
+
+  <!-- Hacker News -->
+  <div class="card full-width" id="hn-card">
+    <div class="card-title">Top Hacker News Stories</div>
+    <div class="placeholder">Fetching stories&hellip;</div>
+  </div>
+
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────────────────────────────────
+const LAT         = 40.5919;
+const LON         = -3.7221;
+const REFRESH_MS  = 10 * 60 * 1000;
+
+// ── WMO weather codes ────────────────────────────────────────────────────────
+function weatherInfo(code) {
+  const map = {
+    0:  ['☀️',  'Clear sky'],
+    1:  ['🌤️', 'Mainly clear'],
+    2:  ['⛅',  'Partly cloudy'],
+    3:  ['☁️',  'Overcast'],
+    45: ['🌫️', 'Fog'],
+    48: ['🌫️', 'Icy fog'],
+    51: ['🌦️', 'Light drizzle'],
+    53: ['🌦️', 'Drizzle'],
+    55: ['🌧️', 'Heavy drizzle'],
+    61: ['🌧️', 'Light rain'],
+    63: ['🌧️', 'Rain'],
+    65: ['🌧️', 'Heavy rain'],
+    71: ['🌨️', 'Light snow'],
+    73: ['🌨️', 'Snow'],
+    75: ['❄️',  'Heavy snow'],
+    80: ['🌦️', 'Light showers'],
+    81: ['🌧️', 'Showers'],
+    82: ['⛈️',  'Heavy showers'],
+    85: ['🌨️', 'Snow showers'],
+    86: ['❄️',  'Heavy snow showers'],
+    95: ['⛈️',  'Thunderstorm'],
+    96: ['⛈️',  'Thunderstorm + hail'],
+    99: ['⛈️',  'Thunderstorm + heavy hail'],
+  };
+  return map[code] ?? ['🌡️', 'Unknown'];
+}
+
+// ── Weather ──────────────────────────────────────────────────────────────────
+async function fetchWeather() {
+  const url = `https://api.open-meteo.com/v1/forecast`
+    + `?latitude=${LAT}&longitude=${LON}`
+    + `&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,relativehumidity_2m`
+    + `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
+    + `&timezone=Europe%2FMadrid&forecast_days=5`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('Weather API error');
+  return r.json();
+}
+
+function renderWeather(data) {
+  const c = data.current;
+  const d = data.daily;
+  const [icon, desc] = weatherInfo(c.weathercode);
+  const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  const forecastHTML = d.time.map((dateStr, i) => {
+    const label = i === 0 ? 'Today' : DAY_NAMES[new Date(dateStr + 'T12:00:00').getDay()];
+    const [fi]  = weatherInfo(d.weathercode[i]);
+    return `<div class="fc-day">
+      <div class="fc-label">${label}</div>
+      <div class="fc-icon">${fi}</div>
+      <div class="fc-hi">${Math.round(d.temperature_2m_max[i])}°</div>
+      <div class="fc-lo">${Math.round(d.temperature_2m_min[i])}°</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('weather-card').innerHTML = `
+    <div class="card-title">Weather &mdash; Tres Cantos, Spain</div>
+    <div class="w-current">
+      <div class="w-icon">${icon}</div>
+      <div>
+        <div class="w-temp">${Math.round(c.temperature_2m)}°C</div>
+        <div class="w-desc">${desc} &mdash; feels like ${Math.round(c.apparent_temperature)}°C</div>
+      </div>
+    </div>
+    <div class="w-stats">
+      <span>💧 Humidity ${c.relativehumidity_2m}%</span>
+      <span>💨 Wind ${Math.round(c.windspeed_10m)} km/h</span>
+    </div>
+    <div class="forecast">${forecastHTML}</div>`;
+}
+
+// ── Hacker News ──────────────────────────────────────────────────────────────
+async function fetchHN() {
+  const ids = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+    .then(r => r.json());
+  return Promise.all(
+    ids.slice(0, 10).map(id =>
+      fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(r => r.json())
+    )
+  );
+}
+
+function getDomain(url) {
+  if (!url) return 'news.ycombinator.com';
+  try { return new URL(url).hostname.replace(/^www\./, ''); }
+  catch { return 'news.ycombinator.com'; }
+}
+
+function timeAgo(unix) {
+  const s = Math.floor(Date.now() / 1000) - unix;
+  if (s < 60)   return `${s}s ago`;
+  if (s < 3600) return `${Math.floor(s / 60)}m ago`;
+  if (s < 86400) return `${Math.floor(s / 3600)}h ago`;
+  return `${Math.floor(s / 86400)}d ago`;
+}
+
+function renderHN(stories) {
+  const items = stories.map((s, i) => {
+    const href   = s.url || `https://news.ycombinator.com/item?id=${s.id}`;
+    const domain = getDomain(s.url);
+    const ago    = s.time ? timeAgo(s.time) : '';
+    return `<li class="hn-item">
+      <span class="hn-n">${i + 1}</span>
+      <div>
+        <div class="hn-title"><a href="${href}" target="_blank" rel="noopener">${s.title}</a></div>
+        <div class="hn-meta">&#9650; ${s.score} &nbsp;&middot;&nbsp; ${domain} &nbsp;&middot;&nbsp; ${s.descendants ?? 0} comments &nbsp;&middot;&nbsp; ${ago}</div>
+      </div>
+    </li>`;
+  }).join('');
+
+  document.getElementById('hn-card').innerHTML = `
+    <div class="card-title">Top Hacker News Stories</div>
+    <ul class="hn-list">${items}</ul>`;
+}
+
+// ── Exchange rates ────────────────────────────────────────────────────────────
+async function fetchRates() {
+  const r = await fetch('https://api.frankfurter.dev/v1/latest?base=EUR&symbols=USD,GBP,CHF,JPY');
+  if (!r.ok) throw new Error(`Rates API error: HTTP ${r.status}`);
+  return r.json();
+}
+
+function renderRates(data) {
+  const FLAGS   = { USD: '🇺🇸', GBP: '🇬🇧', CHF: '🇨🇭', JPY: '🇯🇵' };
+  const TARGETS = ['USD', 'GBP', 'CHF', 'JPY'];
+
+  const items = TARGETS.map(cur => {
+    const val = data.rates[cur];
+    const fmt = cur === 'JPY' ? val.toFixed(2) : val.toFixed(4);
+    return `<div class="rate-item">
+      <div class="rate-pair">${FLAGS[cur]} EUR / ${cur}</div>
+      <div class="rate-value">${fmt}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('rates-card').innerHTML = `
+    <div class="card-title">Exchange Rates &mdash; EUR Base &middot; ${data.date}</div>
+    <div class="rates-grid">${items}</div>`;
+}
+
+// ── World clocks ─────────────────────────────────────────────────────────────
+const CITIES = [
+  { name: 'London',    tz: 'Europe/London',    flag: '🇬🇧' },
+  { name: 'New York',  tz: 'America/New_York', flag: '🇺🇸' },
+  { name: 'Singapore', tz: 'Asia/Singapore',   flag: '🇸🇬' },
+  { name: 'Sydney',    tz: 'Australia/Sydney', flag: '🇦🇺' },
+];
+
+function clockStatus(tz) {
+  const h = +new Intl.DateTimeFormat('en', {
+    hour: 'numeric', hour12: false, timeZone: tz
+  }).format(new Date());
+  if (h >= 9  && h < 18) return { dot: 'dot-on',   cls: 'status-on',   label: 'Working' };
+  if (h >= 7  && h < 9)  return { dot: 'dot-warn',  cls: 'status-warn', label: 'Off hours' };
+  if (h >= 18 && h < 22) return { dot: 'dot-warn',  cls: 'status-warn', label: 'Off hours' };
+  return                         { dot: 'dot-off',   cls: 'status-off',  label: 'Sleeping' };
+}
+
+function updateClocks() {
+  const now  = new Date();
+  const grid = document.getElementById('clocks-grid');
+  if (!grid) return;
+
+  grid.innerHTML = CITIES.map(city => {
+    const time   = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: city.tz });
+    const date   = now.toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric', timeZone: city.tz });
+    const status = clockStatus(city.tz);
+
+    return `<div class="clock-item">
+      <div class="clock-city">
+        <span class="dot ${status.dot}"></span>
+        ${city.flag} ${city.name}
+      </div>
+      <div class="clock-time">${time}</div>
+      <div class="clock-date">${date}</div>
+      <div class="clock-status ${status.cls}">${status.label}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Inspirational quotes ──────────────────────────────────────────────────────
+const QUOTES = [
+  { text: 'The only way to do great work is to love what you do.',                              author: 'Steve Jobs' },
+  { text: 'In the middle of every difficulty lies opportunity.',                                author: 'Albert Einstein' },
+  { text: 'It does not matter how slowly you go as long as you do not stop.',                  author: 'Confucius' },
+  { text: 'Everything you\'ve ever wanted is on the other side of fear.',                       author: 'George Addair' },
+  { text: 'Success is not final, failure is not fatal: it is the courage to continue that counts.', author: 'Winston Churchill' },
+  { text: 'Believe you can and you\'re halfway there.',                                         author: 'Theodore Roosevelt' },
+  { text: 'The future belongs to those who believe in the beauty of their dreams.',            author: 'Eleanor Roosevelt' },
+  { text: 'Don\'t watch the clock; do what it does. Keep going.',                               author: 'Sam Levenson' },
+  { text: 'Act as if what you do makes a difference. It does.',                                author: 'William James' },
+  { text: 'It always seems impossible until it\'s done.',                                       author: 'Nelson Mandela' },
+  { text: 'Start where you are. Use what you have. Do what you can.',                         author: 'Arthur Ashe' },
+  { text: 'The only limit to our realization of tomorrow will be our doubts of today.',        author: 'Franklin D. Roosevelt' },
+  { text: 'What lies behind us and what lies before us are tiny matters compared to what lies within us.', author: 'Ralph Waldo Emerson' },
+  { text: 'You miss 100% of the shots you don\'t take.',                                        author: 'Wayne Gretzky' },
+  { text: 'Life is what happens when you\'re busy making other plans.',                         author: 'John Lennon' },
+  { text: 'The best time to plant a tree was 20 years ago. The second best time is now.',     author: 'Chinese Proverb' },
+  { text: 'An unexamined life is not worth living.',                                           author: 'Socrates' },
+  { text: 'Simplicity is the ultimate sophistication.',                                        author: 'Leonardo da Vinci' },
+];
+
+function renderQuote() {
+  const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+  document.getElementById('quote-card').innerHTML = `
+    <div class="card-title">Inspiration</div>
+    <div class="quote-text">&ldquo;${q.text}&rdquo;</div>
+    <div class="quote-author">&mdash; ${q.author}</div>`;
+}
+
+// ── Daily Record ─────────────────────────────────────────────────────────────
+// CLZ Cloud blocks cross-origin API access from static HTML files.
+// This section uses the Discogs public API instead (free, no key needed, CORS-enabled).
+//
+// ► To activate: set your Discogs username below.
+//   Your collection must be set to Public in Discogs settings.
+const DISCOGS_USER = 'cesarmejias';
+
+const CLZ_URL = 'https://cloud.clz.com/cesarmejias/music';
+
+// Deterministic seed from today's date → same pick all day, new one at midnight
+function dailySeed() {
+  const d = new Date();
+  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+}
+
+function seededPick(arr, seed) {
+  return arr[(seed * 2654435761 >>> 0) % arr.length];
+}
+
+async function fetchDailyRecord() {
+  if (!DISCOGS_USER) throw Object.assign(new Error('NOT_CONFIGURED'), {});
+
+  const base    = `https://api.discogs.com/users/${DISCOGS_USER}/collection/folders/0/releases`;
+  const headers = { 'User-Agent': 'MorningDashboard/1.0 +https://github.com' };
+  const seed    = dailySeed();
+
+  // Step 1 — get total count
+  const first = await fetch(`${base}?page=1&per_page=1`, { headers });
+  if (first.status === 404) throw new Error(`Discogs user "${DISCOGS_USER}" not found`);
+  if (!first.ok)            throw new Error(`Discogs API error: HTTP ${first.status}`);
+  const meta        = await first.json();
+  const totalItems  = meta.pagination.items;
+
+  if (totalItems === 0) throw new Error('Discogs collection is empty or private');
+
+  // Step 2 — fetch a random page (100 per page)
+  const totalPages100 = Math.ceil(totalItems / 100);
+  const targetPage    = Math.floor(Math.random() * totalPages100) + 1;
+  const pageData      = await fetch(`${base}?page=${targetPage}&per_page=100&sort=added&sort_order=asc`, { headers });
+  if (!pageData.ok) throw new Error(`Discogs page fetch failed: HTTP ${pageData.status}`);
+  const { releases } = await pageData.json();
+
+  const item = releases[Math.floor(Math.random() * releases.length)];
+  const info = item.basic_information;
+
+  return {
+    title:      info.title,
+    artist:     info.artists.map(a => a.name.replace(/\s*\(\d+\)$/, '')).join(', '),
+    year:       info.year > 0 ? String(info.year) : null,
+    format:     info.formats?.[0]?.name || null,
+    label:      info.labels?.[0]?.name || null,
+    cover:      info.cover_image || info.thumb || null,
+    discogsUrl: `https://www.discogs.com/release/${item.id}`,
+    total:      totalItems,
+  };
+}
+
+function renderDailyRecord(rec) {
+  const bgHTML = rec.cover
+    ? `<div class="record-bg" style="background-image:url('${rec.cover}')"></div>`
+    : '';
+
+  const coverHTML = rec.cover
+    ? `<img class="record-cover" src="${rec.cover}" alt="cover"
+           onerror="this.outerHTML='<div class=\\'record-cover-placeholder\\'>&#127908;</div>'">`
+    : `<div class="record-cover-placeholder">&#127908;</div>`;
+
+  const tags = [rec.year, rec.format, rec.label].filter(Boolean)
+    .map(t => `<span class="record-tag">${t}</span>`).join('');
+
+  document.getElementById('record-card').innerHTML = `
+    ${bgHTML}
+    <div class="card-title">&#9679; Now Spinning &mdash; ${rec.total.toLocaleString()} releases in your collection</div>
+    <div class="record-body">
+      ${coverHTML}
+      <div class="record-info">
+        <div class="record-title">${rec.title}</div>
+        <div class="record-artist">${rec.artist}</div>
+        ${tags ? `<div class="record-tags">${tags}</div>` : ''}
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
+          <a class="record-link" href="${rec.discogsUrl}" target="_blank" rel="noopener">View on Discogs ↗</a>
+          <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08);color:var(--text);border:1px solid rgba(255,255,255,0.15)">CLZ ↗</a>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderDailyRecordSetup() {
+  document.getElementById('record-card').innerHTML = `
+    <div class="card-title">Daily Record &mdash; Setup needed</div>
+    <div class="record-body">
+      <div class="record-cover-placeholder">&#127908;</div>
+      <div class="record-info">
+        <div class="record-title" style="font-size:0.95rem;font-weight:500">Connect your music collection</div>
+        <div class="record-artist" style="color:var(--muted)">CLZ Cloud blocks direct API access from static HTML files.</div>
+        <div class="record-tags" style="margin-top:10px">
+          <span class="record-tag">1&nbsp; Open the dashboard HTML in a text editor</span>
+          <span class="record-tag">2&nbsp; Find: <code style="color:var(--accent)">DISCOGS_USER = ''</code></span>
+          <span class="record-tag">3&nbsp; Set your Discogs username and save</span>
+          <span class="record-tag">4&nbsp; Make your Discogs collection public</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <a class="record-link" href="https://www.discogs.com" target="_blank" rel="noopener">Discogs ↗</a>
+          <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener" style="background:var(--surface2);color:var(--text);border:1px solid var(--border)">CLZ collection ↗</a>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ── Main refresh ──────────────────────────────────────────────────────────────
+async function refresh() {
+  document.getElementById('last-updated').textContent = 'Refreshing…';
+  document.getElementById('refresh-btn').disabled = true;
+
+  await Promise.allSettled([
+    fetchWeather().then(renderWeather).catch(() => {
+      document.getElementById('weather-card').innerHTML =
+        '<div class="card-title">Weather</div><div class="err">Failed to load weather data.</div>';
+    }),
+    fetchHN().then(renderHN).catch(() => {
+      document.getElementById('hn-card').innerHTML =
+        '<div class="card-title">Hacker News</div><div class="err">Failed to load stories.</div>';
+    }),
+    fetchRates().then(renderRates).catch(() => {
+      document.getElementById('rates-card').innerHTML =
+        '<div class="card-title">Exchange Rates</div><div class="err">Failed to load rates.</div>';
+    }),
+    fetchDailyRecord().then(renderDailyRecord).catch(e => {
+      if (e.message === 'NOT_CONFIGURED') { renderDailyRecordSetup(); return; }
+      document.getElementById('record-card').innerHTML =
+        `<div class="card-title">Daily Record</div>
+         <div class="err">${e.message}</div>
+         <div style="margin-top:10px">
+           <a class="record-link" href="https://www.discogs.com" target="_blank" rel="noopener">Discogs ↗</a>
+         </div>`;
+    }),
+  ]);
+
+  renderQuote();
+
+  const now = new Date();
+  document.getElementById('last-updated').textContent =
+    'Updated ' + now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  document.getElementById('refresh-btn').disabled = false;
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+(function setHeaderDate() {
+  const d = new Date();
+  document.getElementById('header-date').textContent =
+    d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+})();
+
+updateClocks();
+setInterval(updateClocks, 1000);
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+
+</body>
+</html>
