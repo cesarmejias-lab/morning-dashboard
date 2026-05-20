@@ -1,4 +1,4 @@
-{
+window.CLZ_MUSIC_COLLECTION = {
   "username": "cesarmejias",
   "syncedAt": "2026-05-20T10:24:41.105Z",
   "total": 5095,
@@ -35669,4 +35669,4 @@
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/60/60_1183392_0_10000Maniacs_MTVUnplugged.jpg"
     }
   ]
-}
+};

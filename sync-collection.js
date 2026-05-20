@@ -203,7 +203,7 @@ async function run() {
       }
     }
 
-    console.log('\n[4/4] Writing database to file...');
+    console.log('\n[4/4] Writing database to files...');
     const payload = {
       username: CLZ_USERNAME,
       syncedAt: new Date().toISOString(),
@@ -211,9 +211,17 @@ async function run() {
       albums: allItems
     };
 
+    // 1. Save as JSON
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(payload, null, 2), 'utf8');
-    console.log(`✔ Success! Saved ${allItems.length} albums to:`);
-    console.log(`  ${OUTPUT_FILE}\n`);
+    console.log(`✔ Success! Saved JSON to:`);
+    console.log(`  ${OUTPUT_FILE}`);
+
+    // 2. Save as JS to support local file:/// CORS bypassing
+    const OUTPUT_JS_FILE = path.join(__dirname, 'music-collection.js');
+    const jsPayload = `window.CLZ_MUSIC_COLLECTION = ${JSON.stringify(payload, null, 2)};`;
+    fs.writeFileSync(OUTPUT_JS_FILE, jsPayload, 'utf8');
+    console.log(`✔ Success! Saved JS to:`);
+    console.log(`  ${OUTPUT_JS_FILE}\n`);
     console.log('==================================================');
     console.log('  Sychronization completed! Enjoy your Dashboard.');
     console.log('==================================================');
