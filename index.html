@@ -348,6 +348,220 @@
       word-break: break-all;
     }
 
+    /* ── Settings Drawer & Tabs ────────────────────────────────────────── */
+    .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    
+    .card-header .card-title {
+      margin-bottom: 0;
+    }
+
+    .settings-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      border-radius: 6px;
+      transition: color 0.2s, transform 0.3s ease, background-color 0.2s;
+    }
+    .settings-btn:hover {
+      color: var(--text);
+      transform: rotate(45deg);
+      background: var(--surface2);
+    }
+    
+    .gear-icon {
+      display: block;
+      transition: stroke 0.2s;
+    }
+
+    .settings-drawer {
+      position: absolute;
+      inset: 0;
+      background: rgba(22, 27, 34, 0.96);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .settings-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .settings-drawer-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .settings-limit-info {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .settings-cities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      overflow-y: auto;
+      flex: 1;
+      padding-bottom: 12px;
+    }
+    
+    .city-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      user-select: none;
+      transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+    }
+    
+    .city-checkbox-label:hover:not(.disabled) {
+      background: var(--border);
+      border-color: var(--muted);
+    }
+    
+    .city-checkbox-label input {
+      display: none;
+    }
+
+    .custom-chk {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--muted);
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .city-checkbox-label input:checked + .custom-chk {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    .city-checkbox-label input:checked + .custom-chk::after {
+      content: '✓';
+      color: #0d1117;
+      font-size: 0.65rem;
+      font-weight: bold;
+    }
+
+    .city-checkbox-label.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .settings-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      flex-shrink: 0;
+    }
+
+    .settings-action-btn {
+      flex: 1;
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: opacity 0.15s, background-color 0.15s;
+    }
+    
+    .settings-action-btn.primary {
+      background: var(--accent);
+      color: #0d1117;
+    }
+    .settings-action-btn.primary:hover {
+      opacity: 0.9;
+    }
+    .settings-action-btn.secondary {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .settings-action-btn.secondary:hover {
+      background: var(--border);
+    }
+
+    /* ── Weather Tabs ──────────────────────────────────────────────────── */
+    .weather-tabs {
+      display: flex;
+      gap: 6px;
+    }
+
+    .weather-tab-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .weather-tab-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .weather-tab-btn.active {
+      background: rgba(88, 166, 255, 0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .weather-fade-wrapper {
+      animation: weatherFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes weatherFadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* ── Responsive ─────────────────────────────────────────────────────── */
     @media (max-width: 680px) {
       .grid { grid-template-columns: 1fr; }
@@ -374,13 +588,50 @@
 
   <!-- Weather -->
   <div class="card" id="weather-card">
-    <div class="card-title">Weather &mdash; Tres Cantos, Spain</div>
-    <div class="placeholder">Fetching weather&hellip;</div>
+    <div class="card-header">
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <span class="card-title" style="margin-bottom: 0;">Weather</span>
+        <div class="weather-tabs" id="weather-tabs"></div>
+      </div>
+      <button class="settings-btn" onclick="toggleWeatherDrawer()" title="Configure Weather Cities">
+        <svg class="gear-icon" viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </button>
+    </div>
+    <div class="settings-drawer" id="weather-settings-drawer" style="display: none;">
+      <div class="settings-drawer-header">
+        <span class="settings-drawer-title">Choose 2 Weather Cities</span>
+        <span class="settings-limit-info" id="weather-limit-info">Selected: 2/2</span>
+      </div>
+      <div class="settings-cities-grid" id="weather-cities-list"></div>
+      <div class="settings-actions">
+        <button class="settings-action-btn primary" onclick="saveWeatherSettings()">Save</button>
+        <button class="settings-action-btn secondary" onclick="toggleWeatherDrawer()">Cancel</button>
+      </div>
+    </div>
+    <div id="weather-body">
+      <div class="placeholder">Fetching weather&hellip;</div>
+    </div>
   </div>
 
   <!-- Clocks -->
   <div class="card" id="clocks-card">
-    <div class="card-title">World Clocks</div>
+    <div class="card-header">
+      <span class="card-title" style="margin-bottom: 0;">World Clocks</span>
+      <button class="settings-btn" onclick="toggleClocksDrawer()" title="Configure Pinned Clocks">
+        <svg class="gear-icon" viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </button>
+    </div>
+    <div class="settings-drawer" id="clocks-settings-drawer" style="display: none;">
+      <div class="settings-drawer-header">
+        <span class="settings-drawer-title">Pin up to 6 Clocks</span>
+        <span class="settings-limit-info" id="clocks-limit-info">Selected: 4/6</span>
+      </div>
+      <div class="settings-cities-grid" id="clocks-cities-list"></div>
+      <div class="settings-actions">
+        <button class="settings-action-btn primary" onclick="saveClocksSettings()">Save</button>
+        <button class="settings-action-btn secondary" onclick="toggleClocksDrawer()">Cancel</button>
+      </div>
+    </div>
     <div class="clocks-grid" id="clocks-grid"></div>
   </div>
 
@@ -417,10 +668,45 @@
 </div>
 
 <script>
-// ── Config ──────────────────────────────────────────────────────────────────
-const LAT         = 40.5919;
-const LON         = -3.7221;
+// ── Cities Database ─────────────────────────────────────────────────────────
+const CITIES_DB = [
+  { name: 'Tres Cantos', country: 'Spain', tz: 'Europe/Madrid', lat: 40.5919, lon: -3.7221, flag: '🇪🇸' },
+  { name: 'Madrid', country: 'Spain', tz: 'Europe/Madrid', lat: 40.4168, lon: -3.7038, flag: '🇪🇸' },
+  { name: 'London', country: 'United Kingdom', tz: 'Europe/London', lat: 51.5074, lon: -0.1278, flag: '🇬🇧' },
+  { name: 'Paris', country: 'France', tz: 'Europe/Paris', lat: 48.8566, lon: 2.3522, flag: '🇫🇷' },
+  { name: 'Berlin', country: 'Germany', tz: 'Europe/Berlin', lat: 52.5200, lon: 13.4050, flag: '🇩🇪' },
+  { name: 'New York', country: 'United States', tz: 'America/New_York', lat: 40.7128, lon: -74.0060, flag: '🇺🇸' },
+  { name: 'San Francisco', country: 'United States', tz: 'America/Los_Angeles', lat: 37.7749, lon: -122.4194, flag: '🇺🇸' },
+  { name: 'Tokyo', country: 'Japan', tz: 'Asia/Tokyo', lat: 35.6762, lon: 139.6503, flag: '🇯🇵' },
+  { name: 'Singapore', country: 'Singapore', tz: 'Asia/Singapore', lat: 1.3521, lon: 103.8198, flag: '🇸🇬' },
+  { name: 'Sydney', country: 'Australia', tz: 'Australia/Sydney', lat: -33.8688, lon: 151.2093, flag: '🇦🇺' },
+  { name: 'Mumbai', country: 'India', tz: 'Asia/Kolkata', lat: 19.0760, lon: 72.8777, flag: '🇮🇳' },
+  { name: 'Dubai', country: 'United Arab Emirates', tz: 'Asia/Dubai', lat: 25.2048, lon: 55.2708, flag: '🇦🇪' },
+  { name: 'São Paulo', country: 'Brazil', tz: 'America/Sao_Paulo', lat: -23.5505, lon: -46.6333, flag: '🇧🇷' },
+  { name: 'Cape Town', country: 'South Africa', tz: 'Africa/Johannesburg', lat: -33.9249, lon: 18.4241, flag: '🇿🇦' },
+  { name: 'Mexico City', country: 'Mexico', tz: 'America/Mexico_City', lat: 19.4326, lon: -99.1332, flag: '🇲🇽' },
+  { name: 'Reykjavik', country: 'Iceland', tz: 'Atlantic/Reykjavik', lat: 64.1466, lon: -21.9426, flag: '🇮🇸' }
+];
+
+const DEFAULT_CLOCKS = [
+  { name: 'London',    tz: 'Europe/London',    flag: '🇬🇧' },
+  { name: 'New York',  tz: 'America/New_York', flag: '🇺🇸' },
+  { name: 'Singapore', tz: 'Asia/Singapore',   flag: '🇸🇬' },
+  { name: 'Sydney',    tz: 'Australia/Sydney', flag: '🇦🇺' }
+];
+
+const DEFAULT_WEATHER = [
+  { name: 'Tres Cantos', country: 'Spain', tz: 'Europe/Madrid', lat: 40.5919, lon: -3.7221, flag: '🇪🇸' },
+  { name: 'New York', country: 'United States', tz: 'America/New_York', lat: 40.7128, lon: -74.0060, flag: '🇺🇸' }
+];
+
+// ── Config & State ──────────────────────────────────────────────────────────
 const REFRESH_MS  = 10 * 60 * 1000;
+
+let pinnedClocks = JSON.parse(localStorage.getItem('morning_dashboard_clocks')) || DEFAULT_CLOCKS;
+let weatherCities = JSON.parse(localStorage.getItem('morning_dashboard_weather')) || DEFAULT_WEATHER;
+let activeWeatherCityName = weatherCities[0]?.name || 'Tres Cantos';
+let weatherDataCache = {};
 
 // ── WMO weather codes ────────────────────────────────────────────────────────
 function weatherInfo(code) {
@@ -454,17 +740,55 @@ function weatherInfo(code) {
 
 // ── Weather ──────────────────────────────────────────────────────────────────
 async function fetchWeather() {
-  const url = `https://api.open-meteo.com/v1/forecast`
-    + `?latitude=${LAT}&longitude=${LON}`
-    + `&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,relativehumidity_2m`
-    + `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
-    + `&timezone=Europe%2FMadrid&forecast_days=5`;
-  const r = await fetch(url);
-  if (!r.ok) throw new Error('Weather API error');
-  return r.json();
+  weatherDataCache = {};
+  const promises = weatherCities.map(async city => {
+    const url = `https://api.open-meteo.com/v1/forecast`
+      + `?latitude=${city.lat}&longitude=${city.lon}`
+      + `&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,relativehumidity_2m`
+      + `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
+      + `&timezone=${encodeURIComponent(city.tz)}&forecast_days=5`;
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`Weather API error for ${city.name}`);
+      const data = await r.json();
+      weatherDataCache[city.name] = data;
+    } catch (e) {
+      console.error(`Failed to fetch weather for ${city.name}:`, e);
+      weatherDataCache[city.name] = { error: true, message: e.message };
+    }
+  });
+  await Promise.all(promises);
 }
 
-function renderWeather(data) {
+function renderWeather() {
+  const tabsContainer = document.getElementById('weather-tabs');
+  const bodyContainer = document.getElementById('weather-body');
+  if (!tabsContainer || !bodyContainer) return;
+
+  // Render Tabs
+  tabsContainer.innerHTML = weatherCities.map(city => {
+    const activeClass = city.name === activeWeatherCityName ? 'active' : '';
+    return `<button class="weather-tab-btn ${activeClass}" onclick="switchWeatherTab('${city.name.replace(/'/g, "\\'")}')">${city.flag} ${city.name}</button>`;
+  }).join('');
+
+  // Find active city and data
+  const activeCity = weatherCities.find(c => c.name === activeWeatherCityName) || weatherCities[0];
+  if (!activeCity) {
+    bodyContainer.innerHTML = '<div class="err">No weather cities configured.</div>';
+    return;
+  }
+
+  const data = weatherDataCache[activeCity.name];
+  if (!data) {
+    bodyContainer.innerHTML = '<div class="placeholder">Loading weather...</div>';
+    return;
+  }
+
+  if (data.error) {
+    bodyContainer.innerHTML = `<div class="err">Failed to load weather for ${activeCity.name}.</div>`;
+    return;
+  }
+
   const c = data.current;
   const d = data.daily;
   const [icon, desc] = weatherInfo(c.weathercode);
@@ -481,20 +805,26 @@ function renderWeather(data) {
     </div>`;
   }).join('');
 
-  document.getElementById('weather-card').innerHTML = `
-    <div class="card-title">Weather &mdash; Tres Cantos, Spain</div>
-    <div class="w-current">
-      <div class="w-icon">${icon}</div>
-      <div>
-        <div class="w-temp">${Math.round(c.temperature_2m)}°C</div>
-        <div class="w-desc">${desc} &mdash; feels like ${Math.round(c.apparent_temperature)}°C</div>
+  bodyContainer.innerHTML = `
+    <div class="weather-fade-wrapper">
+      <div class="w-current">
+        <div class="w-icon">${icon}</div>
+        <div>
+          <div class="w-temp">${Math.round(c.temperature_2m)}°C</div>
+          <div class="w-desc">${desc} &mdash; feels like ${Math.round(c.apparent_temperature)}°C</div>
+        </div>
       </div>
-    </div>
-    <div class="w-stats">
-      <span>💧 Humidity ${c.relativehumidity_2m}%</span>
-      <span>💨 Wind ${Math.round(c.windspeed_10m)} km/h</span>
-    </div>
-    <div class="forecast">${forecastHTML}</div>`;
+      <div class="w-stats">
+        <span>💧 Humidity ${c.relativehumidity_2m}%</span>
+        <span>💨 Wind ${Math.round(c.windspeed_10m)} km/h</span>
+      </div>
+      <div class="forecast">${forecastHTML}</div>
+    </div>`;
+}
+
+function switchWeatherTab(cityName) {
+  activeWeatherCityName = cityName;
+  renderWeather();
 }
 
 // ── Hacker News ──────────────────────────────────────────────────────────────
@@ -567,13 +897,6 @@ function renderRates(data) {
 }
 
 // ── World clocks ─────────────────────────────────────────────────────────────
-const CITIES = [
-  { name: 'London',    tz: 'Europe/London',    flag: '🇬🇧' },
-  { name: 'New York',  tz: 'America/New_York', flag: '🇺🇸' },
-  { name: 'Singapore', tz: 'Asia/Singapore',   flag: '🇸🇬' },
-  { name: 'Sydney',    tz: 'Australia/Sydney', flag: '🇦🇺' },
-];
-
 function clockStatus(tz) {
   const h = +new Intl.DateTimeFormat('en', {
     hour: 'numeric', hour12: false, timeZone: tz
@@ -584,12 +907,13 @@ function clockStatus(tz) {
   return                         { dot: 'dot-off',   cls: 'status-off',  label: 'Sleeping' };
 }
 
+// ── World clocks ─────────────────────────────────────────────────────────────
 function updateClocks() {
   const now  = new Date();
   const grid = document.getElementById('clocks-grid');
   if (!grid) return;
 
-  grid.innerHTML = CITIES.map(city => {
+  grid.innerHTML = pinnedClocks.map(city => {
     const time   = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: city.tz });
     const date   = now.toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric', timeZone: city.tz });
     const status = clockStatus(city.tz);
@@ -604,6 +928,147 @@ function updateClocks() {
       <div class="clock-status ${status.cls}">${status.label}</div>
     </div>`;
   }).join('');
+}
+
+// ── Settings Drawers Logic ────────────────────────────────────────────────────
+function toggleClocksDrawer() {
+  const drawer = document.getElementById('clocks-settings-drawer');
+  if (!drawer) return;
+  
+  if (drawer.style.display === 'none') {
+    const listContainer = document.getElementById('clocks-cities-list');
+    listContainer.innerHTML = CITIES_DB.map(city => {
+      const isChecked = pinnedClocks.some(pc => pc.name === city.name) ? 'checked' : '';
+      return `<label class="city-checkbox-label" id="clock-chk-lbl-${city.name.replace(/\s+/g, '-')}">
+        <input type="checkbox" value="${city.name}" ${isChecked} onchange="onClockCheckboxChange()">
+        <span class="custom-chk"></span>
+        <span>${city.flag} ${city.name}</span>
+      </label>`;
+    }).join('');
+    
+    drawer.style.display = 'flex';
+    onClockCheckboxChange();
+  } else {
+    drawer.style.display = 'none';
+  }
+}
+
+function onClockCheckboxChange() {
+  const container = document.getElementById('clocks-cities-list');
+  const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
+  const count = checkedBoxes.length;
+  
+  document.getElementById('clocks-limit-info').textContent = `Selected: ${count}/6`;
+  
+  const allLabels = container.querySelectorAll('.city-checkbox-label');
+  allLabels.forEach(label => {
+    const input = label.querySelector('input');
+    if (count >= 6 && !input.checked) {
+      label.classList.add('disabled');
+      input.disabled = true;
+    } else {
+      label.classList.remove('disabled');
+      input.disabled = false;
+    }
+  });
+}
+
+function saveClocksSettings() {
+  const container = document.getElementById('clocks-cities-list');
+  const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
+  
+  if (checkedBoxes.length === 0) {
+    alert('Please select at least 1 city clock.');
+    return;
+  }
+  
+  const newPinned = [];
+  checkedBoxes.forEach(cb => {
+    const city = CITIES_DB.find(c => c.name === cb.value);
+    if (city) newPinned.push({ name: city.name, tz: city.tz, flag: city.flag });
+  });
+  
+  pinnedClocks = newPinned;
+  localStorage.setItem('morning_dashboard_clocks', JSON.stringify(pinnedClocks));
+  updateClocks();
+  toggleClocksDrawer();
+}
+
+function toggleWeatherDrawer() {
+  const drawer = document.getElementById('weather-settings-drawer');
+  if (!drawer) return;
+  
+  if (drawer.style.display === 'none') {
+    const listContainer = document.getElementById('weather-cities-list');
+    listContainer.innerHTML = CITIES_DB.map(city => {
+      const isChecked = weatherCities.some(wc => wc.name === city.name) ? 'checked' : '';
+      return `<label class="city-checkbox-label" id="weather-chk-lbl-${city.name.replace(/\s+/g, '-')}">
+        <input type="checkbox" value="${city.name}" ${isChecked} onchange="onWeatherCheckboxChange()">
+        <span class="custom-chk"></span>
+        <span>${city.flag} ${city.name}</span>
+      </label>`;
+    }).join('');
+    
+    drawer.style.display = 'flex';
+    onWeatherCheckboxChange();
+  } else {
+    drawer.style.display = 'none';
+  }
+}
+
+function onWeatherCheckboxChange() {
+  const container = document.getElementById('weather-cities-list');
+  const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
+  const count = checkedBoxes.length;
+  
+  document.getElementById('weather-limit-info').textContent = `Selected: ${count}/2`;
+  
+  const allLabels = container.querySelectorAll('.city-checkbox-label');
+  allLabels.forEach(label => {
+    const input = label.querySelector('input');
+    if (count >= 2 && !input.checked) {
+      label.classList.add('disabled');
+      input.disabled = true;
+    } else {
+      label.classList.remove('disabled');
+      input.disabled = false;
+    }
+  });
+}
+
+async function saveWeatherSettings() {
+  const container = document.getElementById('weather-cities-list');
+  const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
+  
+  if (checkedBoxes.length !== 2) {
+    alert('Please select exactly 2 weather cities.');
+    return;
+  }
+  
+  const newWeather = [];
+  checkedBoxes.forEach(cb => {
+    const city = CITIES_DB.find(c => c.name === cb.value);
+    if (city) newWeather.push(city);
+  });
+  
+  weatherCities = newWeather;
+  localStorage.setItem('morning_dashboard_weather', JSON.stringify(weatherCities));
+  
+  if (!weatherCities.some(c => c.name === activeWeatherCityName)) {
+    activeWeatherCityName = weatherCities[0].name;
+  }
+  
+  toggleWeatherDrawer();
+  
+  document.getElementById('weather-body').innerHTML = '<div class="placeholder">Fetching weather for selected cities&hellip;</div>';
+  
+  try {
+    await fetchWeather();
+    renderWeather();
+  } catch (err) {
+    console.error(err);
+    document.getElementById('weather-body').innerHTML = '<div class="err">Failed to fetch new weather settings.</div>';
+  }
 }
 
 // ── Inspirational quotes ──────────────────────────────────────────────────────
@@ -830,9 +1295,10 @@ async function refresh() {
   document.getElementById('refresh-btn').disabled = true;
 
   await Promise.allSettled([
-    fetchWeather().then(renderWeather).catch(() => {
-      document.getElementById('weather-card').innerHTML =
-        '<div class="card-title">Weather</div><div class="err">Failed to load weather data.</div>';
+    fetchWeather().then(renderWeather).catch((e) => {
+      console.error(e);
+      const body = document.getElementById('weather-body');
+      if (body) body.innerHTML = '<div class="err">Failed to load weather data.</div>';
     }),
     fetchHN().then(renderHN).catch(() => {
       document.getElementById('hn-card').innerHTML =
