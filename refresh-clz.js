@@ -1,3 +1,6 @@
-// refresh-clz.js
-// Simple wrapper that runs the existing sync-collection script.
-require('./sync-collection');
+const { run } = require('./sync-collection');
+
+run().catch(err => {
+  console.error(err.message || err);
+  process.exitCode = 1;
+});

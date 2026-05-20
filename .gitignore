@@ -2,3 +2,5 @@
 .claude/
 _bmad/
 _bmad-output/
+.env
+*.log
