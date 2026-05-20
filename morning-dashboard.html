@@ -736,22 +736,11 @@ function renderCLZSetup() {
 // ── Discogs Daily Record ──────────────────────────────────────────────────────
 const DISCOGS_USER = 'cesarmejias';
 
-// Deterministic seed from today's date → same pick all day, new one at midnight
-function dailySeed() {
-  const d = new Date();
-  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-}
-
-function seededPick(arr, seed) {
-  return arr[(seed * 2654435761 >>> 0) % arr.length];
-}
-
 async function fetchDiscogsRecord() {
   if (!DISCOGS_USER) throw Object.assign(new Error('NOT_CONFIGURED'), {});
 
   const base    = `https://api.discogs.com/users/${DISCOGS_USER}/collection/folders/0/releases`;
   const headers = { 'User-Agent': 'MorningDashboard/1.0 +https://github.com' };
-  const seed    = dailySeed();
 
   // Step 1 — get total count
   const first = await fetch(`${base}?page=1&per_page=1`, { headers });
@@ -764,12 +753,12 @@ async function fetchDiscogsRecord() {
 
   // Step 2 — fetch a random page (100 per page)
   const totalPages100 = Math.ceil(totalItems / 100);
-  const targetPage    = (seed % totalPages100) + 1;
+  const targetPage    = Math.floor(Math.random() * totalPages100) + 1;
   const pageData      = await fetch(`${base}?page=${targetPage}&per_page=100&sort=added&sort_order=asc`, { headers });
   if (!pageData.ok) throw new Error(`Discogs page fetch failed: HTTP ${pageData.status}`);
   const { releases } = await pageData.json();
 
-  const item = seededPick(releases, seed);
+  const item = releases[Math.floor(Math.random() * releases.length)];
   const info = item.basic_information;
 
   return {
