@@ -344,6 +344,7 @@
       cursor: pointer;
     }
     .record-link:hover { opacity: 0.85; }
+    button.record-link { font-family: inherit; }
 
     .record-link.secondary {
       background: rgba(255,255,255,0.08);

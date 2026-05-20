@@ -715,7 +715,6 @@ function renderCLZRecord(rec, syncMessage = '') {
         ${rec.syncedAt ? `<span class="sync-status">Last synced: ${escapeHtml(new Date(rec.syncedAt).toLocaleString())}</span>` : ''}
       </span>
       <div class="record-header-actions">
-        <button type="button" class="record-action-btn" data-action="roll-clz" title="Roll another album">Roll</button>
         <button type="button" class="record-action-btn" data-action="refresh-clz" title="Sync CLZ collection now">Sync CLZ</button>
       </div>
     </div>
@@ -726,7 +725,8 @@ function renderCLZRecord(rec, syncMessage = '') {
         <div class="record-artist">${escapeHtml(rec.artist)}</div>
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
         <div class="record-actions">
-          <a class="record-link" href="${detailUrl}" target="_blank" rel="noopener">View on CLZ &#8599;</a>
+          <button type="button" class="record-link" data-action="roll-clz">Roll</button>
+          <a class="record-link secondary" href="${detailUrl}" target="_blank" rel="noopener">View on CLZ &#8599;</a>
           <a class="record-link secondary" href="${CLZ_URL}" target="_blank" rel="noopener">My CLZ Collection &#8599;</a>
           <a class="record-link secondary" href="${GITHUB_ACTIONS_URL}" target="_blank" rel="noopener">Actions &#8599;</a>
         </div>
@@ -820,9 +820,6 @@ function renderDiscogsRecord(rec) {
     ${recordBgHtml(rec.cover)}
     <div class="card-header">
       <span class="card-title tight">&#9679; Now Spinning (Discogs) &mdash; ${rec.total.toLocaleString()} releases</span>
-      <div class="record-header-actions">
-        <button type="button" class="record-action-btn" data-action="roll-discogs" title="Roll another album">Roll</button>
-      </div>
     </div>
     <div class="record-body record-roll-wrapper" id="discogs-roll-wrapper">
       ${coverHTML}
@@ -831,7 +828,8 @@ function renderDiscogsRecord(rec) {
         <div class="record-artist">${escapeHtml(rec.artist)}</div>
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
         <div class="record-actions">
-          <a class="record-link" href="${safeUrl(rec.discogsUrl)}" target="_blank" rel="noopener">View on Discogs &#8599;</a>
+          <button type="button" class="record-link" data-action="roll-discogs">Roll</button>
+          <a class="record-link secondary" href="${safeUrl(rec.discogsUrl)}" target="_blank" rel="noopener">View on Discogs &#8599;</a>
           <a class="record-link secondary" href="https://www.discogs.com" target="_blank" rel="noopener">Go to Discogs &#8599;</a>
         </div>
       </div>
