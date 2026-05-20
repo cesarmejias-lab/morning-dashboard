@@ -631,59 +631,31 @@ function renderQuote() {
 
 // ── Daily Record ─────────────────────────────────────────────────────────────
 // CLZ Cloud blocks cross-origin API access from static HTML files.
-// This section uses the Discogs public API instead (free, no key needed, CORS-enabled).
-//
-// ► To activate: set your Discogs username below.
-//   Your collection must be set to Public in Discogs settings.
-const DISCOGS_USER = 'cesarmejias';
-
+// This section reads the synced local json file 'music-collection.json'.
+// Run 'node sync-collection.js' to generate this file first.
 const CLZ_URL = 'https://cloud.clz.com/cesarmejias/music';
 
-// Deterministic seed from today's date → same pick all day, new one at midnight
-function dailySeed() {
-  const d = new Date();
-  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-}
-
-function seededPick(arr, seed) {
-  return arr[(seed * 2654435761 >>> 0) % arr.length];
-}
-
 async function fetchDailyRecord() {
-  if (!DISCOGS_USER) throw Object.assign(new Error('NOT_CONFIGURED'), {});
+  const response = await fetch('./music-collection.json');
+  if (!response.ok) {
+    throw Object.assign(new Error('NOT_CONFIGURED'), {});
+  }
+  const data = await response.json();
+  if (!data || !data.albums || data.albums.length === 0) {
+    throw new Error('Music collection is empty or invalid.');
+  }
 
-  const base    = `https://api.discogs.com/users/${DISCOGS_USER}/collection/folders/0/releases`;
-  const headers = { 'User-Agent': 'MorningDashboard/1.0 +https://github.com' };
-  const seed    = dailySeed();
-
-  // Step 1 — get total count
-  const first = await fetch(`${base}?page=1&per_page=1`, { headers });
-  if (first.status === 404) throw new Error(`Discogs user "${DISCOGS_USER}" not found`);
-  if (!first.ok)            throw new Error(`Discogs API error: HTTP ${first.status}`);
-  const meta        = await first.json();
-  const totalItems  = meta.pagination.items;
-
-  if (totalItems === 0) throw new Error('Discogs collection is empty or private');
-
-  // Step 2 — fetch a random page (100 per page)
-  const totalPages100 = Math.ceil(totalItems / 100);
-  const targetPage    = Math.floor(Math.random() * totalPages100) + 1;
-  const pageData      = await fetch(`${base}?page=${targetPage}&per_page=100&sort=added&sort_order=asc`, { headers });
-  if (!pageData.ok) throw new Error(`Discogs page fetch failed: HTTP ${pageData.status}`);
-  const { releases } = await pageData.json();
-
-  const item = releases[Math.floor(Math.random() * releases.length)];
-  const info = item.basic_information;
-
+  // Get a truly random album on every refresh/reload
+  const album = data.albums[Math.floor(Math.random() * data.albums.length)];
+  
   return {
-    title:      info.title,
-    artist:     info.artists.map(a => a.name.replace(/\s*\(\d+\)$/, '')).join(', '),
-    year:       info.year > 0 ? String(info.year) : null,
-    format:     info.formats?.[0]?.name || null,
-    label:      info.labels?.[0]?.name || null,
-    cover:      info.cover_image || info.thumb || null,
-    discogsUrl: `https://www.discogs.com/release/${item.id}`,
-    total:      totalItems,
+    id: album.id,
+    title: album.title,
+    artist: album.artist,
+    year: album.year,
+    cover: album.cover,
+    total: data.total,
+    syncedAt: data.syncedAt
   };
 }
 
@@ -697,12 +669,12 @@ function renderDailyRecord(rec) {
            onerror="this.outerHTML='<div class=\\'record-cover-placeholder\\'>&#127908;</div>'">`
     : `<div class="record-cover-placeholder">&#127908;</div>`;
 
-  const tags = [rec.year, rec.format, rec.label].filter(Boolean)
+  const tags = [rec.year].filter(Boolean)
     .map(t => `<span class="record-tag">${t}</span>`).join('');
 
   document.getElementById('record-card').innerHTML = `
     ${bgHTML}
-    <div class="card-title">&#9679; Now Spinning &mdash; ${rec.total.toLocaleString()} releases in your collection</div>
+    <div class="card-title">&#9679; Now Spinning &mdash; ${rec.total.toLocaleString()} releases in your CLZ collection</div>
     <div class="record-body">
       ${coverHTML}
       <div class="record-info">
@@ -710,8 +682,8 @@ function renderDailyRecord(rec) {
         <div class="record-artist">${rec.artist}</div>
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
-          <a class="record-link" href="${rec.discogsUrl}" target="_blank" rel="noopener">View on Discogs ↗</a>
-          <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08);color:var(--text);border:1px solid rgba(255,255,255,0.15)">CLZ ↗</a>
+          <a class="record-link" href="${CLZ_URL}/detail/${rec.id}" target="_blank" rel="noopener">View on CLZ ↗</a>
+          <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08);color:var(--text);border:1px solid rgba(255,255,255,0.15)">My Collection ↗</a>
         </div>
       </div>
     </div>`;
@@ -719,21 +691,20 @@ function renderDailyRecord(rec) {
 
 function renderDailyRecordSetup() {
   document.getElementById('record-card').innerHTML = `
-    <div class="card-title">Daily Record &mdash; Setup needed</div>
+    <div class="card-title">Daily Record &mdash; CLZ Setup needed</div>
     <div class="record-body">
       <div class="record-cover-placeholder">&#127908;</div>
       <div class="record-info">
-        <div class="record-title" style="font-size:0.95rem;font-weight:500">Connect your music collection</div>
-        <div class="record-artist" style="color:var(--muted)">CLZ Cloud blocks direct API access from static HTML files.</div>
-        <div class="record-tags" style="margin-top:10px">
-          <span class="record-tag">1&nbsp; Open the dashboard HTML in a text editor</span>
-          <span class="record-tag">2&nbsp; Find: <code style="color:var(--accent)">DISCOGS_USER = ''</code></span>
-          <span class="record-tag">3&nbsp; Set your Discogs username and save</span>
-          <span class="record-tag">4&nbsp; Make your Discogs collection public</span>
+        <div class="record-title" style="font-size:0.95rem;font-weight:500;margin-bottom:4px">Sync your CLZ Music collection</div>
+        <div class="record-artist" style="color:var(--muted);font-size:0.85rem;margin-bottom:12px">CLZ Cloud blocks direct access. Sync your collection locally using our synchronization tool.</div>
+        <div class="record-tags" style="margin-top:10px;flex-direction:column;align-items:flex-start;gap:8px">
+          <span class="record-tag" style="font-size:0.75rem;padding:4px 8px">1&nbsp; Open your terminal in the project folder</span>
+          <span class="record-tag" style="font-size:0.75rem;padding:4px 8px">2&nbsp; Run: <code style="color:var(--accent);font-family:monospace">node sync-collection.js</code></span>
+          <span class="record-tag" style="font-size:0.75rem;padding:4px 8px">3&nbsp; Reload this page to see a random music recommendation</span>
         </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-          <a class="record-link" href="https://www.discogs.com" target="_blank" rel="noopener">Discogs ↗</a>
-          <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener" style="background:var(--surface2);color:var(--text);border:1px solid var(--border)">CLZ collection ↗</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+          <button class="record-link" onclick="location.reload()" style="cursor:pointer;border:none;outline:none">Reload Dashboard</button>
+          <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08);color:var(--text);border:1px solid rgba(255,255,255,0.15)">Go to CLZ Music ↗</a>
         </div>
       </div>
     </div>`;
@@ -763,7 +734,7 @@ async function refresh() {
         `<div class="card-title">Daily Record</div>
          <div class="err">${e.message}</div>
          <div style="margin-top:10px">
-           <a class="record-link" href="https://www.discogs.com" target="_blank" rel="noopener">Discogs ↗</a>
+           <a class="record-link" href="${CLZ_URL}" target="_blank" rel="noopener">CLZ Collection ↗</a>
          </div>`;
     }),
   ]);
