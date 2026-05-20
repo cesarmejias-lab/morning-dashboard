@@ -1,8 +1,15 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-05-20T18:12:45.272Z",
-  "total": 5100,
+  "syncedAt": "2026-05-20T21:47:09.574Z",
+  "total": 5101,
   "albums": [
+    {
+      "id": "11785180",
+      "title": "Mi Catedral",
+      "artist": "Triángulo de Amor Bizarro",
+      "year": "2026",
+      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg"
+    },
     {
       "id": "11784849",
       "title": "Clipping",
