@@ -821,7 +821,33 @@ const CITIES_DB = [
   { name: 'São Paulo', country: 'Brazil', tz: 'America/Sao_Paulo', lat: -23.5505, lon: -46.6333, flag: '🇧🇷' },
   { name: 'Cape Town', country: 'South Africa', tz: 'Africa/Johannesburg', lat: -33.9249, lon: 18.4241, flag: '🇿🇦' },
   { name: 'Mexico City', country: 'Mexico', tz: 'America/Mexico_City', lat: 19.4326, lon: -99.1332, flag: '🇲🇽' },
-  { name: 'Reykjavik', country: 'Iceland', tz: 'Atlantic/Reykjavik', lat: 64.1466, lon: -21.9426, flag: '🇮🇸' }
+  { name: 'Reykjavik', country: 'Iceland', tz: 'Atlantic/Reykjavik', lat: 64.1466, lon: -21.9426, flag: '🇮🇸' },
+  // South American Capitals
+  { name: 'Buenos Aires', country: 'Argentina', tz: 'America/Argentina/Buenos_Aires', lat: -34.6037, lon: -58.3816, flag: '🇦🇷' },
+  { name: 'La Paz', country: 'Bolivia', tz: 'America/La_Paz', lat: -16.4897, lon: -68.1193, flag: '🇧🇴' },
+  { name: 'Sucre', country: 'Bolivia', tz: 'America/La_Paz', lat: -19.0196, lon: -65.2619, flag: '🇧🇴' },
+  { name: 'Brasília', country: 'Brazil', tz: 'America/Sao_Paulo', lat: -15.8267, lon: -47.9218, flag: '🇧🇷' },
+  { name: 'Santiago', country: 'Chile', tz: 'America/Santiago', lat: -33.4489, lon: -70.6693, flag: '🇨🇱' },
+  { name: 'Bogotá', country: 'Colombia', tz: 'America/Bogota', lat: 4.7110, lon: -74.0721, flag: '🇨🇴' },
+  { name: 'Quito', country: 'Ecuador', tz: 'America/Guayaquil', lat: -0.1807, lon: -78.4678, flag: '🇪🇨' },
+  { name: 'Georgetown', country: 'Guyana', tz: 'America/Guyana', lat: 6.8013, lon: -58.1551, flag: '🇬🇾' },
+  { name: 'Asunción', country: 'Paraguay', tz: 'America/Asuncion', lat: -25.2637, lon: -57.5759, flag: '🇵🇾' },
+  { name: 'Lima', country: 'Peru', tz: 'America/Lima', lat: -12.0464, lon: -77.0428, flag: '🇵🇪' },
+  { name: 'Paramaribo', country: 'Suriname', tz: 'America/Paramaribo', lat: 5.8520, lon: -55.6032, flag: '🇸🇷' },
+  { name: 'Montevideo', country: 'Uruguay', tz: 'America/Montevideo', lat: -34.9011, lon: -56.1645, flag: '🇺🇾' },
+  { name: 'Caracas', country: 'Venezuela', tz: 'America/Caracas', lat: 10.4806, lon: -66.9036, flag: '🇻🇪' },
+  // Additional Global Capitals
+  { name: 'Ottawa', country: 'Canada', tz: 'America/Toronto', lat: 45.4215, lon: -75.6972, flag: '🇨🇦' },
+  { name: 'Washington, D.C.', country: 'United States', tz: 'America/New_York', lat: 38.9072, lon: -77.0369, flag: '🇺🇸' },
+  { name: 'Beijing', country: 'China', tz: 'Asia/Shanghai', lat: 39.9042, lon: 116.4074, flag: '🇨🇳' },
+  { name: 'Moscow', country: 'Russia', tz: 'Europe/Moscow', lat: 55.7558, lon: 37.6173, flag: '🇷🇺' },
+  { name: 'Nairobi', country: 'Kenya', tz: 'Africa/Nairobi', lat: -1.2921, lon: 36.8219, flag: '🇰🇪' },
+  { name: 'Riyadh', country: 'Saudi Arabia', tz: 'Asia/Riyadh', lat: 24.7136, lon: 46.6753, flag: '🇸🇦' },
+  { name: 'Seoul', country: 'South Korea', tz: 'Asia/Seoul', lat: 37.5665, lon: 126.9780, flag: '🇰🇷' },
+  { name: 'Bangkok', country: 'Thailand', tz: 'Asia/Bangkok', lat: 13.7563, lon: 100.5018, flag: '🇹🇭' },
+  { name: 'Cairo', country: 'Egypt', tz: 'Africa/Cairo', lat: 30.0444, lon: 31.2357, flag: '🇪🇬' },
+  { name: 'Jakarta', country: 'Indonesia', tz: 'Asia/Jakarta', lat: -6.2088, lon: 106.8456, flag: '🇮🇩' },
+  { name: 'Abuja', country: 'Nigeria', tz: 'Africa/Lagos', lat: 9.0765, lon: 7.3986, flag: '🇳🇬' }
 ];
 
 const DEFAULT_CLOCKS = [
@@ -1403,7 +1429,10 @@ function renderCLZRecord(rec) {
   document.getElementById('clz-card').innerHTML = `
     ${bgHTML}
     <div class="card-header" style="position:relative; z-index:1; margin-bottom: 12px;">
-      <span class="card-title" style="margin-bottom: 0;">&#9679; Now Spinning (CLZ) &mdash; ${rec.total.toLocaleString()} releases</span>
+      <span class="card-title" style="margin-bottom: 0; display:flex; flex-direction:column;">
+        <span>&#9679; Now Spinning (CLZ) &mdash; ${rec.total.toLocaleString()} releases</span>
+        ${rec.syncedAt ? `<span style="font-size:0.65rem; color:var(--muted); font-weight:normal; margin-top:2px;">Last synced: ${new Date(rec.syncedAt).toLocaleString()}</span>` : ''}
+      </span>
       <button class="settings-btn" onclick="rollCLZAlbum()" title="Roll another album" style="transform:none; font-size:0.7rem; display:flex; align-items:center; gap:4px; background:var(--surface2); border:1px solid var(--border); padding:3px 8px;">
         <span>🎲</span> Roll
       </button>

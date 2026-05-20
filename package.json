@@ -1,0 +1,11 @@
+{
+  "name": "morning-dashboard",
+  "version": "1.0.0",
+  "description": "Morning Dashboard with automated CLZ refresh",
+  "main": "index.html",
+  "scripts": {
+    "clz:refresh": "node refresh-clz.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
