@@ -750,6 +750,42 @@
       100% { opacity: 0.7; }
     }
 
+    /* ── Skeleton Loading ────────────────────────────────────────────────── */
+    .skeleton {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface2) !important;
+      border: none !important;
+    }
+    .skeleton::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+      );
+      animation: shimmer 1.6s infinite;
+    }
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
+    }
+
+    /* ── Spotify & YouTube Branding ───────────────────────────────────────── */
+    .record-link.secondary.spotify-link:hover {
+      background: rgba(29, 185, 84, 0.15) !important;
+      border-color: #1db954 !important;
+      color: #1db954 !important;
+    }
+    .record-link.secondary.youtube-link:hover {
+      background: rgba(255, 0, 0, 0.15) !important;
+      border-color: #ff0000 !important;
+      color: #ff0000 !important;
+    }
+
     /* ── Responsive ─────────────────────────────────────────────────────── */
     @media (max-width: 680px) {
       .grid { grid-template-columns: 1fr; }

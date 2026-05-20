@@ -1,3 +1,6 @@
+// ── User Configuration ────────────────────────────────────────────────────────
+const USER_NAME = 'Cesar';
+
 // ── Cities Database ─────────────────────────────────────────────────────────
 const CITIES_DB = [
   { name: 'Tres Cantos', country: 'Spain', tz: 'Europe/Madrid', lat: 40.5919, lon: -3.7221, flag: '🇪🇸' },
@@ -707,6 +710,9 @@ function renderCLZRecord(rec, syncMessage = '') {
   const tags = [rec.year].filter(Boolean)
     .map(t => `<span class="record-tag">${escapeHtml(t)}</span>`).join('');
 
+  const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(rec.artist + ' ' + rec.title)}`;
+  const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(rec.artist + ' ' + rec.title + ' album')}`;
+
   byId('clz-card').innerHTML = `
     ${recordBgHtml(rec.cover)}
     <div class="card-header">
@@ -726,6 +732,12 @@ function renderCLZRecord(rec, syncMessage = '') {
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
         <div class="record-actions">
           <button type="button" class="record-link" data-action="roll-clz">Roll</button>
+          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.472-.076-.336.135-.67.472-.746 3.856-.88 7.15-.505 9.822 1.13.295.18.387.565.204.863zm1.224-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.076-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.224-.563 11.346 1.354.366.226.486.707.258 1.074zm.105-2.82c-3.26-1.937-8.643-2.12-11.758-1.173-.5.15-1.025-.133-1.177-.633-.15-.5.133-1.025.633-1.177 3.616-1.1 9.54-.888 13.293 1.342.45.267.6.846.333 1.296-.267.45-.846.6-1.296.333z"/></svg>Spotify
+          </a>
+          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube
+          </a>
           <a class="record-link secondary" href="${detailUrl}" target="_blank" rel="noopener">View on CLZ &#8599;</a>
           <a class="record-link secondary" href="${CLZ_URL}" target="_blank" rel="noopener">My CLZ Collection &#8599;</a>
           <a class="record-link secondary" href="${GITHUB_ACTIONS_URL}" target="_blank" rel="noopener">Actions &#8599;</a>
@@ -816,6 +828,9 @@ function renderDiscogsRecord(rec) {
   const tags = [rec.year, rec.format, rec.label].filter(Boolean)
     .map(t => `<span class="record-tag">${escapeHtml(t)}</span>`).join('');
 
+  const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(rec.artist + ' ' + rec.title)}`;
+  const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(rec.artist + ' ' + rec.title + ' album')}`;
+
   byId('discogs-card').innerHTML = `
     ${recordBgHtml(rec.cover)}
     <div class="card-header">
@@ -829,6 +844,12 @@ function renderDiscogsRecord(rec) {
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
         <div class="record-actions">
           <button type="button" class="record-link" data-action="roll-discogs">Roll</button>
+          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.472-.076-.336.135-.67.472-.746 3.856-.88 7.15-.505 9.822 1.13.295.18.387.565.204.863zm1.224-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.076-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.224-.563 11.346 1.354.366.226.486.707.258 1.074zm.105-2.82c-3.26-1.937-8.643-2.12-11.758-1.173-.5.15-1.025-.133-1.177-.633-.15-.5.133-1.025.633-1.177 3.616-1.1 9.54-.888 13.293 1.342.45.267.6.846.333 1.296-.267.45-.846.6-1.296.333z"/></svg>Spotify
+          </a>
+          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube
+          </a>
           <a class="record-link secondary" href="${safeUrl(rec.discogsUrl)}" target="_blank" rel="noopener">View on Discogs &#8599;</a>
           <a class="record-link secondary" href="https://www.discogs.com" target="_blank" rel="noopener">Go to Discogs &#8599;</a>
         </div>
@@ -861,6 +882,12 @@ function renderDiscogsSetup() {
 async function refresh() {
   byId('last-updated').textContent = 'Refreshing...';
   byId('refresh-btn').disabled = true;
+
+  renderWeatherSkeleton();
+  renderHNSkeleton();
+  renderRatesSkeleton();
+  renderRecordSkeleton('clz-card', 'CLZ Music Recommendation');
+  renderRecordSkeleton('discogs-card', 'Discogs Daily Record');
 
   await Promise.allSettled([
     fetchWeather().then(renderWeather).catch((e) => {
@@ -943,12 +970,158 @@ function bindEvents() {
   }, true);
 
   document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
-    const weatherDrawer = byId('weather-settings-drawer');
-    const clocksDrawer = byId('clocks-settings-drawer');
-    if (weatherDrawer && !weatherDrawer.hidden) toggleWeatherDrawer();
-    if (clocksDrawer && !clocksDrawer.hidden) toggleClocksDrawer();
+    if (event.key === 'Escape') {
+      const weatherDrawer = byId('weather-settings-drawer');
+      const clocksDrawer = byId('clocks-settings-drawer');
+      if (weatherDrawer && !weatherDrawer.hidden) toggleWeatherDrawer();
+      if (clocksDrawer && !clocksDrawer.hidden) toggleClocksDrawer();
+      return;
+    }
+
+    // Ignore shortcuts if the user is typing in a text field
+    const activeEl = document.activeElement;
+    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) {
+      return;
+    }
+
+    const key = event.key.toLowerCase();
+    
+    // R: Refresh everything
+    if (key === 'r') {
+      event.preventDefault();
+      refresh();
+    }
+    
+    // C: Roll CLZ Album
+    if (key === 'c') {
+      event.preventDefault();
+      rollCLZAlbum();
+    }
+    
+    // D: Roll Discogs Album
+    if (key === 'd') {
+      event.preventDefault();
+      rollDiscogsAlbum();
+    }
+    
+    // W: Configure weather (Toggle drawer)
+    if (key === 'w') {
+      event.preventDefault();
+      toggleWeatherDrawer();
+    }
+    
+    // K: Configure clocks (Toggle drawer)
+    if (key === 'k') {
+      event.preventDefault();
+      toggleClocksDrawer();
+    }
   });
+}
+
+// ── Skeleton Loader Helpers ───────────────────────────────────────────────────
+function renderWeatherSkeleton() {
+  const body = byId('weather-body');
+  if (!body) return;
+  body.innerHTML = `
+    <div class="weather-fade-wrapper">
+      <div class="w-current">
+        <div class="skeleton" style="width: 50px; height: 50px; border-radius: 50%;"></div>
+        <div class="skeleton" style="width: 80px; height: 45px; border-radius: 6px;"></div>
+      </div>
+      <div class="w-stats" style="margin-bottom: 20px; display: flex; gap: 18px;">
+        <div class="skeleton" style="width: 100px; height: 14px; border-radius: 4px;"></div>
+        <div class="skeleton" style="width: 80px; height: 14px; border-radius: 4px;"></div>
+      </div>
+      <div class="forecast">
+        ${Array(5).fill(0).map(() => `
+          <div class="fc-day" style="background: transparent; border: 1px solid var(--border);">
+            <div class="skeleton" style="width: 25px; height: 10px; margin: 0 auto 8px; border-radius: 2px;"></div>
+            <div class="skeleton" style="width: 20px; height: 20px; margin: 0 auto 8px; border-radius: 50%;"></div>
+            <div class="skeleton" style="width: 30px; height: 12px; margin: 0 auto; border-radius: 2px;"></div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+function renderRatesSkeleton() {
+  const body = byId('rates-card');
+  if (!body) return;
+  body.innerHTML = `
+    <div class="card-title">Exchange Rates &mdash; EUR Base</div>
+    <div class="rates-grid">
+      ${Array(4).fill(0).map(() => `
+        <div class="rate-item" style="border: 1px solid var(--border); background: transparent;">
+          <div class="skeleton" style="width: 50px; height: 10px; margin-bottom: 8px; border-radius: 2px;"></div>
+          <div class="skeleton" style="width: 80px; height: 24px; border-radius: 4px;"></div>
+        </div>
+      `).join('')}
+    </div>`;
+}
+
+function renderRecordSkeleton(cardId, cardTitle) {
+  const card = byId(cardId);
+  if (!card) return;
+  card.innerHTML = `
+    <div class="card-title">${cardTitle}</div>
+    <div class="record-body" style="gap: 24px;">
+      <div class="skeleton record-cover" style="border-radius: 10px;"></div>
+      <div class="record-info" style="flex: 1;">
+        <div class="skeleton" style="width: 60%; height: 24px; margin-bottom: 8px; border-radius: 4px;"></div>
+        <div class="skeleton" style="width: 40%; height: 16px; margin-bottom: 12px; border-radius: 3px;"></div>
+        <div class="record-tags" style="margin-bottom: 14px;">
+          <div class="skeleton" style="width: 50px; height: 16px; border-radius: 4px;"></div>
+          <div class="skeleton" style="width: 70px; height: 16px; border-radius: 4px;"></div>
+        </div>
+        <div class="record-actions" style="margin-top: 6px; display: flex; gap: 8px;">
+          <div class="skeleton" style="width: 80px; height: 26px; border-radius: 6px;"></div>
+          <div class="skeleton" style="width: 100px; height: 26px; border-radius: 6px;"></div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderHNSkeleton() {
+  const card = byId('hn-card');
+  if (!card) return;
+  card.innerHTML = `
+    <div class="card-title">Top Hacker News Stories</div>
+    <ul class="hn-list">
+      ${Array(5).fill(0).map((_, i) => `
+        <li class="hn-item" style="border-bottom: 1px solid var(--border);">
+          <span class="hn-n">${i + 1}</span>
+          <div style="flex: 1;">
+            <div class="skeleton" style="width: 70%; height: 14px; margin-bottom: 6px; border-radius: 3px;"></div>
+            <div class="skeleton" style="width: 40%; height: 10px; border-radius: 2px;"></div>
+          </div>
+        </li>
+      `).join('')}
+    </ul>`;
+}
+
+// ── Greeting Helpers ──────────────────────────────────────────────────────────
+function getGreeting() {
+  const hour = new Date().getHours();
+  let baseGreeting = 'Good morning';
+  if (hour >= 12 && hour < 18) {
+    baseGreeting = 'Good afternoon';
+  } else if (hour >= 18 && hour < 22) {
+    baseGreeting = 'Good evening';
+  } else if (hour >= 22 || hour < 5) {
+    baseGreeting = 'Good night';
+  }
+  
+  if (USER_NAME) {
+    return `${baseGreeting}, ${USER_NAME}`;
+  }
+  return baseGreeting;
+}
+
+function updateGreeting() {
+  const greetingEl = byId('greeting-title');
+  if (greetingEl) {
+    greetingEl.textContent = getGreeting();
+  }
 }
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
@@ -959,8 +1132,18 @@ function bindEvents() {
 })();
 
 bindEvents();
+updateGreeting();
 loadAccentColor();
 updateClocks();
 setInterval(updateClocks, 1000);
 refresh();
 setInterval(refresh, REFRESH_MS);
+
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker registered successfully with scope:', reg.scope))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
