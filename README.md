@@ -26,6 +26,13 @@ https://cesarmejias-lab.github.io/morning-dashboard/
 
 No token is requested or stored by the dashboard. Press **Sync CLZ**, click **Run workflow** in GitHub, then refresh the dashboard after the workflow finishes.
 
+## Music Controls
+
+- **Roll** in the CLZ card picks another random album from `music-collection.json`.
+- **Roll** in the Discogs card picks another random public Discogs release.
+- **Sync CLZ** opens the GitHub Actions workflow page. The workflow refreshes `music-collection.json` and commits it back to `main`.
+- The dashboard fetches `music-collection.json` with cache-busting so recently synced totals show up without stale browser cache.
+
 ## CLI Sync
 
 ```bash
