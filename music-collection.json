@@ -1,8 +1,43 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-05-20T10:24:41.105Z",
-  "total": 5095,
+  "syncedAt": "2026-05-20T14:27:42.922Z",
+  "total": 5100,
   "albums": [
+    {
+      "id": "11784849",
+      "title": "Clipping",
+      "artist": "Special Friend",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c1/c1_37000548_0_Clipping.jpg"
+    },
+    {
+      "id": "11784847",
+      "title": "Double Exposure",
+      "artist": "Penny Arcade",
+      "year": "2026",
+      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg"
+    },
+    {
+      "id": "11784848",
+      "title": "Softest Attack",
+      "artist": "Prism Shores",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/df/df_36723760_0_SoftestAttack.jpg"
+    },
+    {
+      "id": "11784846",
+      "title": "Acknowledge Kindness",
+      "artist": "The Reds, Pinks And Purples",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d2/d2_37160940_0_AcknowledgeKindness.jpg"
+    },
+    {
+      "id": "11784845",
+      "title": "Look For Your Mind!",
+      "artist": "The Lemon Twigs",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4e/4e_37076103_0_LookForYourMind.jpg"
+    },
     {
       "id": "11783212",
       "title": "I Know You’re Hurting, Everyone Is Hurting, Everyone Is Trying, You Have Got To Try",
@@ -3855,7 +3890,7 @@
     },
     {
       "id": "10494143",
-      "title": "No Title As Of 13 February 2024 28,340 Dead",
+      "title": "No Title As Of 13 February 2024 28,340 Dead",
       "artist": "Godspeed You Black Emperor!",
       "year": "2024",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a8/a8_31850216_0_NoTitleAsOf13February202428340.jpg"
@@ -7635,7 +7670,7 @@
     },
     {
       "id": "9214887",
-      "title": "José María Granados  - Tributo Amigos",
+      "title": "José María Granados - Tributo Amigos",
       "artist": "Varios",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/c8/c8_9214887_0_VariosJosMaraGranadosTributoAm.jpg"
@@ -8391,7 +8426,7 @@
     },
     {
       "id": "8990454",
-      "title": "Veinticuatro páginas inolvidables     1 (disc 2)",
+      "title": "Veinticuatro páginas inolvidables 1 (disc 2)",
       "artist": "Juan Manuel Serrat",
       "year": "2003",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/de/de_3605360_0_Veinticuatropginasinolvidables.jpg"
@@ -19179,7 +19214,7 @@
     {
       "id": "2158101",
       "title": "Collected recordings 1983-1989",
-      "artist": "Lloyd Cole  And The Commotions",
+      "artist": "Lloyd Cole And The Commotions",
       "year": "",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/1f/1f_2158101_0__Collectedrecordings19831989.jpg"
     },
@@ -19500,7 +19535,7 @@
     },
     {
       "id": "1939298",
-      "title": "Raintown (DeLuxe 3 CD   DVD Edition)",
+      "title": "Raintown (DeLuxe 3 CD DVD Edition)",
       "artist": "Deacon Blue",
       "year": "2012",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/df/df_3792922_0_RaintownDeluxeEditionCD1Rainto.jpg"
@@ -20025,8 +20060,8 @@
     },
     {
       "id": "1645881",
-      "title": "The Very Best of Graham Parker   The Rumour",
-      "artist": "Graham Parker   The Rumour",
+      "title": "The Very Best of Graham Parker The Rumour",
+      "artist": "Graham Parker The Rumour",
       "year": "2014",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/19/19_3916139_0_TheVeryBestofGrahamParkerTheRu.jpg"
     },
@@ -21097,7 +21132,7 @@
     {
       "id": "937453",
       "title": "I Just Can't Stop It",
-      "artist": "The  Beat",
+      "artist": "The Beat",
       "year": "2012",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/7d/7d_937453_0_TheBeatIJustCantStopIt.jpg"
     },
@@ -23329,7 +23364,7 @@
     },
     {
       "id": "102409",
-      "title": "THE BEST OF 1980  1990",
+      "title": "THE BEST OF 1980 1990",
       "artist": "U2",
       "year": "1998",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/9f/9f_3343468_0_TheBestOf19801990.jpg"
@@ -24793,7 +24828,7 @@
     {
       "id": "90783",
       "title": "Lamparetes",
-      "artist": "Antònia Font | Antònia Font",
+      "artist": "AntÃ²nia Font | Antònia Font",
       "year": "",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/bd/bd_3648904_0_Lamparetes.jpg"
     },
@@ -28013,14 +28048,14 @@
     {
       "id": "75634",
       "title": "Unholy Soul + Singles",
-      "artist": "The Orchids | The  Orchids",
+      "artist": "The Orchids | The Orchids",
       "year": "2005",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/26/26_584378_0_TheOrchidsUnholySoulSingles.jpeg"
     },
     {
       "id": "75633",
       "title": "Good To Be A Stranger",
-      "artist": "The Orchids | The  Orchids",
+      "artist": "The Orchids | The Orchids",
       "year": "2007",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/94/94_927236_0_TheOrchidsGoodToBeAStranger.jpeg"
     },
@@ -28706,7 +28741,7 @@
     {
       "id": "73755",
       "title": "Hits",
-      "artist": "Mike The Mechanics | Mike   The Mechanics",
+      "artist": "Mike The Mechanics | Mike The Mechanics",
       "year": "1996",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/bc/bc_905058_0_Hits.jpg"
     },
@@ -31435,7 +31470,7 @@
     },
     {
       "id": "90849",
-      "title": "Gloria y la belleza sureña",
+      "title": "Gloria y la belleza sureÃ±a",
       "artist": "Francisco Nixon & Ricardo Vicente",
       "year": "",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/35/35_3520969_0_Gloriaylabellezasurea.jpg"
@@ -32276,7 +32311,7 @@
     {
       "id": "92071",
       "title": "30e Anniversaire",
-      "artist": "Piaf, Edith | Edith  Piaf",
+      "artist": "Piaf, Edith | Edith Piaf",
       "year": "1993",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/b2/b2_1137611_0_Piafdith30eAnniversaire.jpg"
     },
