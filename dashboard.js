@@ -651,7 +651,7 @@ async function fetchCLZCollection(cacheBust = false) {
 
   try {
     const suffix = cacheBust ? `?t=${Date.now()}` : '';
-    const response = await fetch(`./music-collection.json${suffix}`);
+    const response = await fetch(`./music-collection.json${suffix}`, { cache: 'no-store' });
     if (response.ok) {
       const data = await response.json();
       if (data && data.albums && data.albums.length > 0) {
@@ -679,8 +679,8 @@ function pickCLZRecord(data) {
   };
 }
 
-async function fetchCLZRecord() {
-  return pickCLZRecord(await fetchCLZCollection());
+async function fetchCLZRecord(options = {}) {
+  return pickCLZRecord(await fetchCLZCollection(Boolean(options.cacheBust)));
 }
 
 function recordCoverPlaceholder() {
@@ -876,7 +876,7 @@ async function refresh() {
     fetchRates().then(renderRates).catch(() => {
       setCardMessage('rates-card', 'Exchange Rates', 'Failed to load rates.');
     }),
-    fetchCLZRecord().then(renderCLZRecord).catch(e => {
+    fetchCLZRecord({ cacheBust: true }).then(renderCLZRecord).catch(e => {
       if (e.message === 'NOT_CONFIGURED') { renderCLZSetup(); return; }
       byId('clz-card').innerHTML =
         `<div class="card-title">CLZ Music Recommendation</div>
