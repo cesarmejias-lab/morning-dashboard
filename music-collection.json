@@ -1,14 +1,42 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-05-20T21:47:09.574Z",
-  "total": 5101,
+  "syncedAt": "2026-05-21T14:49:22.519Z",
+  "total": 5105,
   "albums": [
+    {
+      "id": "11785514",
+      "title": "Don't Give Up",
+      "artist": "The Maureens",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/d1/d1_11785514_0_TheMaureensDontGiveUp.jpg"
+    },
+    {
+      "id": "11785512",
+      "title": "Loserdom",
+      "artist": "Ben Auld",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/9c/9c_11785512_0_BenAuldLoserdom.jpg"
+    },
+    {
+      "id": "11785483",
+      "title": "Forever Breathes The Lonely Word",
+      "artist": "Felt",
+      "year": "2018",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d4/d4_12545382_0_ForeverBreathesTheLonelyWord.jpg"
+    },
+    {
+      "id": "11785480",
+      "title": "Al Calor Del Amor En Un Bar",
+      "artist": "Gabinete Caligari",
+      "year": "1986",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f2/f2_8062486_0_AlCalorDelAmorEnUnBar.jpg"
+    },
     {
       "id": "11785180",
       "title": "Mi Catedral",
       "artist": "Triángulo de Amor Bizarro",
       "year": "2026",
-      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg"
+      "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/5e/5e_11785180_0_TringulodeAmorBizarroMiCatedra.jpg"
     },
     {
       "id": "11784849",
@@ -22,7 +50,7 @@
       "title": "Double Exposure",
       "artist": "Penny Arcade",
       "year": "2025",
-      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg"
+      "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/5b/5b_11784847_0_PennyArcadeDoubleExposure.jpg"
     },
     {
       "id": "11784848",
