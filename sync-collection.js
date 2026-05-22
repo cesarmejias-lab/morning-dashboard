@@ -10,10 +10,19 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const { normalizeCollection } = require('./clz-radar');
+const {
+  parseDetailMetadata,
+  mergeAlbumMetadata,
+  mergeExistingMetadata,
+  selectAlbumsForEnrichment,
+} = require('./clz-sync-metadata');
 
 const CLZ_USERNAME = process.env.CLZ_USERNAME || process.argv[2] || 'cesarmejias';
 const BASE_URL = `https://cloud.clz.com/${encodeURIComponent(CLZ_USERNAME)}/music`;
 const OUTPUT_FILE = path.join(__dirname, 'music-collection.json');
+const ENRICH_DETAILS = process.env.CLZ_ENRICH_DETAILS !== 'false';
+const CLZ_ENRICH_LIMIT = Math.max(0, Number(process.env.CLZ_ENRICH_LIMIT || 60));
+const CLZ_DETAIL_DELAY_MS = Math.max(100, Number(process.env.CLZ_DETAIL_DELAY_MS || 350));
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -66,6 +75,59 @@ function fetchLazyLoad(csrfToken, cookies, page = 1) {
       Cookie: cookies.join('; '),
     },
   });
+}
+
+function fetchDetailPage(albumId, cookies) {
+  return httpsGet({
+    hostname: 'cloud.clz.com',
+    port: 443,
+    path: `/${encodeURIComponent(CLZ_USERNAME)}/music/detail/${encodeURIComponent(albumId)}`,
+    method: 'GET',
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+      Cookie: cookies.join('; '),
+    },
+  });
+}
+
+async function enrichAlbums(albums, existingCollection, cookies) {
+  const existingAlbums = existingCollection && Array.isArray(existingCollection.albums)
+    ? existingCollection.albums
+    : [];
+  const existingById = new Map(existingAlbums.map(album => [String(album.id), album]));
+  const merged = albums.map(album => mergeExistingMetadata(album, existingById.get(String(album.id))));
+
+  if (!ENRICH_DETAILS || CLZ_ENRICH_LIMIT === 0) {
+    return merged;
+  }
+
+  const targets = selectAlbumsForEnrichment(merged, existingAlbums, CLZ_ENRICH_LIMIT);
+  const targetIds = new Set(targets.map(album => String(album.id)));
+  const enrichedById = new Map();
+  const checkedAt = new Date().toISOString();
+
+  for (const album of targets) {
+    process.stdout.write(`  -> Enriching ${album.id} ${album.title}... `);
+    try {
+      const res = await fetchDetailPage(album.id, cookies);
+      if (res.status === 200) {
+        const metadata = parseDetailMetadata(res.body);
+        enrichedById.set(String(album.id), mergeAlbumMetadata(album, metadata, checkedAt));
+        console.log('ok.');
+      } else {
+        enrichedById.set(String(album.id), mergeAlbumMetadata(album, {}, checkedAt));
+        console.log(`skipped HTTP ${res.status}.`);
+      }
+    } catch (err) {
+      enrichedById.set(String(album.id), mergeAlbumMetadata(album, {}, checkedAt));
+      console.log(`skipped ${err.message}.`);
+    }
+    await delay(CLZ_DETAIL_DELAY_MS);
+  }
+
+  return merged.map(album => targetIds.has(String(album.id))
+    ? enrichedById.get(String(album.id)) || album
+    : album);
 }
 
 function decodeHtml(value = '') {
@@ -184,7 +246,7 @@ async function run() {
   console.log(`Target username : ${CLZ_USERNAME}`);
   console.log(`Target URL      : ${BASE_URL}\n`);
 
-  console.log('[1/4] Connecting to CLZ Cloud to initialize session...');
+  console.log('[1/5] Connecting to CLZ Cloud to initialize session...');
   const mainPage = await getPage(BASE_URL);
 
   if (mainPage.status !== 200) {
@@ -206,8 +268,9 @@ async function run() {
 
   const csrfToken = csrfMatch[1];
   console.log('[OK] Session initialized successfully.');
+  const existingCollection = readExistingCollection();
 
-  console.log('\n[2/4] Fetching collection metadata...');
+  console.log('\n[2/5] Fetching collection metadata...');
   const page1Res = await fetchLazyLoad(csrfToken, cookies, 1);
 
   if (page1Res.status !== 200) {
@@ -225,7 +288,7 @@ async function run() {
   const totalPages = Math.ceil(totalCount / itemsPerPage);
   console.log(`[OK] Found ${totalCount.toLocaleString()} albums across ${totalPages} pages.`);
 
-  console.log('\n[3/4] Crawling collection pages (100 albums per request)...');
+  console.log('\n[3/5] Crawling collection pages (100 albums per request)...');
   const allItems = [];
 
   for (let page = 1; page <= totalPages; page++) {
@@ -258,11 +321,14 @@ async function run() {
     }
   }
 
-  console.log('\n[4/4] Writing database...');
+  console.log('\n[4/5] Enriching album metadata...');
+  const enrichedItems = await enrichAlbums(allItems, existingCollection, cookies);
+
+  console.log('\n[5/5] Writing database...');
   const payload = buildCollectionPayload({
     username: CLZ_USERNAME,
     syncedAt: new Date().toISOString(),
-    albums: allItems,
+    albums: enrichedItems,
   });
 
   const result = writeCollection(payload);
@@ -287,4 +353,5 @@ module.exports = {
   parseItems,
   decodeHtml,
   buildCollectionPayload,
+  enrichAlbums,
 };
