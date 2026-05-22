@@ -145,6 +145,134 @@
     };
   }
 
+  function daysBetween(a, b) {
+    const start = a instanceof Date ? a : new Date(a);
+    const end = b instanceof Date ? b : new Date(b);
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return Number.POSITIVE_INFINITY;
+    return Math.abs(end.getTime() - start.getTime()) / 86400000;
+  }
+
+  function pruneHistory(history, now = new Date()) {
+    return (Array.isArray(history) ? history : [])
+      .filter(entry => entry && entry.id && entry.shownAt && daysBetween(entry.shownAt, now) <= HISTORY_MAX_AGE_DAYS)
+      .slice(0, HISTORY_LIMIT);
+  }
+
+  function recordHistoryEntry(history, album, now = new Date()) {
+    const normalized = normalizeAlbum(album);
+    const entry = {
+      id: normalized.id,
+      artist: normalized.artist,
+      shownAt: now.toISOString(),
+      signals: [...normalized.genres, ...normalized.styles, ...normalized.moods].slice(0, 6),
+    };
+    return [entry, ...pruneHistory(history, now).filter(item => item.id !== entry.id)].slice(0, HISTORY_LIMIT);
+  }
+
+  function readHistory(storage, key) {
+    try {
+      const raw = storage.getItem(key);
+      return pruneHistory(raw ? JSON.parse(raw) : []);
+    } catch {
+      return [];
+    }
+  }
+
+  function writeHistory(storage, key, history) {
+    try {
+      storage.setItem(key, JSON.stringify(pruneHistory(history)));
+    } catch {
+      return false;
+    }
+    return true;
+  }
+
+  function seenSet(history, key) {
+    return new Set(pruneHistory(history).map(entry => String(entry[key] || '').toLowerCase()).filter(Boolean));
+  }
+
+  function scoreAlbum(album, collection, history, random) {
+    const normalized = normalizeAlbum(album);
+    const recentIds = seenSet(history, 'id');
+    const recentArtists = seenSet(history, 'artist');
+    let score = 10 + random();
+
+    if (recentIds.has(normalized.id.toLowerCase())) score -= 100;
+    if (recentArtists.has(normalized.artist.toLowerCase())) score -= 20;
+    if (normalized.addedAt && daysBetween(normalized.addedAt, new Date()) > 365) score += 8;
+    if (normalized.genres.length > 0 || normalized.styles.length > 0 || normalized.moods.length > 0) score += 6;
+    if (normalized.format) score += 3;
+    if (normalized.edition) score += 2;
+    if (decadeFromYear(normalized.year)) score += 2;
+    if (collection.summary && collection.summary.metadataQuality && collection.summary.metadataQuality.basic > 0 && normalized.metadataQuality.level === 'basic') score -= 2;
+
+    return score;
+  }
+
+  function buildRadarSignals(album, collection, history) {
+    const normalized = normalizeAlbum(album);
+    const signals = [];
+    const recentSignals = new Set(pruneHistory(history).flatMap(entry => entry.signals || []).map(value => value.toLowerCase()));
+    const decade = decadeFromYear(normalized.year);
+
+    const genre = normalized.genres.find(name => !recentSignals.has(name.toLowerCase())) || normalized.genres[0];
+    if (genre) signals.push({ label: 'Genre', value: genre });
+
+    const style = normalized.styles.find(name => !recentSignals.has(name.toLowerCase())) || normalized.styles[0];
+    if (style) signals.push({ label: 'Style', value: style });
+
+    if (decade) signals.push({ label: 'Decade', value: decade });
+    if (normalized.format) signals.push({ label: 'Format', value: normalized.format });
+    if (normalized.addedAt && daysBetween(normalized.addedAt, new Date()) > 365) {
+      signals.push({ label: 'Rediscovery', value: 'Added over a year ago' });
+    }
+    if (normalized.metadataQuality.level === 'basic') {
+      signals.push({ label: 'Metadata', value: 'Basic CLZ data' });
+    }
+
+    return signals.slice(0, 3);
+  }
+
+  function generateRecommendationReason(album, signals) {
+    const normalized = normalizeAlbum(album);
+    const genre = signals.find(signal => signal.label === 'Genre');
+    const style = signals.find(signal => signal.label === 'Style');
+    const format = signals.find(signal => signal.label === 'Format');
+    const decade = signals.find(signal => signal.label === 'Decade');
+
+    if (genre) return `A ${genre.value} record from your collection rotation.`;
+    if (style) return `A ${style.value} corner of the collection worth revisiting.`;
+    if (format) return `A ${format.value} edition surfaced for today's listen.`;
+    if (decade) return `A ${decade.value} pick from a different shelf of the collection.`;
+    if (normalized.metadataQuality.level === 'basic') return 'A fresh pick from your CLZ collection.';
+    return 'A fresh pick from your CLZ collection.';
+  }
+
+  function selectDailyRadar(collectionPayload, options = {}) {
+    const collection = normalizeCollection(collectionPayload);
+    const history = pruneHistory(options.history || [], options.now || new Date());
+    const random = typeof options.random === 'function' ? options.random : Math.random;
+    const candidates = collection.albums.length > 0 ? collection.albums : [];
+    if (candidates.length === 0) {
+      throw new Error('CLZ collection is empty.');
+    }
+
+    const scored = candidates
+      .map(album => ({ album, score: scoreAlbum(album, collection, history, random) }))
+      .sort((a, b) => b.score - a.score);
+    const selected = scored[0].album;
+    const signals = buildRadarSignals(selected, collection, history);
+    const reason = generateRecommendationReason(selected, signals);
+
+    return {
+      ...selected,
+      total: collection.total || collection.albums.length,
+      syncedAt: collection.syncedAt,
+      reason,
+      signals,
+    };
+  }
+
   return {
     HISTORY_LIMIT,
     HISTORY_MAX_AGE_DAYS,
@@ -153,5 +281,12 @@
     inferMetadataQuality,
     buildCollectionSummary,
     decadeFromYear,
+    selectDailyRadar,
+    buildRadarSignals,
+    generateRecommendationReason,
+    pruneHistory,
+    recordHistoryEntry,
+    readHistory,
+    writeHistory,
   };
 }));
