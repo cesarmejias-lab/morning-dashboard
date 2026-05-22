@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "clz:refresh": "node refresh-clz.js",
-    "check": "node --check dashboard.js && node --check sync-collection.js && node --check refresh-clz.js && node --check server.js"
+    "test": "node --test tests/*.test.js",
+    "check": "node --check dashboard.js && node --check clz-radar.js && node --check sync-collection.js && node --check refresh-clz.js && node --check server.js && npm test"
   },
   "author": "",
   "license": "MIT"
