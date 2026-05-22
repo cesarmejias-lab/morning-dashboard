@@ -9,6 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { normalizeCollection } = require('./clz-radar');
 
 const CLZ_USERNAME = process.env.CLZ_USERNAME || process.argv[2] || 'cesarmejias';
 const BASE_URL = `https://cloud.clz.com/${encodeURIComponent(CLZ_USERNAME)}/music`;
@@ -144,6 +145,16 @@ function comparableCollection(collection) {
     username: collection.username,
     total: collection.total,
     albums: collection.albums,
+    summary: collection.summary,
+  });
+}
+
+function buildCollectionPayload({ username, syncedAt, albums }) {
+  return normalizeCollection({
+    username,
+    syncedAt,
+    total: Array.isArray(albums) ? albums.length : 0,
+    albums,
   });
 }
 
@@ -248,12 +259,11 @@ async function run() {
   }
 
   console.log('\n[4/4] Writing database...');
-  const payload = {
+  const payload = buildCollectionPayload({
     username: CLZ_USERNAME,
     syncedAt: new Date().toISOString(),
-    total: allItems.length,
     albums: allItems,
-  };
+  });
 
   const result = writeCollection(payload);
 
@@ -276,4 +286,5 @@ module.exports = {
   run,
   parseItems,
   decodeHtml,
+  buildCollectionPayload,
 };
