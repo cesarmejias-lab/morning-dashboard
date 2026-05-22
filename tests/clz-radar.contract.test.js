@@ -88,38 +88,26 @@ test('normalizeCollection keeps current top-level contract and adds summary', ()
   });
 });
 
-test('normalizeCollection preserves an explicit zero total', () => {
-  const emptyCollection = normalizeCollection({
-    total: 0,
-    albums: [],
-  });
-  const collectionWithAlbums = normalizeCollection({
-    total: 0,
-    albums: [
-      { id: '1', title: 'One', artist: 'A' },
-    ],
-  });
-
-  assert.equal(emptyCollection.total, 0);
-  assert.equal(collectionWithAlbums.total, 0);
-});
-
-test('normalizeCollection falls back to album count for infinite totals', () => {
+test('normalizeCollection preserves explicit zero totals', () => {
   const albums = [
     { id: '1', title: 'One', artist: 'A' },
     { id: '2', title: 'Two', artist: 'B' },
   ];
 
-  assert.equal(normalizeCollection({ total: Infinity, albums }).total, 2);
+  assert.equal(normalizeCollection({ total: 0, albums }).total, 0);
+  assert.equal(normalizeCollection({ total: '0', albums }).total, 0);
 });
 
-test('normalizeCollection falls back to album count for negative totals', () => {
+test('normalizeCollection falls back to album count for invalid totals', () => {
   const albums = [
     { id: '1', title: 'One', artist: 'A' },
     { id: '2', title: 'Two', artist: 'B' },
   ];
+  const invalidTotals = [null, undefined, '', '   ', false, true, [], {}, Infinity, -1, 1.5, '1.5'];
 
-  assert.equal(normalizeCollection({ total: -1, albums }).total, 2);
+  invalidTotals.forEach(total => {
+    assert.equal(normalizeCollection({ total, albums }).total, 2);
+  });
 });
 
 test('inferMetadataQuality treats null as basic metadata', () => {

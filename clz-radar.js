@@ -111,20 +111,35 @@
     };
   }
 
+  function normalizeTotal(total, fallback) {
+    if (typeof total === 'number') {
+      return Number.isFinite(total) && Number.isInteger(total) && total >= 0
+        ? total
+        : fallback;
+    }
+
+    if (typeof total === 'string') {
+      const trimmed = total.trim();
+      if (!/^\d+$/.test(trimmed)) return fallback;
+      const parsed = Number(trimmed);
+      return Number.isFinite(parsed) && Number.isInteger(parsed) && parsed >= 0
+        ? parsed
+        : fallback;
+    }
+
+    return fallback;
+  }
+
   function normalizeCollection(payload) {
     const source = payload || {};
     const albums = Array.isArray(source.albums)
       ? source.albums.map(normalizeAlbum).filter(album => album.id)
       : [];
-    const parsedTotal = Number(source.total);
-    const total = Number.isFinite(parsedTotal) && parsedTotal >= 0
-      ? parsedTotal
-      : albums.length;
 
     return {
       username: cleanText(source.username) || '',
       syncedAt: cleanText(source.syncedAt),
-      total,
+      total: normalizeTotal(source.total, albums.length),
       albums,
       summary: buildCollectionSummary(albums),
     };
