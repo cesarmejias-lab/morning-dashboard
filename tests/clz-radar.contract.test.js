@@ -88,6 +88,47 @@ test('normalizeCollection keeps current top-level contract and adds summary', ()
   });
 });
 
+test('normalizeCollection preserves an explicit zero total', () => {
+  const emptyCollection = normalizeCollection({
+    total: 0,
+    albums: [],
+  });
+  const collectionWithAlbums = normalizeCollection({
+    total: 0,
+    albums: [
+      { id: '1', title: 'One', artist: 'A' },
+    ],
+  });
+
+  assert.equal(emptyCollection.total, 0);
+  assert.equal(collectionWithAlbums.total, 0);
+});
+
+test('normalizeCollection falls back to album count for infinite totals', () => {
+  const albums = [
+    { id: '1', title: 'One', artist: 'A' },
+    { id: '2', title: 'Two', artist: 'B' },
+  ];
+
+  assert.equal(normalizeCollection({ total: Infinity, albums }).total, 2);
+});
+
+test('normalizeCollection falls back to album count for negative totals', () => {
+  const albums = [
+    { id: '1', title: 'One', artist: 'A' },
+    { id: '2', title: 'Two', artist: 'B' },
+  ];
+
+  assert.equal(normalizeCollection({ total: -1, albums }).total, 2);
+});
+
+test('inferMetadataQuality treats null as basic metadata', () => {
+  assert.deepEqual(inferMetadataQuality(null), {
+    level: 'basic',
+    missing: ['genres', 'styles', 'moods', 'format', 'edition', 'addedAt'],
+  });
+});
+
 test('buildCollectionSummary returns empty arrays for empty input', () => {
   assert.deepEqual(buildCollectionSummary([]), {
     genres: [],
@@ -100,4 +141,22 @@ test('buildCollectionSummary returns empty arrays for empty input', () => {
       enriched: 0,
     },
   });
+});
+
+test('buildCollectionSummary treats null as empty input', () => {
+  assert.deepEqual(buildCollectionSummary(null), {
+    genres: [],
+    styles: [],
+    formats: [],
+    decades: [],
+    metadataQuality: {
+      basic: 0,
+      partial: 0,
+      enriched: 0,
+    },
+  });
+});
+
+test('module does not expose CLZRadar on the Node global object', () => {
+  assert.equal(globalThis.CLZRadar, undefined);
 });

@@ -1,9 +1,9 @@
 (function initCLZRadar(root, factory) {
   const api = factory();
-  if (typeof module === 'object' && module.exports) {
+  const isCommonJS = typeof module === 'object' && module.exports;
+  if (isCommonJS) {
     module.exports = api;
-  }
-  if (root) {
+  } else if (root) {
     root.CLZRadar = api;
   }
 }(typeof globalThis !== 'undefined' ? globalThis : null, function createCLZRadar() {
@@ -27,13 +27,14 @@
   }
 
   function inferMetadataQuality(album) {
+    const source = album || {};
     const missing = [];
-    const hasGenres = cleanArray(album.genres).length > 0;
-    const hasStyles = cleanArray(album.styles).length > 0;
-    const hasMoods = cleanArray(album.moods).length > 0;
-    const hasFormat = Boolean(cleanText(album.format));
-    const hasEdition = Boolean(cleanText(album.edition));
-    const hasAddedAt = Boolean(cleanText(album.addedAt));
+    const hasGenres = cleanArray(source.genres).length > 0;
+    const hasStyles = cleanArray(source.styles).length > 0;
+    const hasMoods = cleanArray(source.moods).length > 0;
+    const hasFormat = Boolean(cleanText(source.format));
+    const hasEdition = Boolean(cleanText(source.edition));
+    const hasAddedAt = Boolean(cleanText(source.addedAt));
 
     if (!hasGenres) missing.push('genres');
     if (!hasStyles) missing.push('styles');
@@ -86,13 +87,14 @@
   }
 
   function buildCollectionSummary(albums) {
+    const sourceAlbums = Array.isArray(albums) ? albums : [];
     const genres = new Map();
     const styles = new Map();
     const formats = new Map();
     const decades = new Map();
     const metadataQuality = { basic: 0, partial: 0, enriched: 0 };
 
-    albums.map(normalizeAlbum).forEach(album => {
+    sourceAlbums.map(normalizeAlbum).forEach(album => {
       album.genres.forEach(name => increment(genres, name));
       album.styles.forEach(name => increment(styles, name));
       increment(formats, album.format);
@@ -110,14 +112,19 @@
   }
 
   function normalizeCollection(payload) {
-    const albums = Array.isArray(payload && payload.albums)
-      ? payload.albums.map(normalizeAlbum).filter(album => album.id)
+    const source = payload || {};
+    const albums = Array.isArray(source.albums)
+      ? source.albums.map(normalizeAlbum).filter(album => album.id)
       : [];
+    const parsedTotal = Number(source.total);
+    const total = Number.isFinite(parsedTotal) && parsedTotal >= 0
+      ? parsedTotal
+      : albums.length;
 
     return {
-      username: cleanText(payload && payload.username) || '',
-      syncedAt: cleanText(payload && payload.syncedAt),
-      total: Number(payload && payload.total) || albums.length,
+      username: cleanText(source.username) || '',
+      syncedAt: cleanText(source.syncedAt),
+      total,
       albums,
       summary: buildCollectionSummary(albums),
     };
