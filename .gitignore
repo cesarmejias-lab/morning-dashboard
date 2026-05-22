@@ -2,5 +2,7 @@
 .claude/
 _bmad/
 _bmad-output/
+.superpowers/
+.worktrees/
 .env
 *.log
