@@ -16,6 +16,7 @@ const MIME_TYPES = {
 const STATIC_FILES = new Set([
   'index.html',
   'morning-dashboard.html',
+  'clz-radar.js',
   'dashboard.js',
   'styles.css',
   'music-collection.json',

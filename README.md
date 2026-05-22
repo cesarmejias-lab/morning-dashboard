@@ -1,6 +1,6 @@
 # Morning Dashboard
 
-A static morning dashboard with weather, world clocks, exchange rates, Hacker News, Discogs, and a random recommendation from a CLZ Music collection.
+A static morning dashboard with weather, world clocks, exchange rates, Hacker News, Discogs, and a Daily Collection Radar recommendation from a CLZ Music collection.
 
 ## Run Locally
 
@@ -28,7 +28,8 @@ No token is requested or stored by the dashboard. Press **Sync CLZ**, click **Ru
 
 ## Music Controls
 
-- **Roll** in the CLZ card picks another random album from `music-collection.json`.
+- **Daily Collection Radar** picks a weighted recommendation from `music-collection.json`, shows a short reason, and adds compact collection signals when metadata is available.
+- **Roll** in the Daily Collection Radar card picks another weighted CLZ recommendation and stores a small local history to avoid immediate repeats.
 - **Roll** in the Discogs card picks another random public Discogs release.
 - **Sync CLZ** opens the GitHub Actions workflow page. The workflow refreshes `music-collection.json` and commits it back to `main`.
 - The dashboard fetches `music-collection.json` with cache-busting so recently synced totals show up without stale browser cache.
@@ -50,6 +51,16 @@ On Windows PowerShell:
 ```powershell
 $env:CLZ_USERNAME='your-clz-user'; npm run clz:refresh
 ```
+
+### CLZ Enrichment
+
+The sync preserves the current listing fields and gradually enriches album records when public CLZ detail pages expose more metadata.
+
+```bash
+CLZ_ENRICH_DETAILS=true CLZ_ENRICH_LIMIT=60 npm run clz:refresh
+```
+
+Set `CLZ_ENRICH_DETAILS=false` to skip detail pages and keep the faster listing-only sync. `CLZ_ENRICH_LIMIT` caps how many unchecked albums are enriched per run.
 
 ## GitHub Actions
 
