@@ -69,6 +69,7 @@ const STORAGE = {
   accent: 'morning_dashboard_accent_color',
   clocks: 'morning_dashboard_clocks',
   weather: 'morning_dashboard_weather',
+  clzRadarHistory: 'morning_dashboard_clz_radar_history',
 };
 
 function byId(id) {
@@ -658,8 +659,9 @@ async function fetchCLZCollection(cacheBust = false) {
     if (response.ok) {
       const data = await response.json();
       if (data && data.albums && data.albums.length > 0) {
-        window.CLZ_MUSIC_COLLECTION = data;
-        return data;
+        const collection = getCLZRadarApi().normalizeCollection(data);
+        window.CLZ_MUSIC_COLLECTION = collection;
+        return collection;
       }
     }
   } catch (e) {
@@ -669,17 +671,28 @@ async function fetchCLZCollection(cacheBust = false) {
   throw Object.assign(new Error('NOT_CONFIGURED'), {});
 }
 
+function getCLZRadarApi() {
+  if (!window.CLZRadar) {
+    throw new Error('Daily Collection Radar module did not load.');
+  }
+  return window.CLZRadar;
+}
+
+function readCLZRadarHistory() {
+  return getCLZRadarApi().readHistory(localStorage, STORAGE.clzRadarHistory);
+}
+
+function writeCLZRadarHistory(history) {
+  getCLZRadarApi().writeHistory(localStorage, STORAGE.clzRadarHistory, history);
+}
+
 function pickCLZRecord(data) {
-  const album = data.albums[Math.floor(Math.random() * data.albums.length)];
-  return {
-    id: album.id,
-    title: album.title,
-    artist: album.artist,
-    year: album.year,
-    cover: album.cover,
-    total: data.total || data.albums.length,
-    syncedAt: data.syncedAt
-  };
+  const radar = getCLZRadarApi();
+  const collection = radar.normalizeCollection(data);
+  const history = readCLZRadarHistory();
+  const rec = radar.selectDailyRadar(collection, { history, now: new Date() });
+  writeCLZRadarHistory(radar.recordHistoryEntry(history, rec, new Date()));
+  return rec;
 }
 
 async function fetchCLZRecord(options = {}) {
@@ -707,8 +720,20 @@ function recordBgHtml(cover) {
 function renderCLZRecord(rec, syncMessage = '') {
   const detailUrl = safeUrl(`${CLZ_URL}/detail/${encodeURIComponent(rec.id)}`);
   const coverHTML = recordCoverHtml(rec.cover, rec.title);
-  const tags = [rec.year].filter(Boolean)
+  const tags = [
+    rec.year,
+    rec.format,
+    rec.edition,
+    ...(rec.genres || []).slice(0, 2),
+    ...(rec.styles || []).slice(0, 1),
+  ].filter(Boolean)
     .map(t => `<span class="record-tag">${escapeHtml(t)}</span>`).join('');
+  const signals = Array.isArray(rec.signals) ? rec.signals : [];
+  const signalHtml = signals.map(signal => `
+    <div class="radar-signal">
+      <span class="radar-signal-label">${escapeHtml(signal.label)}</span>
+      <span class="radar-signal-value">${escapeHtml(signal.value)}</span>
+    </div>`).join('');
 
   const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(rec.artist + ' ' + rec.title)}`;
   const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(rec.artist + ' ' + rec.title + ' album')}`;
@@ -717,7 +742,7 @@ function renderCLZRecord(rec, syncMessage = '') {
     ${recordBgHtml(rec.cover)}
     <div class="card-header">
       <span class="card-title tight">
-        <span>&#9679; Now Spinning (CLZ) &mdash; ${rec.total.toLocaleString()} releases</span>
+        <span>&#9679; Daily Collection Radar &mdash; ${rec.total.toLocaleString()} releases</span>
         ${rec.syncedAt ? `<span class="sync-status">Last synced: ${escapeHtml(new Date(rec.syncedAt).toLocaleString())}</span>` : ''}
       </span>
       <div class="record-header-actions">
@@ -730,14 +755,12 @@ function renderCLZRecord(rec, syncMessage = '') {
         <div class="record-title">${escapeHtml(rec.title)}</div>
         <div class="record-artist">${escapeHtml(rec.artist)}</div>
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
+        ${rec.reason ? `<div class="record-reason">${escapeHtml(rec.reason)}</div>` : ''}
+        ${signalHtml ? `<div class="radar-signals">${signalHtml}</div>` : ''}
         <div class="record-actions">
           <button type="button" class="record-link" data-action="roll-clz">Roll</button>
-          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.472-.076-.336.135-.67.472-.746 3.856-.88 7.15-.505 9.822 1.13.295.18.387.565.204.863zm1.224-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.076-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.224-.563 11.346 1.354.366.226.486.707.258 1.074zm.105-2.82c-3.26-1.937-8.643-2.12-11.758-1.173-.5.15-1.025-.133-1.177-.633-.15-.5.133-1.025.633-1.177 3.616-1.1 9.54-.888 13.293 1.342.45.267.6.846.333 1.296-.267.45-.846.6-1.296.333z"/></svg>Spotify
-          </a>
-          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube
-          </a>
+          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">Spotify</a>
+          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">YouTube</a>
           <a class="record-link secondary" href="${detailUrl}" target="_blank" rel="noopener">View on CLZ &#8599;</a>
           <a class="record-link secondary" href="${CLZ_URL}" target="_blank" rel="noopener">My CLZ Collection &#8599;</a>
           <a class="record-link secondary" href="${GITHUB_ACTIONS_URL}" target="_blank" rel="noopener">Actions &#8599;</a>
@@ -749,7 +772,7 @@ function renderCLZRecord(rec, syncMessage = '') {
 
 function renderCLZSetup() {
   byId('clz-card').innerHTML = `
-    <div class="card-title">CLZ Music &mdash; Setup needed</div>
+    <div class="card-title">Daily Collection Radar &mdash; Setup needed</div>
     <div class="record-body">
       <div class="record-cover-placeholder">&#127908;</div>
       <div class="record-info">
@@ -886,7 +909,7 @@ async function refresh() {
   renderWeatherSkeleton();
   renderHNSkeleton();
   renderRatesSkeleton();
-  renderRecordSkeleton('clz-card', 'CLZ Music Recommendation');
+  renderRecordSkeleton('clz-card', 'Daily Collection Radar');
   renderRecordSkeleton('discogs-card', 'Discogs Daily Record');
 
   await Promise.allSettled([
@@ -904,7 +927,7 @@ async function refresh() {
     fetchCLZRecord({ cacheBust: true }).then(renderCLZRecord).catch(e => {
       if (e.message === 'NOT_CONFIGURED') { renderCLZSetup(); return; }
       byId('clz-card').innerHTML =
-        `<div class="card-title">CLZ Music Recommendation</div>
+        `<div class="card-title">Daily Collection Radar</div>
          <div class="err">${escapeHtml(e.message)}</div>
          <div class="record-actions">
            <button type="button" class="record-link" data-action="refresh-clz">Sync CLZ</button>
