@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-02T02:52:21.406Z",
-  "total": 5110,
+  "syncedAt": "2026-06-02T08:20:23.810Z",
+  "total": 5111,
   "albums": [
+    {
+      "id": "11850562",
+      "title": "Little Wide Open",
+      "artist": "Kevin Morby",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/67/67_37295214_0_LittleWideOpen.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11838862",
       "title": "Constelator",
@@ -84015,7 +84040,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84040,7 +84065,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84065,7 +84090,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84090,7 +84115,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84115,7 +84140,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84140,7 +84165,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84165,7 +84190,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84190,7 +84215,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84215,7 +84240,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84240,7 +84265,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84265,7 +84290,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84290,7 +84315,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84315,7 +84340,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84340,7 +84365,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84365,7 +84390,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84390,7 +84415,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84415,7 +84440,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84440,7 +84465,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84465,7 +84490,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84490,7 +84515,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84515,7 +84540,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84540,7 +84565,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84565,7 +84590,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84590,7 +84615,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84615,7 +84640,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84640,7 +84665,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84665,7 +84690,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84690,7 +84715,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84715,7 +84740,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84740,7 +84765,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84765,7 +84790,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84790,7 +84815,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84815,7 +84840,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84840,7 +84865,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84865,7 +84890,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84890,7 +84915,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84915,7 +84940,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84940,7 +84965,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84965,7 +84990,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -84990,7 +85015,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85015,7 +85040,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85040,7 +85065,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85065,7 +85090,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85090,7 +85115,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85115,7 +85140,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85140,7 +85165,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85165,7 +85190,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85190,7 +85215,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85215,7 +85240,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85240,7 +85265,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85265,7 +85290,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85290,7 +85315,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85315,7 +85340,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85340,7 +85365,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85365,7 +85390,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85390,7 +85415,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85415,7 +85440,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85440,7 +85465,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85465,7 +85490,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-06-02T08:19:50.348Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -127765,7 +127790,7 @@
       },
       {
         "name": "2020s",
-        "count": 1125
+        "count": 1126
       },
       {
         "name": "2000s",
@@ -127801,7 +127826,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5110,
+      "basic": 5111,
       "partial": 0,
       "enriched": 0
     }
