@@ -1,8 +1,83 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-07T21:04:20.526Z",
-  "total": 5113,
+  "syncedAt": "2026-06-08T15:36:02.612Z",
+  "total": 5116,
   "albums": [
+    {
+      "id": "11861079",
+      "title": "In A Wine Dark Haze",
+      "artist": "It's Immaterial",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/e7/e7_37313916_0_InAWineDarkHaze.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-08T15:36:01.174Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11861078",
+      "title": "Images Of Life",
+      "artist": "Ted Lucas",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/46/46_37448229_0_ImagesOfLife.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-08T15:36:01.174Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11861077",
+      "title": "Everything All The Time",
+      "artist": "Band Of Horses",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2a/2a_36858577_0_EverythingAllTheTime.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-08T15:36:01.174Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11853016",
       "title": "Je T'Aime",
@@ -127840,7 +127915,7 @@
       },
       {
         "name": "2020s",
-        "count": 1127
+        "count": 1130
       },
       {
         "name": "2000s",
@@ -127876,7 +127951,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5113,
+      "basic": 5116,
       "partial": 0,
       "enriched": 0
     }
