@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-08T15:36:02.612Z",
-  "total": 5116,
+  "syncedAt": "2026-06-09T14:33:33.013Z",
+  "total": 5117,
   "albums": [
+    {
+      "id": "11861728",
+      "title": "Last Missouri Exit",
+      "artist": "Case Oats",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2b/2b_34826840_0_LastMissouriExit.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-09T14:33:32.581Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11861079",
       "title": "In A Wine Dark Haze",
@@ -127915,7 +127940,7 @@
       },
       {
         "name": "2020s",
-        "count": 1130
+        "count": 1131
       },
       {
         "name": "2000s",
@@ -127951,7 +127976,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5116,
+      "basic": 5117,
       "partial": 0,
       "enriched": 0
     }
