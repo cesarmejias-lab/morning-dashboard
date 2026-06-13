@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-13T17:16:02.603Z",
-  "total": 5117,
+  "syncedAt": "2026-06-13T21:06:47.746Z",
+  "total": 5118,
   "albums": [
+    {
+      "id": "11865656",
+      "title": "From A Hole In The Floor To A Fountain Of Youth",
+      "artist": "Future Islands",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/76/76_37412454_0_FromAHoleInTheFloorToAFountain.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-13T21:06:47.208Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11861728",
       "title": "Last Missouri Exit",
@@ -127940,7 +127965,7 @@
       },
       {
         "name": "2020s",
-        "count": 1131
+        "count": 1132
       },
       {
         "name": "2000s",
@@ -127976,7 +128001,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5117,
+      "basic": 5118,
       "partial": 0,
       "enriched": 0
     }
