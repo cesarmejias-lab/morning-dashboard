@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-13T21:06:47.746Z",
-  "total": 5118,
+  "syncedAt": "2026-06-16T22:07:50.110Z",
+  "total": 5119,
   "albums": [
+    {
+      "id": "11868124",
+      "title": "Transatlanticism",
+      "artist": "Death Cab For Cutie",
+      "year": "2024",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/af/af_31322976_0_Transatlanticism.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-16T22:07:49.635Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11865656",
       "title": "From A Hole In The Floor To A Fountain Of Youth",
@@ -127965,7 +127990,7 @@
       },
       {
         "name": "2020s",
-        "count": 1132
+        "count": 1133
       },
       {
         "name": "2000s",
@@ -128001,7 +128026,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5118,
+      "basic": 5119,
       "partial": 0,
       "enriched": 0
     }
