@@ -1,8 +1,133 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-17T02:56:06.231Z",
-  "total": 5119,
+  "syncedAt": "2026-06-17T14:57:57.371Z",
+  "total": 5124,
   "albums": [
+    {
+      "id": "11868402",
+      "title": "Joy",
+      "artist": "Paul King",
+      "year": "1987",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b5/b5_2279303_0_Joy.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-17T14:57:55.123Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11868401",
+      "title": "In The Eye Of The Storm",
+      "artist": "Roger Hodgson",
+      "year": "1984",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/36/36_2853648_0_RogerHodgsonInTheEyeOfTheStorm.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-17T14:57:55.123Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11868400",
+      "title": "Luxury Liner",
+      "artist": "Emmylou Harris",
+      "year": "1977",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/73/73_1332020_0_EmmylouHarrisLuxuryLiner.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-17T14:57:55.123Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11868399",
+      "title": "Coup De Grâce",
+      "artist": "Mink DeVille",
+      "year": "1981",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/64/64_6478303_0_CoupDeGrce.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-17T14:57:55.123Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11868397",
+      "title": "West Of Rome",
+      "artist": "Vic Chesnutt",
+      "year": "2021",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/9b/9b_21300622_0_WestOfRome.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-17T14:57:55.123Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11868124",
       "title": "Transatlanticism",
@@ -127990,7 +128115,7 @@
       },
       {
         "name": "2020s",
-        "count": 1133
+        "count": 1134
       },
       {
         "name": "2000s",
@@ -128002,11 +128127,11 @@
       },
       {
         "name": "1980s",
-        "count": 536
+        "count": 539
       },
       {
         "name": "1970s",
-        "count": 101
+        "count": 102
       },
       {
         "name": "1960s",
@@ -128026,7 +128151,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5119,
+      "basic": 5124,
       "partial": 0,
       "enriched": 0
     }
