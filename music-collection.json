@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-18T14:52:42.999Z",
-  "total": 5124,
+  "syncedAt": "2026-06-19T14:48:19.508Z",
+  "total": 5125,
   "albums": [
+    {
+      "id": "11870159",
+      "title": "Ambiguous Desire",
+      "artist": "Arlo Parks",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/46/46_36960354_0_AmbiguousDesire.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-19T14:48:19.045Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11868402",
       "title": "Joy",
@@ -128115,7 +128140,7 @@
       },
       {
         "name": "2020s",
-        "count": 1134
+        "count": 1135
       },
       {
         "name": "2000s",
@@ -128151,7 +128176,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5124,
+      "basic": 5125,
       "partial": 0,
       "enriched": 0
     }
