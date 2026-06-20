@@ -1,8 +1,358 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-20T10:29:05.227Z",
-  "total": 5126,
+  "syncedAt": "2026-06-20T17:19:15.753Z",
+  "total": 5140,
   "albums": [
+    {
+      "id": "11870791",
+      "title": "Frank",
+      "artist": "Squeeze",
+      "year": "1989",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/72/72_1051673_0_Squeeze2Frank.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870790",
+      "title": "11",
+      "artist": "The Smithereens",
+      "year": "1989",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/83/83_1707083_0_11.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870789",
+      "title": "Africa's Blood",
+      "artist": "Lee Perry",
+      "year": "2021",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b2/b2_19648684_0_AfricasBlood.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870788",
+      "title": "Duke Reid Golden Hits",
+      "artist": "Various Artists",
+      "year": "2016",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/7d/7d_8971163_0_DukeReidGoldenHits.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870787",
+      "title": "Get It Out Of Your Head",
+      "artist": "The Art Company",
+      "year": "1985",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/fe/fe_2414306_0_TheArtCompanyGetItOutOfYourHea.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870786",
+      "title": "Whoops! There Goes The Neighbourhood",
+      "artist": "The Blow Monkeys",
+      "year": "1989",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/9c/9c_868700_0_TheBlowMonkeysWhoopsThereGoesT.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870785",
+      "title": "The Many Moods Of Ann-Margret",
+      "artist": "Ann Margret",
+      "year": "1984",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/75/75_4376502_0_ManyMoodsOf.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870784",
+      "title": "Photographs As Memories",
+      "artist": "Eyeless In Gaza",
+      "year": "1981",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/13/13_1991316_0_PhotographsAsMemories.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870783",
+      "title": "Savoir Faire",
+      "artist": "Mink DeVille",
+      "year": "1985",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b0/b0_2853656_0_MinkDeVilleSavoirFaire.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870782",
+      "title": "Spiderland",
+      "artist": "Slint",
+      "year": "2004",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/78/78_2908745_0_SlintSpiderland.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870781",
+      "title": "You Must Ask The Heart",
+      "artist": "Jonathan Richman",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/41/41_35763859_0_YouMustAskTheHeart.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870780",
+      "title": "Entertainment!",
+      "artist": "Gang Of Four",
+      "year": "2014",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/63/63_6011977_0_Entertainment.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870779",
+      "title": "Simple Pleasure",
+      "artist": "Tindersticks",
+      "year": "2018",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/98/98_11474069_0_SimplePleasure.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11870778",
+      "title": "I Built You A Tower",
+      "artist": "Death Cab For Cutie",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f3/f3_37556211_0_IBuiltYouATower.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-20T17:19:09.810Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11870597",
       "title": "Idem Palais",
@@ -128161,15 +128511,15 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1320
+        "count": 1323
       },
       {
         "name": "2020s",
-        "count": 1136
+        "count": 1139
       },
       {
         "name": "2000s",
-        "count": 784
+        "count": 785
       },
       {
         "name": "1990s",
@@ -128177,7 +128527,7 @@
       },
       {
         "name": "1980s",
-        "count": 539
+        "count": 546
       },
       {
         "name": "1970s",
@@ -128201,7 +128551,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5126,
+      "basic": 5140,
       "partial": 0,
       "enriched": 0
     }
