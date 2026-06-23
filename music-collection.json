@@ -1,8 +1,58 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-23T10:57:48.734Z",
-  "total": 5142,
+  "syncedAt": "2026-06-23T21:27:07.396Z",
+  "total": 5144,
   "albums": [
+    {
+      "id": "11877318",
+      "title": "2nd Honeymoon / Don't Stop The World",
+      "artist": "Deaf School",
+      "year": "1977",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/77/77_1323962_0_DeafSchool2ndHoneymoonDontStop.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-23T21:27:06.272Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11877317",
+      "title": "Mother's Spiritual",
+      "artist": "Laura Nyro",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/77/77_33618537_0_MothersSpiritual.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-23T21:27:06.272Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11875597",
       "title": "Brothers In Arms",
@@ -128565,7 +128615,7 @@
       },
       {
         "name": "2020s",
-        "count": 1140
+        "count": 1141
       },
       {
         "name": "2000s",
@@ -128581,7 +128631,7 @@
       },
       {
         "name": "1970s",
-        "count": 102
+        "count": 103
       },
       {
         "name": "1960s",
@@ -128601,7 +128651,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5142,
+      "basic": 5144,
       "partial": 0,
       "enriched": 0
     }
