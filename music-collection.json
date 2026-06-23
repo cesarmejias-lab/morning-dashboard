@@ -1,8 +1,58 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-20T17:19:15.753Z",
-  "total": 5140,
+  "syncedAt": "2026-06-23T10:57:48.734Z",
+  "total": 5142,
   "albums": [
+    {
+      "id": "11875597",
+      "title": "Brothers In Arms",
+      "artist": "Dire Straits",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d5/d5_33994689_0_BrothersInArms.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-23T10:57:47.830Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11875596",
+      "title": "Vainica Doble",
+      "artist": "Vainica Doble",
+      "year": "2018",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/28/28_12378909_0_VainicaDoble.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-23T10:57:47.830Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11870791",
       "title": "Frank",
@@ -128511,11 +128561,11 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1323
+        "count": 1324
       },
       {
         "name": "2020s",
-        "count": 1139
+        "count": 1140
       },
       {
         "name": "2000s",
@@ -128551,7 +128601,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5140,
+      "basic": 5142,
       "partial": 0,
       "enriched": 0
     }
