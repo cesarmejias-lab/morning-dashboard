@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-24T02:35:53.626Z",
-  "total": 5144,
+  "syncedAt": "2026-06-28T20:55:08.016Z",
+  "total": 5145,
   "albums": [
+    {
+      "id": "11881329",
+      "title": "388",
+      "artist": "The Coral",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/be/be_37412262_0_388.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-06-28T20:55:07.439Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11877318",
       "title": "2nd Honeymoon / Don't Stop The World",
@@ -128615,7 +128640,7 @@
       },
       {
         "name": "2020s",
-        "count": 1141
+        "count": 1142
       },
       {
         "name": "2000s",
@@ -128651,7 +128676,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5144,
+      "basic": 5145,
       "partial": 0,
       "enriched": 0
     }
