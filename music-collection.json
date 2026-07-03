@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-06-28T20:55:08.016Z",
-  "total": 5145,
+  "syncedAt": "2026-07-03T10:29:24.773Z",
+  "total": 5146,
   "albums": [
+    {
+      "id": "11886416",
+      "title": "Duglas Stewart's Frankenstein",
+      "artist": "BMX Bandits",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/80/80_37625913_0_DuglasStewartsFrankenstein.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-03T10:29:24.344Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11881329",
       "title": "388",
@@ -128640,7 +128665,7 @@
       },
       {
         "name": "2020s",
-        "count": 1142
+        "count": 1143
       },
       {
         "name": "2000s",
@@ -128676,7 +128701,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5145,
+      "basic": 5146,
       "partial": 0,
       "enriched": 0
     }
