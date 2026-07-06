@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-07-03T10:29:24.773Z",
-  "total": 5146,
+  "syncedAt": "2026-07-06T15:17:03.850Z",
+  "total": 5147,
   "albums": [
+    {
+      "id": "11889566",
+      "title": "The Ground Above",
+      "artist": "Beth Orton",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/17/17_37702182_0_TheGroundAbove.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-06T15:17:03.433Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11886416",
       "title": "Duglas Stewart's Frankenstein",
@@ -128665,7 +128690,7 @@
       },
       {
         "name": "2020s",
-        "count": 1143
+        "count": 1144
       },
       {
         "name": "2000s",
@@ -128701,7 +128726,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5146,
+      "basic": 5147,
       "partial": 0,
       "enriched": 0
     }
