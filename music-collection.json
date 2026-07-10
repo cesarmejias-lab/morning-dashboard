@@ -1,8 +1,108 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-07-06T15:17:03.850Z",
-  "total": 5147,
+  "syncedAt": "2026-07-10T10:47:09.847Z",
+  "total": 5151,
   "albums": [
+    {
+      "id": "11894471",
+      "title": "El Amor Y Las Mayorías",
+      "artist": "Tachenko",
+      "year": "2013",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/49/49_4564947_0_ElAmorYLasMayoras.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-10T10:47:07.927Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11894469",
+      "title": "O Compositor E O Cantor",
+      "artist": "Marcos Valle",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4a/4a_37448292_0_OCompositorEOCantor.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-10T10:47:07.927Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11894470",
+      "title": "If You're Dreaming",
+      "artist": "Anna Burch",
+      "year": "2020",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/33/33_15043374_0_IfYoureDreaming.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-10T10:47:07.927Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11894468",
+      "title": "Just A Day",
+      "artist": "The Hanging Stars",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ae/ae_37677711_0_JustADay.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-10T10:47:07.927Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11889566",
       "title": "The Ground Above",
@@ -128686,11 +128786,11 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1324
+        "count": 1325
       },
       {
         "name": "2020s",
-        "count": 1144
+        "count": 1147
       },
       {
         "name": "2000s",
@@ -128726,7 +128826,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5147,
+      "basic": 5151,
       "partial": 0,
       "enriched": 0
     }
