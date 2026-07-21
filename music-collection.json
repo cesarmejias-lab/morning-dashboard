@@ -1,8 +1,58 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-07-20T06:40:47.533Z",
-  "total": 5152,
+  "syncedAt": "2026-07-21T01:57:39.474Z",
+  "total": 5154,
   "albums": [
+    {
+      "id": "11920204",
+      "title": "Waiting",
+      "artist": "Fun Boy Three",
+      "year": "1983",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0c/0c_808407_0_FunBoyThreeWaiting.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-21T01:57:38.417Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11920203",
+      "title": "Wild Mood Swings",
+      "artist": "The Cure",
+      "year": "1996",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/6b/6b_459749_0_TheCureWildMoodSwings.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-21T01:57:38.417Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11903761",
       "title": "Where Angels Fear To Tread",
@@ -128823,11 +128873,11 @@
       },
       {
         "name": "1990s",
-        "count": 636
+        "count": 637
       },
       {
         "name": "1980s",
-        "count": 547
+        "count": 548
       },
       {
         "name": "1970s",
@@ -128851,7 +128901,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5152,
+      "basic": 5154,
       "partial": 0,
       "enriched": 0
     }
