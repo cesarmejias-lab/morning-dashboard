@@ -1,6 +1,6 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-07-21T01:57:39.474Z",
+  "syncedAt": "2026-07-25T01:58:24.793Z",
   "total": 5154,
   "albums": [
     {
@@ -79232,7 +79232,7 @@
       "id": "535489",
       "title": "The Idler Wheel Is Wiser than the Driver of the Srew and Whipping Cords Will Serve You More than Ropes Will Ever Do",
       "artist": "Fiona Apple",
-      "year": null,
+      "year": "2012",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/46/46_3769467_0_TheIdlerWheelIsWiserthantheDri.jpg",
       "genres": [],
       "styles": [],
@@ -128861,7 +128861,7 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1325
+        "count": 1326
       },
       {
         "name": "2020s",
