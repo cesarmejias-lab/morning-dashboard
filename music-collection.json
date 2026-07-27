@@ -1,8 +1,133 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-07-25T01:58:24.793Z",
-  "total": 5154,
+  "syncedAt": "2026-07-27T14:15:40.258Z",
+  "total": 5159,
   "albums": [
+    {
+      "id": "11928240",
+      "title": "Three Months, Three Weeks & Two Days",
+      "artist": "Bill Pritchard",
+      "year": "1989",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f1/f1_2860477_0_ThreeMonthsThreeWeeksTwoDays.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-27T14:15:37.645Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11928239",
+      "title": "サマータイム・ラヴ・ソング = Summer-Time Love Song",
+      "artist": "The Milky Way; The Milky Way",
+      "year": "1979",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c9/c9_13634480_0_SummerTimeLoveSong.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-27T14:15:37.645Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11928238",
+      "title": "L'amour, Demure, Stenhousemuir (A Compilation 1984 - 1991)",
+      "artist": "Biff Bang Pow!",
+      "year": "1991",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/9f/9f_1024919_0_LamourDemureStenhousemuirAComp.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-27T14:15:37.645Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11928237",
+      "title": "Slowly",
+      "artist": "Luis Eduardo Aute",
+      "year": "1992",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0d/0d_5027982_0_Slowly.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-27T14:15:37.645Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11928236",
+      "title": "La Quiero A Morir",
+      "artist": "Francis Cabrel",
+      "year": "1980",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/8f/8f_1788616_0_LaQuieroAMorir.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-27T14:15:37.645Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11920204",
       "title": "Waiting",
@@ -128873,15 +128998,15 @@
       },
       {
         "name": "1990s",
-        "count": 637
+        "count": 639
       },
       {
         "name": "1980s",
-        "count": 548
+        "count": 550
       },
       {
         "name": "1970s",
-        "count": 103
+        "count": 104
       },
       {
         "name": "1960s",
@@ -128901,7 +129026,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5154,
+      "basic": 5159,
       "partial": 0,
       "enriched": 0
     }
