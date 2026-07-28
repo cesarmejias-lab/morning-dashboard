@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-07-27T14:15:40.258Z",
-  "total": 5159,
+  "syncedAt": "2026-07-28T13:47:16.033Z",
+  "total": 5160,
   "albums": [
+    {
+      "id": "11930091",
+      "title": "Somewhere Good",
+      "artist": "Tara Clerkin Trio",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/7d/7d_37505976_0_SomewhereGood.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-07-28T13:47:15.521Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11928240",
       "title": "Three Months, Three Weeks & Two Days",
@@ -128990,7 +129015,7 @@
       },
       {
         "name": "2020s",
-        "count": 1147
+        "count": 1148
       },
       {
         "name": "2000s",
@@ -129026,7 +129051,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5159,
+      "basic": 5160,
       "partial": 0,
       "enriched": 0
     }
