@@ -182,6 +182,8 @@ async function fetchWeather() {
       + `?latitude=${city.lat}&longitude=${city.lon}`
       + `&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,relativehumidity_2m`
       + `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
+      + `,sunrise,sunset,apparent_temperature_max,apparent_temperature_min`
+      + `&hourly=precipitation_probability`
       + `&timezone=${encodeURIComponent(city.tz)}&forecast_days=5`;
     try {
       const r = await fetch(url);
@@ -194,6 +196,29 @@ async function fetchWeather() {
     }
   });
   await Promise.all(promises);
+}
+
+function weatherVerdictHtml(data) {
+  const api = typeof WeatherVerdict === 'undefined' ? null : WeatherVerdict;
+  if (!api) return '';
+
+  // A malformed payload must never stop the current conditions from rendering.
+  let parts;
+  try {
+    parts = api.formatVerdict(api.buildVerdict({ data }));
+  } catch (e) {
+    console.error('Weather verdict failed:', e);
+    return '';
+  }
+
+  const detail = parts.details.length
+    ? `<span class="w-verdict-detail">${escapeHtml(parts.details.join(' · '))}</span>`
+    : '';
+
+  return `<div class="w-verdict">
+    <span class="w-verdict-headline">${escapeHtml(parts.headline)}</span>
+    ${detail}
+  </div>`;
 }
 
 function renderWeather() {
@@ -259,6 +284,7 @@ function renderWeather() {
 
   bodyContainer.innerHTML = `
     <div class="weather-fade-wrapper">
+      ${weatherVerdictHtml(data)}
       <div class="w-current">
         <div class="w-icon">${escapeHtml(icon)}</div>
         <div>

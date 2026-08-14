@@ -127,6 +127,21 @@
       margin-bottom: 16px;
     }
 
+    .w-verdict {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      background: var(--surface2);
+    }
+    .w-verdict-headline { font-size: 0.9rem; font-weight: 600; }
+    .w-verdict-detail   { font-size: 0.78rem; color: var(--muted); }
+
     .forecast {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
