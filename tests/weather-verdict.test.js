@@ -49,7 +49,7 @@ test('reports the first contiguous window at or above the maybe threshold', () =
   probs[17] = 60; probs[18] = 70; probs[19] = 65; probs[20] = 55;
   probs[22] = 80; // a later, separate burst that must be ignored
   const verdict = buildVerdict({ data: fixture(probs) });
-  assert.deepEqual(verdict.window, { from: '17:00', to: '20:00' });
+  assert.deepEqual(verdict.window, { from: '17:00', to: '20:00', probability: 70 });
 });
 
 test('ignores rain that already happened before the reference hour', () => {
@@ -64,7 +64,7 @@ test('ignores rain that already happened before the reference hour', () => {
 test('handles a window that runs to the end of the day', () => {
   const probs = DRY.slice();
   probs[22] = 55; probs[23] = 60;
-  assert.deepEqual(buildVerdict({ data: fixture(probs) }).window, { from: '22:00', to: '23:00' });
+  assert.deepEqual(buildVerdict({ data: fixture(probs) }).window, { from: '22:00', to: '23:00', probability: 60 });
 });
 
 test('skips non-numeric probabilities without breaking', () => {
@@ -72,7 +72,7 @@ test('skips non-numeric probabilities without breaking', () => {
   probs[17] = 60; probs[18] = null; probs[19] = 65;
   const verdict = buildVerdict({ data: fixture(probs) });
   assert.equal(verdict.umbrella, 'yes');
-  assert.deepEqual(verdict.window, { from: '17:00', to: '19:00' });
+  assert.deepEqual(verdict.window, { from: '17:00', to: '19:00', probability: 65 });
 });
 
 test('degrades to the daily maximum when the hourly series is missing', () => {
@@ -143,4 +143,27 @@ test('formatVerdict states a dry day without inventing a window', () => {
 
 test('DEFAULT_THRESHOLDS are the documented values', () => {
   assert.deepEqual(DEFAULT_THRESHOLDS, { yes: 50, maybe: 30 });
+});
+
+test('does not drop the hour we are standing in when current.time is 15-minutely', () => {
+  const probs = DRY.slice();
+  probs[13] = 60; // raining right now, during the 13:00-14:00 hour
+  const data = fixture(probs, { current: { time: '2026-08-14T13:15' } });
+  const verdict = buildVerdict({ data });
+  assert.deepEqual(verdict.window, { from: '13:00', to: '13:00', probability: 60 });
+  assert.equal(verdict.umbrella, 'yes');
+});
+
+test('window probability reflects the window itself, not a later burst elsewhere in the day', () => {
+  const probs = DRY.slice();
+  probs[17] = 32; probs[18] = 35; probs[22] = 90;
+  const verdict = buildVerdict({ data: fixture(probs) });
+  // The day's maximum still drives the umbrella state...
+  assert.equal(verdict.umbrella, 'yes');
+  assert.equal(verdict.maxProbability, 90);
+  // ...but the window and its printed percentage belong to the 17:00-18:00 run.
+  assert.deepEqual(verdict.window, { from: '17:00', to: '18:00', probability: 35 });
+  const out = formatVerdict(verdict);
+  assert.ok(out.details.some(d => d.includes('35%')), 'detail should name the window max (35), not the day max');
+  assert.ok(out.details.every(d => !d.includes('90%')), 'the 90% burst outside the window must not appear');
 });

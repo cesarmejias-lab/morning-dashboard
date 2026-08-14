@@ -40,6 +40,8 @@
     };
   }
 
+  // Sorts by date first: partitionTasks relies on this to keep overdue tasks
+  // in oldest-first order once each group is sorted independently.
   function sortForMorning(tasks) {
     return (Array.isArray(tasks) ? tasks.slice() : []).sort((a, b) => {
       if (a.date !== b.date) return a.date < b.date ? -1 : 1;

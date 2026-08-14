@@ -350,7 +350,6 @@ function renderHN(stories) {
     <ul class="hn-list">${items}</ul>`;
 }
 
-
 // ── World clocks ─────────────────────────────────────────────────────────────
 function clockStatus(tz) {
   const h = +new Intl.DateTimeFormat('en', {
@@ -973,9 +972,15 @@ async function fetchTodoistTasks(token) {
   if (!response.ok) throw new Error(`Todoist API error: HTTP ${response.status}`);
 
   const payload = await response.json();
-  // The v1 endpoint may return a bare array or wrap it; accept either.
+  // The v1 endpoint may return a bare array or wrap it; accept either. A
+  // wrapped payload with a next_cursor means today's tasks may be on a page
+  // we never fetched — pagination is a follow-up, so fail loudly instead of
+  // silently rendering an incomplete (and possibly falsely empty) list.
   if (Array.isArray(payload)) return payload;
-  if (payload && Array.isArray(payload.results)) return payload.results;
+  if (payload && Array.isArray(payload.results)) {
+    if (payload.next_cursor) throw new Error('PAGINATED');
+    return payload.results;
+  }
   throw new Error('UNEXPECTED_SHAPE');
 }
 
@@ -1026,7 +1031,7 @@ function renderTodoistCard(groups, projectNames = {}) {
   if (!total) {
     byId('todoist-card').innerHTML = `
       <div class="card-title">Tareas</div>
-      <div class="todoist-empty">Nada para hoy.</div>`;
+      <div class="todoist-empty">Nada pendiente para hoy.</div>`;
     return;
   }
 
@@ -1055,6 +1060,7 @@ async function loadTodoistTasks() {
     TOKEN_FORBIDDEN: 'Ese token no tiene permiso para leer tareas.',
     RATE_LIMITED: 'Todoist está limitando las peticiones. Prueba de nuevo en unos minutos.',
     UNEXPECTED_SHAPE: 'Todoist ha devuelto una respuesta que este dashboard no reconoce.',
+    PAGINATED: 'Todoist ha devuelto más tareas de las que este dashboard sabe leer.',
   };
 
   try {
@@ -1114,10 +1120,13 @@ async function refresh() {
            <a class="record-link" href="https://www.discogs.com" target="_blank" rel="noopener">Discogs &#8599;</a>
          </div>`;
     }),
+    loadTodoistTasks().catch(e => {
+      console.error('Todoist load failed:', e);
+      setCardMessage('todoist-card', 'Tareas', 'No se pudieron cargar las tareas.');
+    }),
   ]);
 
   renderQuote();
-  loadTodoistTasks();
 
   const now = new Date();
   byId('last-updated').textContent =

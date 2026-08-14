@@ -52,15 +52,20 @@
     if (!daily || !Array.isArray(daily.time) || typeof daily.time[0] !== 'string') return null;
 
     const today = daily.time[0];
+    // Compare at hour granularity: current.time is 15-minutely ("…T13:15"), while
+    // the hourly series is labelled on the hour, so a raw compare would drop the
+    // hour we are standing in.
+    const cutoff = nowLocal ? nowLocal.slice(0, 13) : null;
     let remainingMax = null;
     let start = null;
     let end = null;
+    let windowMax = null;
     let closed = false;
 
     for (let i = 0; i < hourly.time.length; i++) {
       const time = hourly.time[i];
       if (typeof time !== 'string' || time.slice(0, 10) !== today) continue;
-      if (nowLocal && time < nowLocal) continue;
+      if (cutoff && time.slice(0, 13) < cutoff) continue;
 
       // Open-Meteo uses null for gaps in the series. Treat it as unknown and
       // skip it — note Number(null) is 0, so coercing first would silently
@@ -77,6 +82,10 @@
         if (probability >= minProbability) {
           if (start === null) start = time;
           end = time;
+          // Track the max only across hours that are part of this window, so
+          // the printed percentage matches the window being described — not
+          // a later, separate burst that drives the umbrella state instead.
+          if (windowMax === null || probability > windowMax) windowMax = probability;
         } else if (start !== null) {
           closed = true;
         }
@@ -85,7 +94,7 @@
 
     return {
       remainingMax,
-      window: start === null ? null : { from: hourLabel(start), to: hourLabel(end) },
+      window: start === null ? null : { from: hourLabel(start), to: hourLabel(end), probability: windowMax },
     };
   }
 
@@ -127,7 +136,7 @@
 
     if (v.umbrella !== 'no' && Number.isFinite(v.maxProbability)) {
       details.push(v.window
-        ? COPY.window(v.maxProbability, v.window.from, v.window.to)
+        ? COPY.window(v.window.probability ?? v.maxProbability, v.window.from, v.window.to)
         : COPY.chanceToday(v.maxProbability));
     }
 
