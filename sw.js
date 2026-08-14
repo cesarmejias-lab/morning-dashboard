@@ -1,4 +1,10 @@
-const CACHE_NAME = 'morning-dashboard-v3';
+const CACHE_NAME = 'morning-dashboard-v4';
+
+// App shell files carry the code, so they are served network-first: a deploy
+// reaches clients on their next load instead of the one after it. Everything
+// else in STATIC_ASSETS stays cache-first.
+const APP_SHELL = /(^|\/)(index\.html|dashboard\.js|styles\.css)$/;
+
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -38,6 +44,48 @@ self.addEventListener('activate', event => {
   );
 });
 
+// Network-First — prefer fresh, keep a copy so the cache can serve us offline
+function networkFirst(req) {
+  return fetch(req)
+    .then(response => {
+      if (response.ok) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
+      }
+      return response;
+    })
+    .catch(() => caches.match(req).then(cached => {
+      if (cached) return cached;
+      // A navigation whose exact URL was never cached still has the
+      // precached shell to fall back on
+      return req.mode === 'navigate' ? caches.match('./index.html') : Response.error();
+    }));
+}
+
+// Cache-First with background revalidation — for assets that rarely change
+function cacheFirst(req) {
+  return caches.match(req).then(cached => {
+    if (cached) {
+      // Refresh the cache in the background (Stale-While-Revalidate feel)
+      fetch(req).then(fresh => {
+        if (fresh.ok) {
+          caches.open(CACHE_NAME).then(cache => cache.put(req, fresh));
+        }
+      }).catch(() => { /* ignore network error when updating */ });
+
+      return cached;
+    }
+
+    return fetch(req).then(fresh => {
+      if (fresh.ok) {
+        const copy = fresh.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
+      }
+      return fresh;
+    });
+  });
+}
+
 // Fetch Event — smart caching strategy
 self.addEventListener('fetch', event => {
   const req = event.request;
@@ -46,52 +94,19 @@ self.addEventListener('fetch', event => {
   // Skip non-GET requests
   if (req.method !== 'GET') return;
 
-  // Strategy for API endpoints (Open-Meteo, Frankfurter, Hacker News, Discogs):
-  // Network-First with a fallback to cache or offline messages
+  // API endpoints (Open-Meteo, Frankfurter, Hacker News, Discogs)
   const isApiRequest = url.hostname.includes('open-meteo.com') ||
                        url.hostname.includes('frankfurter.dev') ||
                        url.hostname.includes('firebaseio.com') ||
                        url.hostname.includes('discogs.com');
 
-  if (isApiRequest) {
-    event.respondWith(
-      fetch(req)
-        .then(response => {
-          // Cache a clone of the successful API response for offline fallback
-          if (response.ok) {
-            const copy = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
-          }
-          return response;
-        })
-        .catch(() => {
-          // If network fails, try to return from cache
-          return caches.match(req);
-        })
-    );
-  } else {
-    // Cache-First with Network Fallback strategy for local dashboard static assets
-    event.respondWith(
-      caches.match(req).then(cachedResponse => {
-        if (cachedResponse) {
-          // Dynamically fetch and update cache in the background (Stale-While-Revalidate feel)
-          fetch(req).then(networkResponse => {
-            if (networkResponse.ok) {
-              caches.open(CACHE_NAME).then(cache => cache.put(req, networkResponse));
-            }
-          }).catch(() => { /* ignore network error when updating */ });
-          
-          return cachedResponse;
-        }
+  // The HTML entry point and the code it loads
+  const isAppShell = url.origin === self.location.origin &&
+                     (req.mode === 'navigate' ||
+                      url.pathname.endsWith('/') ||
+                      APP_SHELL.test(url.pathname));
 
-        return fetch(req).then(networkResponse => {
-          if (networkResponse.ok) {
-            const copy = networkResponse.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
-          }
-          return networkResponse;
-        });
-      })
-    );
-  }
+  event.respondWith(
+    isApiRequest || isAppShell ? networkFirst(req) : cacheFirst(req)
+  );
 });
