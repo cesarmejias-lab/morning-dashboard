@@ -906,6 +906,7 @@ function renderDiscogsSetup() {
 
 // ── Todoist ───────────────────────────────────────────────────────────────────
 const TODOIST_API = 'https://api.todoist.com/api/v1/tasks';
+const TODOIST_PROJECTS_API = 'https://api.todoist.com/api/v1/projects';
 const TODOIST_TOKEN_HELP = 'https://app.todoist.com/app/settings/integrations/developer';
 
 function readTodoistToken() {
@@ -960,11 +961,118 @@ function renderTodoistSetup(message = '') {
     </div>`;
 }
 
-function loadTodoistTasks() {
-  if (!readTodoistToken()) { renderTodoistSetup(); return; }
-  byId('todoist-card').innerHTML =
-    `<div class="card-title">Tareas</div>
-     <div class="placeholder">Token guardado. La carga de tareas llega en el paso siguiente.</div>`;
+// Read-only. Never issues POST, PUT or DELETE.
+async function fetchTodoistTasks(token) {
+  const response = await fetch(TODOIST_API, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (response.status === 401) throw new Error('TOKEN_INVALID');
+  if (response.status === 403) throw new Error('TOKEN_FORBIDDEN');
+  if (response.status === 429) throw new Error('RATE_LIMITED');
+  if (!response.ok) throw new Error(`Todoist API error: HTTP ${response.status}`);
+
+  const payload = await response.json();
+  // The v1 endpoint may return a bare array or wrap it; accept either.
+  if (Array.isArray(payload)) return payload;
+  if (payload && Array.isArray(payload.results)) return payload.results;
+  throw new Error('UNEXPECTED_SHAPE');
+}
+
+// Project names are a label, never a reason to fail: any error yields {}.
+async function fetchTodoistProjectNames(token) {
+  try {
+    const response = await fetch(TODOIST_PROJECTS_API, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!response.ok) return {};
+    return TodoistTasks.buildProjectNames(await response.json());
+  } catch (e) {
+    console.error('Todoist project names unavailable:', e);
+    return {};
+  }
+}
+
+function localTodayISO(now = new Date()) {
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function todoistTaskHtml(task, overdue, projectNames) {
+  const urgent = task.priority >= 3 ? ' urgent' : '';
+  const meta = [];
+
+  const project = task.projectId ? projectNames[task.projectId] : null;
+  if (project) meta.push(project);
+
+  if (overdue) meta.push(`vencía ${task.date}`);
+  else if (task.time) meta.push(task.time);
+
+  const link = task.url
+    ? `<a class="todoist-content" href="${safeUrl(task.url)}" target="_blank" rel="noopener">${escapeHtml(task.content)}</a>`
+    : `<span class="todoist-content">${escapeHtml(task.content)}</span>`;
+
+  return `<li class="todoist-task${urgent}">
+    ${link}
+    ${meta.length ? `<span class="todoist-meta">${escapeHtml(meta.join(' · '))}</span>` : ''}
+  </li>`;
+}
+
+function renderTodoistCard(groups, projectNames = {}) {
+  const total = groups.overdue.length + groups.dueToday.length;
+
+  if (!total) {
+    byId('todoist-card').innerHTML = `
+      <div class="card-title">Tareas</div>
+      <div class="todoist-empty">Nada para hoy.</div>`;
+    return;
+  }
+
+  // Spec wording: "Tareas — 2 atrasadas · 5 para hoy". Singular when there is one.
+  const summary = [];
+  if (groups.overdue.length) {
+    summary.push(`${groups.overdue.length} ${groups.overdue.length === 1 ? 'atrasada' : 'atrasadas'}`);
+  }
+  if (groups.dueToday.length) summary.push(`${groups.dueToday.length} para hoy`);
+
+  const items = groups.overdue.map(t => todoistTaskHtml(t, true, projectNames))
+    .concat(groups.dueToday.map(t => todoistTaskHtml(t, false, projectNames)))
+    .join('');
+
+  byId('todoist-card').innerHTML = `
+    <div class="card-title">Tareas &mdash; ${escapeHtml(summary.join(' · '))}</div>
+    <ul class="todoist-list">${items}</ul>`;
+}
+
+async function loadTodoistTasks() {
+  const token = readTodoistToken();
+  if (!token) { renderTodoistSetup(); return; }
+
+  const MESSAGES = {
+    TOKEN_INVALID: 'Todoist ha rechazado el token. Puede estar revocado — pega uno nuevo.',
+    TOKEN_FORBIDDEN: 'Ese token no tiene permiso para leer tareas.',
+    RATE_LIMITED: 'Todoist está limitando las peticiones. Prueba de nuevo en unos minutos.',
+    UNEXPECTED_SHAPE: 'Todoist ha devuelto una respuesta que este dashboard no reconoce.',
+  };
+
+  try {
+    // Tasks decide success; names only decorate, so a failed lookup yields {}.
+    const [raw, projectNames] = await Promise.all([
+      fetchTodoistTasks(token),
+      fetchTodoistProjectNames(token),
+    ]);
+    renderTodoistCard(TodoistTasks.partitionTasks(raw, localTodayISO()), projectNames);
+  } catch (e) {
+    console.error('Todoist load failed:', e);
+    if (e.message === 'TOKEN_INVALID' || e.message === 'TOKEN_FORBIDDEN') {
+      // Keep the stored token: the user decides whether to replace it.
+      renderTodoistSetup(MESSAGES[e.message]);
+      return;
+    }
+    setCardMessage('todoist-card', 'Tareas', MESSAGES[e.message] || 'No se pudieron cargar las tareas.');
+  }
 }
 
 // ── Main refresh ──────────────────────────────────────────────────────────────
