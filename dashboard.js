@@ -70,6 +70,7 @@ const STORAGE = {
   clocks: 'morning_dashboard_clocks',
   weather: 'morning_dashboard_weather',
   clzRadarHistory: 'morning_dashboard_clz_radar_history',
+  todoistToken: 'morning_dashboard_todoist_token',
 };
 
 function byId(id) {
@@ -903,6 +904,69 @@ function renderDiscogsSetup() {
     </div>`;
 }
 
+// ── Todoist ───────────────────────────────────────────────────────────────────
+const TODOIST_API = 'https://api.todoist.com/api/v1/tasks';
+const TODOIST_TOKEN_HELP = 'https://app.todoist.com/app/settings/integrations/developer';
+
+function readTodoistToken() {
+  try {
+    return (localStorage.getItem(STORAGE.todoistToken) || '').trim();
+  } catch (e) {
+    console.error('Todoist token unreadable:', e);
+    return '';
+  }
+}
+
+// The token is written once and never rendered back into the page.
+function saveTodoistToken() {
+  const input = byId('todoist-token-input');
+  if (!input) return;
+  const token = input.value.trim();
+  if (!token) {
+    renderTodoistSetup('Pega un token primero.');
+    return;
+  }
+  try {
+    localStorage.setItem(STORAGE.todoistToken, token);
+  } catch (e) {
+    console.error('Todoist token not persisted:', e);
+    renderTodoistSetup('No se pudo guardar el token en este navegador.');
+    return;
+  }
+  input.value = '';
+  loadTodoistTasks();
+}
+
+function renderTodoistSetup(message = '') {
+  const note = message
+    ? `<div class="err">${escapeHtml(message)}</div>`
+    : '';
+
+  byId('todoist-card').innerHTML = `
+    <div class="card-title">Tareas &mdash; Falta configurar</div>
+    <div class="todoist-setup">
+      <div class="todoist-setup-text">
+        Pega un token de la API de Todoist para ver las tareas de hoy y las
+        vencidas. Se guarda solo en este navegador y se usa solo para leer.
+      </div>
+      ${note}
+      <div class="todoist-token-row">
+        <input type="password" id="todoist-token-input" class="todoist-token-input"
+               placeholder="Token de la API de Todoist" autocomplete="off" spellcheck="false"
+               aria-label="Token de la API de Todoist">
+        <button type="button" class="record-link" data-action="save-todoist">Guardar</button>
+      </div>
+      <a class="record-link secondary" href="${TODOIST_TOKEN_HELP}" target="_blank" rel="noopener">Consigue un token &#8599;</a>
+    </div>`;
+}
+
+function loadTodoistTasks() {
+  if (!readTodoistToken()) { renderTodoistSetup(); return; }
+  byId('todoist-card').innerHTML =
+    `<div class="card-title">Tareas</div>
+     <div class="placeholder">Token guardado. La carga de tareas llega en el paso siguiente.</div>`;
+}
+
 // ── Main refresh ──────────────────────────────────────────────────────────────
 async function refresh() {
   byId('last-updated').textContent = 'Refreshing...';
@@ -945,6 +1009,7 @@ async function refresh() {
   ]);
 
   renderQuote();
+  loadTodoistTasks();
 
   const now = new Date();
   byId('last-updated').textContent =
@@ -969,6 +1034,7 @@ function bindEvents() {
     if (action === 'roll-discogs') rollDiscogsAlbum();
     if (action === 'refresh-clz') refreshCLZCollection();
     if (action === 'reload') location.reload();
+    if (action === 'save-todoist') saveTodoistToken();
   });
 
   document.addEventListener('input', event => {
