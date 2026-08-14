@@ -807,7 +807,7 @@ function refreshCLZCollection() {
 }
 
 // ── Discogs Daily Record ──────────────────────────────────────────────────────
-const DISCOGS_USER = 'cesarmejias';
+const DISCOGS_USER = 'cesar.mejias';
 
 async function fetchDiscogsRecord() {
   if (!DISCOGS_USER) throw Object.assign(new Error('NOT_CONFIGURED'), {});
