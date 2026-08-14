@@ -1,4 +1,4 @@
-const CACHE_NAME = 'morning-dashboard-v4';
+const CACHE_NAME = 'morning-dashboard-v5';
 
 // App shell files carry the code, so they are served network-first: a deploy
 // reaches clients on their next load instead of the one after it. Everything
@@ -94,9 +94,8 @@ self.addEventListener('fetch', event => {
   // Skip non-GET requests
   if (req.method !== 'GET') return;
 
-  // API endpoints (Open-Meteo, Frankfurter, Hacker News, Discogs)
+  // API endpoints (Open-Meteo, Hacker News, Discogs)
   const isApiRequest = url.hostname.includes('open-meteo.com') ||
-                       url.hostname.includes('frankfurter.dev') ||
                        url.hostname.includes('firebaseio.com') ||
                        url.hostname.includes('discogs.com');
 

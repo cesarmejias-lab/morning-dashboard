@@ -323,30 +323,6 @@ function renderHN(stories) {
     <ul class="hn-list">${items}</ul>`;
 }
 
-// ── Exchange rates ────────────────────────────────────────────────────────────
-async function fetchRates() {
-  const r = await fetch('https://api.frankfurter.dev/v1/latest?base=EUR&symbols=USD,GBP,CHF,JPY');
-  if (!r.ok) throw new Error(`Rates API error: HTTP ${r.status}`);
-  return r.json();
-}
-
-function renderRates(data) {
-  const FLAGS   = { USD: '🇺🇸', GBP: '🇬🇧', CHF: '🇨🇭', JPY: '🇯🇵' };
-  const TARGETS = ['USD', 'GBP', 'CHF', 'JPY'];
-
-  const items = TARGETS.map(cur => {
-    const val = Number(data.rates[cur]);
-    const fmt = cur === 'JPY' ? val.toFixed(2) : val.toFixed(4);
-    return `<div class="rate-item">
-      <div class="rate-pair">${FLAGS[cur]} EUR / ${cur}</div>
-      <div class="rate-value">${fmt}</div>
-    </div>`;
-  }).join('');
-
-  byId('rates-card').innerHTML = `
-    <div class="card-title">Exchange Rates &mdash; EUR Base &middot; ${escapeHtml(data.date)}</div>
-    <div class="rates-grid">${items}</div>`;
-}
 
 // ── World clocks ─────────────────────────────────────────────────────────────
 function clockStatus(tz) {
@@ -908,7 +884,6 @@ async function refresh() {
 
   renderWeatherSkeleton();
   renderHNSkeleton();
-  renderRatesSkeleton();
   renderRecordSkeleton('clz-card', 'Daily Collection Radar');
   renderRecordSkeleton('discogs-card', 'Discogs Daily Record');
 
@@ -920,9 +895,6 @@ async function refresh() {
     }),
     fetchHN().then(renderHN).catch(() => {
       setCardMessage('hn-card', 'Hacker News', 'Failed to load stories.');
-    }),
-    fetchRates().then(renderRates).catch(() => {
-      setCardMessage('rates-card', 'Exchange Rates', 'Failed to load rates.');
     }),
     fetchCLZRecord({ cacheBust: true }).then(renderCLZRecord).catch(e => {
       if (e.message === 'NOT_CONFIGURED') { renderCLZSetup(); return; }
@@ -1064,21 +1036,6 @@ function renderWeatherSkeleton() {
           </div>
         `).join('')}
       </div>
-    </div>`;
-}
-
-function renderRatesSkeleton() {
-  const body = byId('rates-card');
-  if (!body) return;
-  body.innerHTML = `
-    <div class="card-title">Exchange Rates &mdash; EUR Base</div>
-    <div class="rates-grid">
-      ${Array(4).fill(0).map(() => `
-        <div class="rate-item" style="border: 1px solid var(--border); background: transparent;">
-          <div class="skeleton" style="width: 50px; height: 10px; margin-bottom: 8px; border-radius: 2px;"></div>
-          <div class="skeleton" style="width: 80px; height: 24px; border-radius: 4px;"></div>
-        </div>
-      `).join('')}
     </div>`;
 }
 
