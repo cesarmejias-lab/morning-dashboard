@@ -22,6 +22,7 @@
 - **Escaping:** all task content through `escapeHtml()`, all links through `safeUrl()`. Both already exist in `dashboard.js`.
 - **The Todoist token is never re-rendered** into the page after being saved, and the input is `type="password"`.
 - **Every `sw.js` change bumps `CACHE_NAME`**, otherwise the old cache is not purged.
+- **Every `?v=…`-versioned asset bumps its query string in the same commit.** Whenever a file referenced from `index.html` with a cache-busting `?v=…` query string changes, that query string must be bumped in the same commit, or a returning visitor's HTTP cache can serve the old file against new HTML.
 - `npm test` and `npm run check` must pass at the end of every task.
 
 ---
@@ -1447,7 +1448,7 @@ Reload twice, then check:
 - DevTools → Network: the request to `api.todoist.com` is **not** served from the service worker (no "(ServiceWorker)" in the Size column).
 - DevTools → Application → Cache Storage: **no** entry for `api.todoist.com` under any cache.
 - Corrupt the stored token and reload: the setup state returns with the rejection message, and the stored value is still there.
-- With every task completed in Todoist, the card shows "Nothing due today."
+- With every task completed in Todoist, the card shows "Nada pendiente para hoy."
 
 - [ ] **Step 9: Commit**
 
@@ -1460,9 +1461,9 @@ git commit -m "Load and render today's and overdue Todoist tasks"
 
 ## Verification After All Tasks
 
-- [ ] `npm run check` passes (56 tests).
+- [ ] `npm run check` passes (59 tests).
 - [ ] The top row is Weather, World Clocks, Tasks, Inspiration — no gap, no Exchange Rates.
-- [ ] The page is no taller than before the change.
+- [ ] No new cards and no new grid rows: the top band is still four cards in the existing two-column grid (two rows), with Todoist occupying the slot Exchange Rates vacated.
 - [ ] `grep -rn "frankfurter\|rates-card" .` returns nothing outside `docs/`.
 - [ ] `grep -rn "rest/v2" .` returns nothing: the retired Todoist API is not referenced.
 - [ ] `grep -rn "method: *'POST'\|method: *'PUT'\|method: *'DELETE'" dashboard.js` returns nothing for Todoist.
