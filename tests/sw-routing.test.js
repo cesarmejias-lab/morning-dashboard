@@ -57,15 +57,27 @@ test('Todoist requests bypass the service worker entirely', async () => {
   assert.deepEqual(result.calls, [], 'and must not touch the cache at all');
 });
 
-test('the app shell is served network-first', async () => {
+test('the app shell is served network-first on navigation', async () => {
   for (const url of [SCOPE + 'dashboard.js?v=1', SCOPE + 'styles.css', SCOPE + 'index.html']) {
     const result = await route(url, 'navigate');
     assert.equal(result.strategy, 'network-first', `${url} must not be served from cache first`);
   }
 });
 
-test('weather-verdict.js and todoist.js are served network-first as app code', async () => {
-  for (const file of ['weather-verdict.js', 'todoist.js']) {
+// The `navigate` mode alone forces network-first, regardless of APP_SHELL, so
+// the previous test cannot tell us whether the pathname regex itself is
+// correct. This pins the actual property the task exists to protect: a
+// `?v=…` query string must not defeat the APP_SHELL match against
+// `url.pathname` when the request is not a navigation.
+test('the app shell is served network-first by pathname, independent of query string or navigate mode', async () => {
+  for (const url of [SCOPE + 'dashboard.js?v=1', SCOPE + 'styles.css', SCOPE + 'index.html']) {
+    const result = await route(url);
+    assert.equal(result.strategy, 'network-first', `${url} must not be served from cache first`);
+  }
+});
+
+test('weather-verdict.js, todoist.js and clz-radar.js are served network-first as app code', async () => {
+  for (const file of ['weather-verdict.js', 'todoist.js', 'clz-radar.js']) {
     const result = await route(SCOPE + file);
     assert.equal(result.strategy, 'network-first', `${file} carries code and must stay fresh`);
   }
