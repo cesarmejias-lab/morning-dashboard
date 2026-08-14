@@ -15,7 +15,7 @@
 - **No dependencies, no build step.** Plain browser JS loaded via `<script>` tags. Node is used only to run tests.
 - **Module pattern:** every new logic module uses the dual-export wrapper from `clz-radar.js` — `module.exports` when CommonJS is present, otherwise a global on `globalThis`.
 - **Pure logic modules take no clock and no DOM.** Time references are injected as strings.
-- **UI copy is English.** The existing interface is entirely English ("Weather", "feels like", "Updated", "Refresh"). The spec's UX examples were written in Spanish as illustrations; rendering Spanish strings into this UI would be inconsistent. The verdict wording lives in the `COPY` constant inside `weather-verdict.js`, so switching languages is a one-place edit.
+- **New UI copy is Spanish, exactly as the spec writes it** (decided by Cesar on 2026-08-14, superseding this plan's original English choice). Every string this plan introduces — the weather verdict line and the whole Todoist card — is Spanish, and follows the spec's examples verbatim where the spec gives one: `☂ Paraguas: sí — 70% entre las 17:00 y las 20:00 · sensación máx 24° · anochece 21:34`, `Sin lluvia hoy · …`, `Tareas — 2 atrasadas · 5 para hoy`. Pre-existing English strings ("Weather", "feels like", "Updated", "Refresh", other card titles) are **not** translated — that is out of scope. The verdict wording stays isolated in the `COPY` constant inside `weather-verdict.js`. Every code block below already carries the Spanish strings; use them verbatim rather than re-translating.
 - **Umbrella thresholds:** `yes` at probability ≥ 50, `maybe` at 30–49, `no` below 30. Passed in as a parameter, never hardcoded inside logic branches.
 - **Todoist is read-only.** No `POST`, `PUT`, or `DELETE` to `api.todoist.com` anywhere in the codebase.
 - **Todoist endpoints:** `https://api.todoist.com/api/v1/tasks` and `/api/v1/projects`, both GET only. The `rest/v2` API returns `410 Gone` and must not be used.
@@ -283,14 +283,14 @@ test('formatVerdict names the window when there is rain ahead', () => {
   const probs = DRY.slice();
   probs[17] = 70; probs[18] = 70;
   const out = formatVerdict(buildVerdict({ data: fixture(probs) }));
-  assert.match(out.headline, /Umbrella: yes/);
+  assert.match(out.headline, /Paraguas: sí/);
   assert.ok(out.details.some(d => d.includes('17:00') && d.includes('18:00')));
 });
 
 test('formatVerdict states a dry day without inventing a window', () => {
   const out = formatVerdict(buildVerdict({ data: fixture(DRY) }));
-  assert.match(out.headline, /No rain today/);
-  assert.ok(out.details.every(d => !d.includes(':00 to ')));
+  assert.match(out.headline, /Sin lluvia hoy/);
+  assert.ok(out.details.every(d => !d.includes('entre las')));
 });
 
 test('DEFAULT_THRESHOLDS are the documented values', () => {
@@ -319,10 +319,11 @@ Create `weather-verdict.js`:
 }(typeof globalThis !== 'undefined' ? globalThis : null, function createWeatherVerdict() {
   const DEFAULT_THRESHOLDS = { yes: 50, maybe: 30 };
 
+  // Spanish, per the spec's UX examples. The only place the verdict wording lives.
   const COPY = {
-    umbrellaYes: 'Umbrella: yes',
-    umbrellaMaybe: 'Umbrella: maybe',
-    dry: 'No rain today',
+    umbrellaYes: '☂ Paraguas: sí',
+    umbrellaMaybe: '☂ Paraguas: quizá',
+    dry: 'Sin lluvia hoy',
   };
 
   // "2026-08-14T07:24" -> "07:24"
@@ -432,15 +433,15 @@ Create `weather-verdict.js`:
 
     if (v.umbrella !== 'no' && Number.isFinite(v.maxProbability)) {
       details.push(v.window
-        ? `${v.maxProbability}% from ${v.window.from} to ${v.window.to}`
-        : `${v.maxProbability}% chance today`);
+        ? `${v.maxProbability}% entre las ${v.window.from} y las ${v.window.to}`
+        : `${v.maxProbability}% de probabilidad hoy`);
     }
 
     if (v.feelsLike && Number.isFinite(v.feelsLike.max)) {
-      details.push(`feels up to ${Math.round(v.feelsLike.max)}°`);
+      details.push(`sensación máx ${Math.round(v.feelsLike.max)}°`);
     }
 
-    if (v.sunset) details.push(`sunset ${v.sunset}`);
+    if (v.sunset) details.push(`anochece ${v.sunset}`);
 
     return { headline, details };
   }
@@ -1086,8 +1087,8 @@ In `index.html`, in the position the rates card occupied (after the Clocks card,
 ```html
   <!-- Todoist -->
   <div class="card" id="todoist-card">
-    <div class="card-title">Tasks</div>
-    <div class="placeholder">Loading tasks&hellip;</div>
+    <div class="card-title">Tareas</div>
+    <div class="placeholder">Cargando tareas&hellip;</div>
   </div>
 ```
 
@@ -1137,14 +1138,14 @@ function saveTodoistToken() {
   if (!input) return;
   const token = input.value.trim();
   if (!token) {
-    renderTodoistSetup('Paste a token first.');
+    renderTodoistSetup('Pega un token primero.');
     return;
   }
   try {
     localStorage.setItem(STORAGE.todoistToken, token);
   } catch (e) {
     console.error('Todoist token not persisted:', e);
-    renderTodoistSetup('Could not save the token in this browser.');
+    renderTodoistSetup('No se pudo guardar el token en este navegador.');
     return;
   }
   input.value = '';
@@ -1157,20 +1158,20 @@ function renderTodoistSetup(message = '') {
     : '';
 
   byId('todoist-card').innerHTML = `
-    <div class="card-title">Tasks &mdash; Setup needed</div>
+    <div class="card-title">Tareas &mdash; Falta configurar</div>
     <div class="todoist-setup">
       <div class="todoist-setup-text">
-        Paste a Todoist API token to see today's and overdue tasks. It is stored
-        only in this browser and used for reading.
+        Pega un token de la API de Todoist para ver las tareas de hoy y las
+        vencidas. Se guarda solo en este navegador y se usa solo para leer.
       </div>
       ${note}
       <div class="todoist-token-row">
         <input type="password" id="todoist-token-input" class="todoist-token-input"
-               placeholder="Todoist API token" autocomplete="off" spellcheck="false"
-               aria-label="Todoist API token">
-        <button type="button" class="record-link" data-action="save-todoist">Save</button>
+               placeholder="Token de la API de Todoist" autocomplete="off" spellcheck="false"
+               aria-label="Token de la API de Todoist">
+        <button type="button" class="record-link" data-action="save-todoist">Guardar</button>
       </div>
-      <a class="record-link secondary" href="${TODOIST_TOKEN_HELP}" target="_blank" rel="noopener">Get a token &#8599;</a>
+      <a class="record-link secondary" href="${TODOIST_TOKEN_HELP}" target="_blank" rel="noopener">Consigue un token &#8599;</a>
     </div>`;
 }
 ```
@@ -1183,8 +1184,8 @@ Task 7 replaces this with the real fetch. It exists now only so this task is ind
 function loadTodoistTasks() {
   if (!readTodoistToken()) { renderTodoistSetup(); return; }
   byId('todoist-card').innerHTML =
-    `<div class="card-title">Tasks</div>
-     <div class="placeholder">Token saved. Task loading arrives in the next step.</div>`;
+    `<div class="card-title">Tareas</div>
+     <div class="placeholder">Token guardado. La carga de tareas llega en el paso siguiente.</div>`;
 }
 ```
 
@@ -1228,7 +1229,7 @@ Expected: PASS, 56 tests.
 
 Run `npm run dev` and reload twice. Then:
 - With no token stored, the card shows the setup state in the third top-row slot.
-- Clicking Save with an empty field shows "Paste a token first."
+- Clicking Guardar with an empty field shows "Pega un token primero."
 - Saving any non-empty string shows the placeholder message from Step 5.
 - In DevTools → Application → Local Storage, `morning_dashboard_todoist_token` holds the value.
 - Search the rendered DOM for the token string: it must not appear anywhere.
@@ -1320,7 +1321,7 @@ function todoistTaskHtml(task, overdue, projectNames) {
   const project = task.projectId ? projectNames[task.projectId] : null;
   if (project) meta.push(project);
 
-  if (overdue) meta.push(`overdue ${task.date}`);
+  if (overdue) meta.push(`vencía ${task.date}`);
   else if (task.time) meta.push(task.time);
 
   const link = task.url
@@ -1338,21 +1339,24 @@ function renderTodoistCard(groups, projectNames = {}) {
 
   if (!total) {
     byId('todoist-card').innerHTML = `
-      <div class="card-title">Tasks</div>
-      <div class="todoist-empty">Nothing due today.</div>`;
+      <div class="card-title">Tareas</div>
+      <div class="todoist-empty">Nada para hoy.</div>`;
     return;
   }
 
+  // Spec wording: "Tareas — 2 atrasadas · 5 para hoy". Singular when there is one.
   const summary = [];
-  if (groups.overdue.length) summary.push(`${groups.overdue.length} overdue`);
-  if (groups.dueToday.length) summary.push(`${groups.dueToday.length} today`);
+  if (groups.overdue.length) {
+    summary.push(`${groups.overdue.length} ${groups.overdue.length === 1 ? 'atrasada' : 'atrasadas'}`);
+  }
+  if (groups.dueToday.length) summary.push(`${groups.dueToday.length} para hoy`);
 
   const items = groups.overdue.map(t => todoistTaskHtml(t, true, projectNames))
     .concat(groups.dueToday.map(t => todoistTaskHtml(t, false, projectNames)))
     .join('');
 
   byId('todoist-card').innerHTML = `
-    <div class="card-title">Tasks &middot; ${escapeHtml(summary.join(' · '))}</div>
+    <div class="card-title">Tareas &mdash; ${escapeHtml(summary.join(' · '))}</div>
     <ul class="todoist-list">${items}</ul>`;
 }
 ```
@@ -1367,10 +1371,10 @@ async function loadTodoistTasks() {
   if (!token) { renderTodoistSetup(); return; }
 
   const MESSAGES = {
-    TOKEN_INVALID: 'That token was rejected. It may have been revoked — paste a new one.',
-    TOKEN_FORBIDDEN: 'That token does not have permission to read tasks.',
-    RATE_LIMITED: 'Todoist is rate limiting requests. Try again in a few minutes.',
-    UNEXPECTED_SHAPE: 'Todoist returned a response this dashboard does not recognise.',
+    TOKEN_INVALID: 'Todoist ha rechazado el token. Puede estar revocado — pega uno nuevo.',
+    TOKEN_FORBIDDEN: 'Ese token no tiene permiso para leer tareas.',
+    RATE_LIMITED: 'Todoist está limitando las peticiones. Prueba de nuevo en unos minutos.',
+    UNEXPECTED_SHAPE: 'Todoist ha devuelto una respuesta que este dashboard no reconoce.',
   };
 
   try {
@@ -1387,7 +1391,7 @@ async function loadTodoistTasks() {
       renderTodoistSetup(MESSAGES[e.message]);
       return;
     }
-    setCardMessage('todoist-card', 'Tasks', MESSAGES[e.message] || 'Could not load tasks.');
+    setCardMessage('todoist-card', 'Tareas', MESSAGES[e.message] || 'No se pudieron cargar las tareas.');
   }
 }
 ```
