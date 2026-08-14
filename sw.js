@@ -1,4 +1,4 @@
-const CACHE_NAME = 'morning-dashboard-v2';
+const CACHE_NAME = 'morning-dashboard-v3';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -14,7 +14,11 @@ const STATIC_ASSETS = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(STATIC_ASSETS))
+      // `cache: 'reload'` bypasses the HTTP cache so a new version never
+      // precaches stale copies of the assets it is meant to refresh
+      .then(cache => cache.addAll(
+        STATIC_ASSETS.map(url => new Request(url, { cache: 'reload' }))
+      ))
       .then(() => self.skipWaiting())
   );
 });
