@@ -14,6 +14,10 @@
     umbrellaYes: '☂ Paraguas: sí',
     umbrellaMaybe: '☂ Paraguas: quizá',
     dry: 'Sin lluvia hoy',
+    window: (probability, from, to) => `${probability}% entre las ${from} y las ${to}`,
+    chanceToday: (probability) => `${probability}% de probabilidad hoy`,
+    feelsLike: (degrees) => `sensación máx ${degrees}°`,
+    sunset: (time) => `anochece ${time}`,
   };
 
   // "2026-08-14T07:24" -> "07:24"
@@ -123,15 +127,15 @@
 
     if (v.umbrella !== 'no' && Number.isFinite(v.maxProbability)) {
       details.push(v.window
-        ? `${v.maxProbability}% entre las ${v.window.from} y las ${v.window.to}`
-        : `${v.maxProbability}% de probabilidad hoy`);
+        ? COPY.window(v.maxProbability, v.window.from, v.window.to)
+        : COPY.chanceToday(v.maxProbability));
     }
 
     if (v.feelsLike && Number.isFinite(v.feelsLike.max)) {
-      details.push(`sensación máx ${Math.round(v.feelsLike.max)}°`);
+      details.push(COPY.feelsLike(Math.round(v.feelsLike.max)));
     }
 
-    if (v.sunset) details.push(`anochece ${v.sunset}`);
+    if (v.sunset) details.push(COPY.sunset(v.sunset));
 
     return { headline, details };
   }
