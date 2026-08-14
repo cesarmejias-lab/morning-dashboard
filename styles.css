@@ -127,6 +127,51 @@
       margin-bottom: 16px;
     }
 
+    .w-verdict {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      background: var(--surface2);
+    }
+    .w-verdict-headline { font-size: 0.9rem; font-weight: 600; }
+    .w-verdict-detail   { font-size: 0.78rem; color: var(--muted); }
+
+    .todoist-setup      { display: flex; flex-direction: column; gap: 10px; padding: 4px 0; }
+    .todoist-setup-text { font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+    .todoist-token-row  { display: flex; gap: 8px; }
+    .todoist-token-input {
+      flex: 1;
+      min-width: 0;
+      padding: 7px 9px;
+      font-size: 0.8rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .todoist-token-input:focus { outline: none; border-color: var(--accent); }
+
+    .todoist-list  { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+    .todoist-task  {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      padding-left: 9px;
+      border-left: 2px solid var(--border);
+    }
+    .todoist-task.urgent  { border-left-color: var(--red); }
+    .todoist-content      { font-size: 0.84rem; color: var(--text); text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
+    a.todoist-content:hover { color: var(--accent); }
+    .todoist-meta         { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .todoist-empty        { font-size: 0.84rem; color: var(--green); padding: 12px 0; }
+
     .forecast {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -197,22 +242,6 @@
     }
 
     .clock-date { font-size: 0.69rem; color: var(--muted); margin-top: 2px; }
-
-    /* ── Rates ──────────────────────────────────────────────────────────── */
-    .rates-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .rate-item {
-      background: var(--surface2);
-      border-radius: 8px;
-      padding: 12px 14px;
-    }
-
-    .rate-pair  { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
-    .rate-value { font-size: 1.5rem; font-weight: 500; font-variant-numeric: tabular-nums; }
 
     /* ── Quote ──────────────────────────────────────────────────────────── */
     .quote-card {
