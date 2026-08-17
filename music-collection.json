@@ -1,8 +1,333 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-15T00:47:59.828Z",
-  "total": 5162,
+  "syncedAt": "2026-08-17T08:35:18.979Z",
+  "total": 5175,
   "albums": [
+    {
+      "id": "11952973",
+      "title": "Different When It's Silent",
+      "artist": "Tricky",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/aa/aa_37861221_0_DifferentWhenItsSilent.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952972",
+      "title": "A ? of WHEN",
+      "artist": "Panda Bear; Sonic Boom",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/77/77_37839450_0_AofWHEN.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952971",
+      "title": "Seychelles",
+      "artist": "Masayoshi Takanaka",
+      "year": "2024",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f4/f4_31412402_0_Seychelles.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952970",
+      "title": "Helado Tropical",
+      "artist": "Helado Tropical",
+      "year": null,
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ae/ae_37909767_0_HeladoTropical.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952969",
+      "title": "The Collection",
+      "artist": "Sally Oldfield",
+      "year": "1985",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/e7/e7_2452427_0_SallyOldfieldTheCollection.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952968",
+      "title": "Alegria",
+      "artist": "Antònia Font",
+      "year": "2022",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/37/37_25284874_0_Alegria.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952967",
+      "title": "Ever The Optimist",
+      "artist": "The Trash Can Sinatras",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/bc/bc_38163138_0_EverTheOptimist.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952966",
+      "title": "W",
+      "artist": "Pajaro Sunrise",
+      "year": "2018",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/26/26_12760082_0_W.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952965",
+      "title": "Reflets Du Monde Lointain",
+      "artist": "Dominique A.",
+      "year": "2023",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0e/0e_26278220_0_RefletsDuMondeLointain.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952964",
+      "title": "The Thread",
+      "artist": "Family Stereo",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c6/c6_38066256_0_TheThread.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952963",
+      "title": "H'art Songs",
+      "artist": "Moondog",
+      "year": "2024",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/68/68_32237289_0_HartSongs.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952962",
+      "title": "Snowbug",
+      "artist": "The High Llamas",
+      "year": "2024",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ca/ca_32521722_0_Snowbug.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11952956",
+      "title": "Motorway City (The Golden Age Of Car Travel 1966-82)",
+      "artist": "Various",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f3/f3_38025444_0_MotorwayCityTheGoldenAgeOfCarT.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-17T08:35:12.395Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11950571",
       "title": "Figure 8",
@@ -129061,11 +129386,11 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1327
+        "count": 1328
       },
       {
         "name": "2020s",
-        "count": 1149
+        "count": 1159
       },
       {
         "name": "2000s",
@@ -129077,7 +129402,7 @@
       },
       {
         "name": "1980s",
-        "count": 550
+        "count": 551
       },
       {
         "name": "1970s",
@@ -129101,7 +129426,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5162,
+      "basic": 5175,
       "partial": 0,
       "enriched": 0
     }
