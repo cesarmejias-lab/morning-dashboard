@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-22T16:15:26.181Z",
-  "total": 5175,
+  "syncedAt": "2026-08-22T20:14:36.590Z",
+  "total": 5176,
   "albums": [
+    {
+      "id": "11957414",
+      "title": "Renascent",
+      "artist": "The Durutti Column",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/21/21_38034102_0_Renascent.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-22T20:14:36.155Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11952973",
       "title": "Different When It's Silent",
@@ -129390,7 +129415,7 @@
       },
       {
         "name": "2020s",
-        "count": 1159
+        "count": 1160
       },
       {
         "name": "2000s",
@@ -129426,7 +129451,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5175,
+      "basic": 5176,
       "partial": 0,
       "enriched": 0
     }
