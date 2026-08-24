@@ -1,8 +1,58 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-24T08:39:27.515Z",
-  "total": 5176,
+  "syncedAt": "2026-08-24T12:32:59.226Z",
+  "total": 5178,
   "albums": [
+    {
+      "id": "11959744",
+      "title": "Technicolor Paradise: Rhum Rhapsodies & Other Exotic Delights",
+      "artist": "Various Artists",
+      "year": "2022",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/37/37_25119679_0_TechnicolorParadiseRhumRhapsod.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-24T12:32:58.357Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11959743",
+      "title": "Drums And Wires",
+      "artist": "XTC",
+      "year": "2020",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/88/88_16269444_0_DrumsAndWires.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-24T12:32:58.357Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11957414",
       "title": "Renascent",
@@ -129415,7 +129465,7 @@
       },
       {
         "name": "2020s",
-        "count": 1160
+        "count": 1162
       },
       {
         "name": "2000s",
@@ -129451,7 +129501,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5176,
+      "basic": 5178,
       "partial": 0,
       "enriched": 0
     }
