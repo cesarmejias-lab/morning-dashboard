@@ -1,8 +1,33 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-24T12:32:59.226Z",
-  "total": 5178,
+  "syncedAt": "2026-08-26T12:36:32.854Z",
+  "total": 5179,
   "albums": [
+    {
+      "id": "11961434",
+      "title": "Superb",
+      "artist": "Surprise Chef",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/35/35_33955743_0_Superb.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-26T12:36:32.432Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11959744",
       "title": "Technicolor Paradise: Rhum Rhapsodies & Other Exotic Delights",
@@ -129465,7 +129490,7 @@
       },
       {
         "name": "2020s",
-        "count": 1162
+        "count": 1163
       },
       {
         "name": "2000s",
@@ -129501,7 +129526,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5178,
+      "basic": 5179,
       "partial": 0,
       "enriched": 0
     }
