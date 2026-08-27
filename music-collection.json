@@ -1,8 +1,58 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-26T16:43:24.596Z",
-  "total": 5179,
+  "syncedAt": "2026-08-27T18:42:08.054Z",
+  "total": 5181,
   "albums": [
+    {
+      "id": "11963580",
+      "title": "CD",
+      "artist": "Derribos Arias",
+      "year": "1996",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/87/87_2696355_0_DerribosAriasCD.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-27T18:42:07.115Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11963426",
+      "title": "Transilvania",
+      "artist": "Josele Santiago",
+      "year": "2017",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f7/f7_11042585_0_Transilvania.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-27T18:42:07.115Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11961434",
       "title": "Superb",
@@ -129486,7 +129536,7 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1328
+        "count": 1329
       },
       {
         "name": "2020s",
@@ -129498,7 +129548,7 @@
       },
       {
         "name": "1990s",
-        "count": 639
+        "count": 640
       },
       {
         "name": "1980s",
@@ -129526,7 +129576,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5179,
+      "basic": 5181,
       "partial": 0,
       "enriched": 0
     }
