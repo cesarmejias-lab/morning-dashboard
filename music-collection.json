@@ -1,8 +1,58 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-31T02:42:38.481Z",
-  "total": 5181,
+  "syncedAt": "2026-08-31T18:33:22.211Z",
+  "total": 5183,
   "albums": [
+    {
+      "id": "11995423",
+      "title": "Poch Se Ha Vuelto A Equivocar",
+      "artist": "Poch",
+      "year": "1985",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/35/35_12820274_0_PochSeHaVueltoAEquivocar.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-31T18:33:21.270Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11995422",
+      "title": "I'll Be Your Mirror - A Tribute To The Velvet Underground & Nico",
+      "artist": "Various",
+      "year": "2021",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/24/24_20455822_0_IllBeYourMirrorATributeToTheVe.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-08-31T18:33:21.270Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11963580",
       "title": "CD",
@@ -129540,7 +129590,7 @@
       },
       {
         "name": "2020s",
-        "count": 1163
+        "count": 1164
       },
       {
         "name": "2000s",
@@ -129552,7 +129602,7 @@
       },
       {
         "name": "1980s",
-        "count": 551
+        "count": 552
       },
       {
         "name": "1970s",
@@ -129576,7 +129626,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5181,
+      "basic": 5183,
       "partial": 0,
       "enriched": 0
     }
