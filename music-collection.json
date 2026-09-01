@@ -1,8 +1,158 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-08-31T18:33:22.211Z",
-  "total": 5183,
+  "syncedAt": "2026-09-01T22:16:12.279Z",
+  "total": 5189,
   "albums": [
+    {
+      "id": "11996284",
+      "title": "Materia",
+      "artist": "Julia Holter",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0c/0c_38217402_0_Materia.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-01T22:16:09.200Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11996283",
+      "title": "Shine",
+      "artist": "Tobias Jesso Jr.",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/7f/7f_36660076_0_Shine.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-01T22:16:09.200Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11996282",
+      "title": "This Is My Truth Tell Me Yours",
+      "artist": "Manic Street Preachers",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2e/2e_36350293_0_ThisIsMyTruthTellMeYours.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-01T22:16:09.200Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11996281",
+      "title": "Greatest",
+      "artist": "Duran Duran",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/26/26_34882811_0_Greatest.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-01T22:16:09.200Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11996280",
+      "title": "The Very Best Of Dolly Parton",
+      "artist": "Dolly Parton",
+      "year": "2020",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/e9/e9_15530368_0_TheVeryBestOfDollyParton.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-01T22:16:09.200Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "11996279",
+      "title": "Sometimes I Wish We Were An Eagle",
+      "artist": "Bill Callahan",
+      "year": "2009",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b2/b2_1732071_0_BillCallahanSometimesIWishWeWe.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-01T22:16:09.200Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "11995423",
       "title": "Poch Se Ha Vuelto A Equivocar",
@@ -129590,11 +129740,11 @@
       },
       {
         "name": "2020s",
-        "count": 1164
+        "count": 1169
       },
       {
         "name": "2000s",
-        "count": 785
+        "count": 786
       },
       {
         "name": "1990s",
@@ -129626,7 +129776,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5183,
+      "basic": 5189,
       "partial": 0,
       "enriched": 0
     }
