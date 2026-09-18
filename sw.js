@@ -1,9 +1,9 @@
-const CACHE_NAME = 'morning-dashboard-v8';
+const CACHE_NAME = 'morning-dashboard-v9';
 
 // App shell files carry the code, so they are served network-first: a deploy
 // reaches clients on their next load instead of the one after it. Everything
 // else in STATIC_ASSETS stays cache-first.
-const APP_SHELL = /(^|\/)(index\.html|dashboard\.js|clz-radar\.js|weather-verdict\.js|todoist\.js|styles\.css)$/;
+const APP_SHELL = /(^|\/)(index\.html|dashboard\.js|clz-radar\.js|weather-verdict\.js|todoist\.js|news-feed\.js|styles\.css)$/;
 
 const STATIC_ASSETS = [
   './',
@@ -13,6 +13,7 @@ const STATIC_ASSETS = [
   './clz-radar.js',
   './weather-verdict.js',
   './todoist.js',
+  './news-feed.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
@@ -102,9 +103,10 @@ self.addEventListener('fetch', event => {
   // in the clear. See docs/superpowers/specs/2026-08-14-morning-utility-weather-todoist-design.md
   if (url.hostname === 'api.todoist.com') return;
 
-  // API endpoints (Open-Meteo, Hacker News, Discogs)
+  // API endpoints (Open-Meteo, Hacker News, Discogs, Algolia)
   const isApiRequest = url.hostname.includes('open-meteo.com') ||
                        url.hostname.includes('firebaseio.com') ||
+                       url.hostname.includes('algolia.com') ||
                        url.hostname.includes('discogs.com');
 
   // The HTML entry point and the code it loads

@@ -71,6 +71,7 @@ const STORAGE = {
   weather: 'morning_dashboard_weather',
   clzRadarHistory: 'morning_dashboard_clz_radar_history',
   todoistToken: 'morning_dashboard_todoist_token',
+  newsCategory: 'morning_dashboard_news_category',
 };
 
 function byId(id) {
@@ -306,48 +307,151 @@ function switchWeatherTab(cityName) {
   renderWeather();
 }
 
-// ── Hacker News ──────────────────────────────────────────────────────────────
-async function fetchHN() {
-  const ids = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-    .then(r => r.json());
-  return Promise.all(
+// ── Hacker News & Thematic Feeds ──────────────────────────────────────────────
+let activeNewsCategory = localStorage.getItem(STORAGE.newsCategory) || 'general';
+let newsDataCache = {};
+
+function getNewsApi() {
+  return typeof NewsFeed !== 'undefined' ? NewsFeed : null;
+}
+
+async function fetchNews(category = activeNewsCategory) {
+  const api = getNewsApi();
+
+  if (category === 'ai') {
+    const url = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>=10&query=AI+OR+LLM+OR+GPT+OR+OpenAI+OR+Claude+OR+Anthropic+OR+DeepSeek&hitsPerPage=10';
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Algolia API HTTP ${res.status}`);
+    const data = await res.json();
+    return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+  }
+
+  if (category === 'security') {
+    const url = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>=10&query=security+OR+cybersecurity+OR+vulnerability+OR+cve+OR+malware+OR+ransomware+OR+exploit&hitsPerPage=10';
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Algolia API HTTP ${res.status}`);
+    const data = await res.json();
+    return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+  }
+
+  // Default: General Top Tech
+  const ids = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json').then(r => r.json());
+  const stories = await Promise.all(
     ids.slice(0, 10).map(id =>
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(r => r.json())
     )
   );
+  return stories.map(s => api ? api.normalizeFirebaseStory(s) : s).filter(Boolean);
 }
 
-function getDomain(url) {
-  if (!url) return 'news.ycombinator.com';
-  try { return new URL(url).hostname.replace(/^www\./, ''); }
-  catch { return 'news.ycombinator.com'; }
-}
+function renderNews() {
+  const card = byId('hn-card');
+  if (!card) return;
 
-function timeAgo(unix) {
-  const s = Math.floor(Date.now() / 1000) - unix;
-  if (s < 60)   return `${s}s ago`;
-  if (s < 3600) return `${Math.floor(s / 60)}m ago`;
-  if (s < 86400) return `${Math.floor(s / 3600)}h ago`;
-  return `${Math.floor(s / 86400)}d ago`;
-}
+  const api = getNewsApi();
+  const categories = api ? api.CATEGORIES : [
+    { id: 'general', label: '🔥 Top Tech' },
+    { id: 'ai', label: '🤖 IA & LLMs' },
+    { id: 'security', label: '🛡️ Ciberseguridad' },
+  ];
 
-function renderHN(stories) {
-  const items = stories.map((s, i) => {
-    const href   = safeUrl(s.url || `https://news.ycombinator.com/item?id=${s.id}`);
-    const domain = getDomain(href);
-    const ago    = s.time ? timeAgo(s.time) : '';
-    return `<li class="hn-item">
-      <span class="hn-n">${i + 1}</span>
-      <div>
-        <div class="hn-title"><a href="${href}" target="_blank" rel="noopener">${escapeHtml(s.title)}</a></div>
-        <div class="hn-meta">&#9650; ${Number(s.score) || 0} &nbsp;&middot;&nbsp; ${escapeHtml(domain)} &nbsp;&middot;&nbsp; ${Number(s.descendants) || 0} comments &nbsp;&middot;&nbsp; ${escapeHtml(ago)}</div>
-      </div>
-    </li>`;
+  const tabsHtml = categories.map(cat => {
+    const activeClass = cat.id === activeNewsCategory ? 'active' : '';
+    return `<button type="button" class="news-tab-btn ${activeClass}" data-action="switch-news" data-category="${escapeHtml(cat.id)}">${escapeHtml(cat.label)}</button>`;
   }).join('');
 
-  byId('hn-card').innerHTML = `
-    <div class="card-title">Top Hacker News Stories</div>
-    <ul class="hn-list">${items}</ul>`;
+  const stories = newsDataCache[activeNewsCategory];
+
+  let bodyHtml = '';
+  if (!stories) {
+    bodyHtml = `<ul class="hn-list">
+      ${Array(6).fill(0).map((_, i) => `
+        <li class="hn-item">
+          <span class="hn-n">${i + 1}</span>
+          <div style="flex: 1;">
+            <div class="skeleton" style="width: 70%; height: 15px; margin-bottom: 6px; border-radius: 3px;"></div>
+            <div class="skeleton" style="width: 40%; height: 11px; border-radius: 2px;"></div>
+          </div>
+        </li>
+      `).join('')}
+    </ul>`;
+  } else if (stories.length === 0) {
+    bodyHtml = '<div class="placeholder">No stories found right now.</div>';
+  } else {
+    const items = stories.map((s, i) => {
+      const href = safeUrl(s.url || s.hnUrl);
+      const hnCommentsUrl = safeUrl(s.hnUrl || `https://news.ycombinator.com/item?id=${s.id}`);
+      const domain = s.domain || (api ? api.getDomain(href) : 'news.ycombinator.com');
+      const ago = api ? api.timeAgo(s.time) : '';
+      const points = Number(s.points || s.score) || 0;
+      const comments = Number(s.comments || s.descendants) || 0;
+
+      return `<li class="hn-item">
+        <span class="hn-n">${i + 1}</span>
+        <div class="hn-body">
+          <div class="hn-title">
+            <a href="${href}" target="_blank" rel="noopener">${escapeHtml(s.title)}</a>
+          </div>
+          <div class="hn-meta">
+            <span class="hn-points">&#9650; ${points}</span>
+            <span class="hn-sep">&middot;</span>
+            <span class="hn-domain">${escapeHtml(domain)}</span>
+            <span class="hn-sep">&middot;</span>
+            <a class="hn-comments-link" href="${hnCommentsUrl}" target="_blank" rel="noopener" title="Comments on Hacker News">&#128172; ${comments}</a>
+            ${ago ? `<span class="hn-sep">&middot;</span><span class="hn-ago">${escapeHtml(ago)}</span>` : ''}
+          </div>
+        </div>
+      </li>`;
+    }).join('');
+
+    bodyHtml = `<ul class="hn-list">${items}</ul>`;
+  }
+
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="section-title-row">
+        <span class="card-title tight">News</span>
+        <div class="news-tabs" id="news-tabs">${tabsHtml}</div>
+      </div>
+    </div>
+    <div class="news-fade-wrapper">
+      ${bodyHtml}
+    </div>`;
+}
+
+async function switchNewsTab(categoryId) {
+  if (activeNewsCategory === categoryId && newsDataCache[categoryId]) return;
+  activeNewsCategory = categoryId;
+  localStorage.setItem(STORAGE.newsCategory, categoryId);
+
+  // If already cached, instant render!
+  if (newsDataCache[categoryId]) {
+    renderNews();
+    return;
+  }
+
+  // Render loading skeleton and fetch
+  renderNews();
+  try {
+    const stories = await fetchNews(categoryId);
+    newsDataCache[categoryId] = stories;
+    if (activeNewsCategory === categoryId) {
+      renderNews();
+    }
+  } catch (err) {
+    console.error(`Failed to load ${categoryId} news:`, err);
+    if (activeNewsCategory === categoryId) {
+      setCardMessage('hn-card', 'News', `Failed to load ${categoryId} stories.`);
+    }
+  }
+}
+
+function cycleNewsTab() {
+  const api = getNewsApi();
+  const categories = api ? api.CATEGORIES.map(c => c.id) : ['general', 'ai', 'security'];
+  const currentIndex = categories.indexOf(activeNewsCategory);
+  const nextIndex = (currentIndex + 1) % categories.length;
+  switchNewsTab(categories[nextIndex]);
 }
 
 // ── World clocks ─────────────────────────────────────────────────────────────
@@ -1120,7 +1224,7 @@ async function refresh() {
   byId('refresh-btn').disabled = true;
 
   renderWeatherSkeleton();
-  renderHNSkeleton();
+  renderNewsSkeleton();
   renderRecordSkeleton('clz-card', 'Daily Collection Radar');
   renderRecordSkeleton('discogs-card', 'Discogs Daily Record');
 
@@ -1130,8 +1234,12 @@ async function refresh() {
       const body = byId('weather-body');
       if (body) body.innerHTML = '<div class="err">Failed to load weather data.</div>';
     }),
-    fetchHN().then(renderHN).catch(() => {
-      setCardMessage('hn-card', 'Hacker News', 'Failed to load stories.');
+    fetchNews(activeNewsCategory).then(stories => {
+      newsDataCache[activeNewsCategory] = stories;
+      renderNews();
+    }).catch(e => {
+      console.error('News load failed:', e);
+      setCardMessage('hn-card', 'News', 'Failed to load stories.');
     }),
     fetchCLZRecord({ cacheBust: true }).then(renderCLZRecord).catch(e => {
       if (e.message === 'NOT_CONFIGURED') { renderCLZSetup(); return; }
@@ -1180,6 +1288,7 @@ function bindEvents() {
     if (action === 'save-weather') saveWeatherSettings();
     if (action === 'save-clocks') saveClocksSettings();
     if (action === 'switch-weather') switchWeatherTab(trigger.dataset.city);
+    if (action === 'switch-news') switchNewsTab(trigger.dataset.category);
     if (action === 'roll-clz') rollCLZAlbum();
     if (action === 'roll-discogs') rollDiscogsAlbum();
     if (action === 'refresh-clz') refreshCLZCollection();
@@ -1252,6 +1361,12 @@ function bindEvents() {
       event.preventDefault();
       toggleClocksDrawer();
     }
+
+    // N: Cycle news category
+    if (key === 'n') {
+      event.preventDefault();
+      cycleNewsTab();
+    }
   });
 }
 
@@ -1303,22 +1418,40 @@ function renderRecordSkeleton(cardId, cardTitle) {
     </div>`;
 }
 
-function renderHNSkeleton() {
+function renderNewsSkeleton() {
   const card = byId('hn-card');
   if (!card) return;
+  const api = getNewsApi();
+  const categories = api ? api.CATEGORIES : [
+    { id: 'general', label: '🔥 Top Tech' },
+    { id: 'ai', label: '🤖 IA & LLMs' },
+    { id: 'security', label: '🛡️ Ciberseguridad' },
+  ];
+  const tabsHtml = categories.map(cat => {
+    const activeClass = cat.id === activeNewsCategory ? 'active' : '';
+    return `<button type="button" class="news-tab-btn ${activeClass}" data-action="switch-news" data-category="${escapeHtml(cat.id)}">${escapeHtml(cat.label)}</button>`;
+  }).join('');
+
   card.innerHTML = `
-    <div class="card-title">Top Hacker News Stories</div>
-    <ul class="hn-list">
-      ${Array(5).fill(0).map((_, i) => `
-        <li class="hn-item" style="border-bottom: 1px solid var(--border);">
-          <span class="hn-n">${i + 1}</span>
-          <div style="flex: 1;">
-            <div class="skeleton" style="width: 70%; height: 14px; margin-bottom: 6px; border-radius: 3px;"></div>
-            <div class="skeleton" style="width: 40%; height: 10px; border-radius: 2px;"></div>
-          </div>
-        </li>
-      `).join('')}
-    </ul>`;
+    <div class="card-header">
+      <div class="section-title-row">
+        <span class="card-title tight">News</span>
+        <div class="news-tabs" id="news-tabs">${tabsHtml}</div>
+      </div>
+    </div>
+    <div class="news-fade-wrapper">
+      <ul class="hn-list">
+        ${Array(6).fill(0).map((_, i) => `
+          <li class="hn-item">
+            <span class="hn-n">${i + 1}</span>
+            <div style="flex: 1;">
+              <div class="skeleton" style="width: 70%; height: 15px; margin-bottom: 6px; border-radius: 3px;"></div>
+              <div class="skeleton" style="width: 40%; height: 11px; border-radius: 2px;"></div>
+            </div>
+          </li>
+        `).join('')}
+      </ul>
+    </div>`;
 }
 
 // ── Greeting Helpers ──────────────────────────────────────────────────────────

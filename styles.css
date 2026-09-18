@@ -366,29 +366,134 @@
     .quote-text   { font-size: 0.95rem; font-style: italic; line-height: 1.65; }
     .quote-author { font-size: 0.78rem; color: var(--accent); margin-top: 10px; }
 
-    /* ── HN ─────────────────────────────────────────────────────────────── */
-    .hn-list { list-style: none; }
+    /* ── News Feed & HN ─────────────────────────────────────────────────── */
+    .news-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .news-tab-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .news-tab-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .news-tab-btn.active {
+      background: rgba(88, 166, 255, 0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .news-fade-wrapper {
+      animation: weatherFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hn-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
     .hn-item {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      padding: 7px 0;
-      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+      gap: 12px;
+      padding: 9px 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      transition: background 0.15s;
     }
     .hn-item:last-child { border-bottom: none; }
+    .hn-item:hover {
+      background: var(--surface2);
+    }
 
-    .hn-n { font-size: 0.68rem; color: var(--muted); width: 16px; text-align: right; flex-shrink: 0; }
+    .hn-n {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--muted);
+      width: 18px;
+      text-align: right;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .hn-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hn-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
 
     .hn-title a {
       color: var(--text);
       text-decoration: none;
-      font-size: 0.88rem;
-      line-height: 1.4;
+      transition: color 0.15s;
     }
-    .hn-title a:hover { color: var(--accent); }
+    .hn-title a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
 
-    .hn-meta { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+    .hn-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .hn-points {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hn-domain {
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 0.68rem;
+    }
+
+    .hn-comments-link {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .hn-comments-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .hn-sep {
+      color: var(--border);
+      font-size: 0.8rem;
+    }
+
+    .hn-ago {
+      color: var(--muted);
+      opacity: 0.85;
+    }
 
     /* ── Daily Record ───────────────────────────────────────────────────── */
     .record-card {

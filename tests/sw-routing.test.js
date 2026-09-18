@@ -80,8 +80,8 @@ test('the app shell is served network-first by pathname, independent of query st
   }
 });
 
-test('weather-verdict.js, todoist.js and clz-radar.js are served network-first as app code', async () => {
-  for (const file of ['weather-verdict.js', 'todoist.js', 'clz-radar.js']) {
+test('weather-verdict.js, todoist.js, news-feed.js and clz-radar.js are served network-first as app code', async () => {
+  for (const file of ['weather-verdict.js', 'todoist.js', 'news-feed.js', 'clz-radar.js']) {
     const result = await route(SCOPE + file);
     assert.equal(result.strategy, 'network-first', `${file} carries code and must stay fresh`);
   }
@@ -95,6 +95,9 @@ test('static assets stay cache-first', async () => {
 });
 
 test('other APIs remain network-first', async () => {
-  const result = await route('https://api.open-meteo.com/v1/forecast?x=1', 'cors');
-  assert.equal(result.strategy, 'network-first');
+  const meteo = await route('https://api.open-meteo.com/v1/forecast?x=1', 'cors');
+  assert.equal(meteo.strategy, 'network-first');
+
+  const algolia = await route('https://hn.algolia.com/api/v1/search_by_date?tags=story', 'cors');
+  assert.equal(algolia.strategy, 'network-first');
 });
