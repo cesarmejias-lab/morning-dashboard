@@ -904,7 +904,7 @@ function renderDiscogsSetup() {
 }
 
 // ── Todoist ───────────────────────────────────────────────────────────────────
-const TODOIST_API = 'https://api.todoist.com/api/v1/tasks';
+const TODOIST_API = 'https://api.todoist.com/api/v1/tasks?filter=today';
 const TODOIST_PROJECTS_API = 'https://api.todoist.com/api/v1/projects';
 const TODOIST_TOKEN_HELP = 'https://app.todoist.com/app/settings/integrations/developer';
 
@@ -946,8 +946,8 @@ function renderTodoistSetup(message = '') {
     <div class="card-title">Tareas &mdash; Falta configurar</div>
     <div class="todoist-setup">
       <div class="todoist-setup-text">
-        Pega un token de la API de Todoist para ver las tareas de hoy y las
-        vencidas. Se guarda solo en este navegador y se usa solo para leer.
+        Pega un token de la API de Todoist para ver las tareas de hoy.
+        Se guarda solo en este navegador y se usa solo para leer.
       </div>
       ${note}
       <div class="todoist-token-row">
@@ -962,26 +962,41 @@ function renderTodoistSetup(message = '') {
 
 // Read-only. Never issues POST, PUT or DELETE.
 async function fetchTodoistTasks(token) {
-  const response = await fetch(TODOIST_API, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  let allResults = [];
+  let cursor = null;
+  const maxPages = 5;
 
-  if (response.status === 401) throw new Error('TOKEN_INVALID');
-  if (response.status === 403) throw new Error('TOKEN_FORBIDDEN');
-  if (response.status === 429) throw new Error('RATE_LIMITED');
-  if (!response.ok) throw new Error(`Todoist API error: HTTP ${response.status}`);
+  for (let page = 0; page < maxPages; page++) {
+    const url = new URL(TODOIST_API);
+    if (cursor) {
+      url.searchParams.set('cursor', cursor);
+    }
 
-  const payload = await response.json();
-  // The v1 endpoint may return a bare array or wrap it; accept either. A
-  // wrapped payload with a next_cursor means today's tasks may be on a page
-  // we never fetched — pagination is a follow-up, so fail loudly instead of
-  // silently rendering an incomplete (and possibly falsely empty) list.
-  if (Array.isArray(payload)) return payload;
-  if (payload && Array.isArray(payload.results)) {
-    if (payload.next_cursor) throw new Error('PAGINATED');
-    return payload.results;
+    const response = await fetch(url.toString(), {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    if (response.status === 401) throw new Error('TOKEN_INVALID');
+    if (response.status === 403) throw new Error('TOKEN_FORBIDDEN');
+    if (response.status === 429) throw new Error('RATE_LIMITED');
+    if (!response.ok) throw new Error(`Todoist API error: HTTP ${response.status}`);
+
+    const payload = await response.json();
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+    if (payload && Array.isArray(payload.results)) {
+      allResults = allResults.concat(payload.results);
+      if (!payload.next_cursor) {
+        return allResults;
+      }
+      cursor = payload.next_cursor;
+    } else {
+      throw new Error('UNEXPECTED_SHAPE');
+    }
   }
-  throw new Error('UNEXPECTED_SHAPE');
+
+  return allResults;
 }
 
 // Project names are a label, never a reason to fail: any error yields {}.

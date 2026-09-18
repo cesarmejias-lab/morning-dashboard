@@ -55,6 +55,10 @@ test('Todoist requests bypass the service worker entirely', async () => {
   const result = await route('https://api.todoist.com/api/v1/tasks');
   assert.equal(result.strategy, 'bypass', 'personal task data must not be intercepted');
   assert.deepEqual(result.calls, [], 'and must not touch the cache at all');
+
+  const filtered = await route('https://api.todoist.com/api/v1/tasks?filter=today');
+  assert.equal(filtered.strategy, 'bypass', 'filtered Todoist tasks must also bypass');
+  assert.deepEqual(filtered.calls, [], 'and must not touch the cache at all');
 });
 
 test('the app shell is served network-first on navigation', async () => {
