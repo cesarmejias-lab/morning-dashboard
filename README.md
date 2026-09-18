@@ -1,6 +1,6 @@
 # Morning Dashboard
 
-A static morning dashboard with weather, world clocks, exchange rates, Hacker News, Discogs, and a Daily Collection Radar recommendation from a CLZ Music collection.
+A static morning dashboard with weather, world clocks, Hacker News, Discogs, Todoist tasks, and a Daily Collection Radar recommendation from a CLZ Music collection.
 
 ## Run Locally
 

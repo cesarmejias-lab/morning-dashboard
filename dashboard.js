@@ -70,6 +70,7 @@ const STORAGE = {
   clocks: 'morning_dashboard_clocks',
   weather: 'morning_dashboard_weather',
   clzRadarHistory: 'morning_dashboard_clz_radar_history',
+  todoistToken: 'morning_dashboard_todoist_token',
 };
 
 function byId(id) {
@@ -182,6 +183,8 @@ async function fetchWeather() {
       + `?latitude=${city.lat}&longitude=${city.lon}`
       + `&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,relativehumidity_2m`
       + `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
+      + `,sunrise,sunset,apparent_temperature_max,apparent_temperature_min`
+      + `&hourly=precipitation_probability`
       + `&timezone=${encodeURIComponent(city.tz)}&forecast_days=5`;
     try {
       const r = await fetch(url);
@@ -194,6 +197,29 @@ async function fetchWeather() {
     }
   });
   await Promise.all(promises);
+}
+
+function weatherVerdictHtml(data) {
+  const api = typeof WeatherVerdict === 'undefined' ? null : WeatherVerdict;
+  if (!api) return '';
+
+  // A malformed payload must never stop the current conditions from rendering.
+  let parts;
+  try {
+    parts = api.formatVerdict(api.buildVerdict({ data }));
+  } catch (e) {
+    console.error('Weather verdict failed:', e);
+    return '';
+  }
+
+  const detail = parts.details.length
+    ? `<span class="w-verdict-detail">${escapeHtml(parts.details.join(' · '))}</span>`
+    : '';
+
+  return `<div class="w-verdict">
+    <span class="w-verdict-headline">${escapeHtml(parts.headline)}</span>
+    ${detail}
+  </div>`;
 }
 
 function renderWeather() {
@@ -259,6 +285,7 @@ function renderWeather() {
 
   bodyContainer.innerHTML = `
     <div class="weather-fade-wrapper">
+      ${weatherVerdictHtml(data)}
       <div class="w-current">
         <div class="w-icon">${escapeHtml(icon)}</div>
         <div>
@@ -321,31 +348,6 @@ function renderHN(stories) {
   byId('hn-card').innerHTML = `
     <div class="card-title">Top Hacker News Stories</div>
     <ul class="hn-list">${items}</ul>`;
-}
-
-// ── Exchange rates ────────────────────────────────────────────────────────────
-async function fetchRates() {
-  const r = await fetch('https://api.frankfurter.dev/v1/latest?base=EUR&symbols=USD,GBP,CHF,JPY');
-  if (!r.ok) throw new Error(`Rates API error: HTTP ${r.status}`);
-  return r.json();
-}
-
-function renderRates(data) {
-  const FLAGS   = { USD: '🇺🇸', GBP: '🇬🇧', CHF: '🇨🇭', JPY: '🇯🇵' };
-  const TARGETS = ['USD', 'GBP', 'CHF', 'JPY'];
-
-  const items = TARGETS.map(cur => {
-    const val = Number(data.rates[cur]);
-    const fmt = cur === 'JPY' ? val.toFixed(2) : val.toFixed(4);
-    return `<div class="rate-item">
-      <div class="rate-pair">${FLAGS[cur]} EUR / ${cur}</div>
-      <div class="rate-value">${fmt}</div>
-    </div>`;
-  }).join('');
-
-  byId('rates-card').innerHTML = `
-    <div class="card-title">Exchange Rates &mdash; EUR Base &middot; ${escapeHtml(data.date)}</div>
-    <div class="rates-grid">${items}</div>`;
 }
 
 // ── World clocks ─────────────────────────────────────────────────────────────
@@ -901,6 +903,184 @@ function renderDiscogsSetup() {
     </div>`;
 }
 
+// ── Todoist ───────────────────────────────────────────────────────────────────
+const TODOIST_API = 'https://api.todoist.com/api/v1/tasks';
+const TODOIST_PROJECTS_API = 'https://api.todoist.com/api/v1/projects';
+const TODOIST_TOKEN_HELP = 'https://app.todoist.com/app/settings/integrations/developer';
+
+function readTodoistToken() {
+  try {
+    return (localStorage.getItem(STORAGE.todoistToken) || '').trim();
+  } catch (e) {
+    console.error('Todoist token unreadable:', e);
+    return '';
+  }
+}
+
+// The token is written once and never rendered back into the page.
+function saveTodoistToken() {
+  const input = byId('todoist-token-input');
+  if (!input) return;
+  const token = input.value.trim();
+  if (!token) {
+    renderTodoistSetup('Pega un token primero.');
+    return;
+  }
+  try {
+    localStorage.setItem(STORAGE.todoistToken, token);
+  } catch (e) {
+    console.error('Todoist token not persisted:', e);
+    renderTodoistSetup('No se pudo guardar el token en este navegador.');
+    return;
+  }
+  input.value = '';
+  loadTodoistTasks();
+}
+
+function renderTodoistSetup(message = '') {
+  const note = message
+    ? `<div class="err">${escapeHtml(message)}</div>`
+    : '';
+
+  byId('todoist-card').innerHTML = `
+    <div class="card-title">Tareas &mdash; Falta configurar</div>
+    <div class="todoist-setup">
+      <div class="todoist-setup-text">
+        Pega un token de la API de Todoist para ver las tareas de hoy y las
+        vencidas. Se guarda solo en este navegador y se usa solo para leer.
+      </div>
+      ${note}
+      <div class="todoist-token-row">
+        <input type="password" id="todoist-token-input" class="todoist-token-input"
+               placeholder="Token de la API de Todoist" autocomplete="off" spellcheck="false"
+               aria-label="Token de la API de Todoist">
+        <button type="button" class="record-link" data-action="save-todoist">Guardar</button>
+      </div>
+      <a class="record-link secondary" href="${TODOIST_TOKEN_HELP}" target="_blank" rel="noopener">Consigue un token &#8599;</a>
+    </div>`;
+}
+
+// Read-only. Never issues POST, PUT or DELETE.
+async function fetchTodoistTasks(token) {
+  const response = await fetch(TODOIST_API, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (response.status === 401) throw new Error('TOKEN_INVALID');
+  if (response.status === 403) throw new Error('TOKEN_FORBIDDEN');
+  if (response.status === 429) throw new Error('RATE_LIMITED');
+  if (!response.ok) throw new Error(`Todoist API error: HTTP ${response.status}`);
+
+  const payload = await response.json();
+  // The v1 endpoint may return a bare array or wrap it; accept either. A
+  // wrapped payload with a next_cursor means today's tasks may be on a page
+  // we never fetched — pagination is a follow-up, so fail loudly instead of
+  // silently rendering an incomplete (and possibly falsely empty) list.
+  if (Array.isArray(payload)) return payload;
+  if (payload && Array.isArray(payload.results)) {
+    if (payload.next_cursor) throw new Error('PAGINATED');
+    return payload.results;
+  }
+  throw new Error('UNEXPECTED_SHAPE');
+}
+
+// Project names are a label, never a reason to fail: any error yields {}.
+async function fetchTodoistProjectNames(token) {
+  try {
+    const response = await fetch(TODOIST_PROJECTS_API, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!response.ok) return {};
+    return TodoistTasks.buildProjectNames(await response.json());
+  } catch (e) {
+    console.error('Todoist project names unavailable:', e);
+    return {};
+  }
+}
+
+function localTodayISO(now = new Date()) {
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function todoistTaskHtml(task, overdue, projectNames) {
+  const urgent = task.priority >= 3 ? ' urgent' : '';
+  const meta = [];
+
+  const project = task.projectId ? projectNames[task.projectId] : null;
+  if (project) meta.push(project);
+
+  if (overdue) meta.push(`vencía ${task.date}`);
+  else if (task.time) meta.push(task.time);
+
+  const link = task.url
+    ? `<a class="todoist-content" href="${safeUrl(task.url)}" target="_blank" rel="noopener">${escapeHtml(task.content)}</a>`
+    : `<span class="todoist-content">${escapeHtml(task.content)}</span>`;
+
+  return `<li class="todoist-task${urgent}">
+    ${link}
+    ${meta.length ? `<span class="todoist-meta">${escapeHtml(meta.join(' · '))}</span>` : ''}
+  </li>`;
+}
+
+function renderTodoistCard(groups, projectNames = {}) {
+  const total = groups.overdue.length + groups.dueToday.length;
+
+  if (!total) {
+    byId('todoist-card').innerHTML = `
+      <div class="card-title">Tareas</div>
+      <div class="todoist-empty">Nada pendiente para hoy.</div>`;
+    return;
+  }
+
+  // Spec wording: "Tareas — 2 atrasadas · 5 para hoy". Singular when there is one.
+  const summary = [];
+  if (groups.overdue.length) {
+    summary.push(`${groups.overdue.length} ${groups.overdue.length === 1 ? 'atrasada' : 'atrasadas'}`);
+  }
+  if (groups.dueToday.length) summary.push(`${groups.dueToday.length} para hoy`);
+
+  const items = groups.overdue.map(t => todoistTaskHtml(t, true, projectNames))
+    .concat(groups.dueToday.map(t => todoistTaskHtml(t, false, projectNames)))
+    .join('');
+
+  byId('todoist-card').innerHTML = `
+    <div class="card-title">Tareas &mdash; ${escapeHtml(summary.join(' · '))}</div>
+    <ul class="todoist-list">${items}</ul>`;
+}
+
+async function loadTodoistTasks() {
+  const token = readTodoistToken();
+  if (!token) { renderTodoistSetup(); return; }
+
+  const MESSAGES = {
+    TOKEN_INVALID: 'Todoist ha rechazado el token. Puede estar revocado — pega uno nuevo.',
+    TOKEN_FORBIDDEN: 'Ese token no tiene permiso para leer tareas.',
+    RATE_LIMITED: 'Todoist está limitando las peticiones. Prueba de nuevo en unos minutos.',
+    UNEXPECTED_SHAPE: 'Todoist ha devuelto una respuesta que este dashboard no reconoce.',
+    PAGINATED: 'Todoist ha devuelto más tareas de las que este dashboard sabe leer.',
+  };
+
+  try {
+    // Tasks decide success; names only decorate, so a failed lookup yields {}.
+    const [raw, projectNames] = await Promise.all([
+      fetchTodoistTasks(token),
+      fetchTodoistProjectNames(token),
+    ]);
+    renderTodoistCard(TodoistTasks.partitionTasks(raw, localTodayISO()), projectNames);
+  } catch (e) {
+    console.error('Todoist load failed:', e);
+    if (e.message === 'TOKEN_INVALID' || e.message === 'TOKEN_FORBIDDEN') {
+      // Keep the stored token: the user decides whether to replace it.
+      renderTodoistSetup(MESSAGES[e.message]);
+      return;
+    }
+    setCardMessage('todoist-card', 'Tareas', MESSAGES[e.message] || 'No se pudieron cargar las tareas.');
+  }
+}
+
 // ── Main refresh ──────────────────────────────────────────────────────────────
 async function refresh() {
   byId('last-updated').textContent = 'Refreshing...';
@@ -908,7 +1088,6 @@ async function refresh() {
 
   renderWeatherSkeleton();
   renderHNSkeleton();
-  renderRatesSkeleton();
   renderRecordSkeleton('clz-card', 'Daily Collection Radar');
   renderRecordSkeleton('discogs-card', 'Discogs Daily Record');
 
@@ -920,9 +1099,6 @@ async function refresh() {
     }),
     fetchHN().then(renderHN).catch(() => {
       setCardMessage('hn-card', 'Hacker News', 'Failed to load stories.');
-    }),
-    fetchRates().then(renderRates).catch(() => {
-      setCardMessage('rates-card', 'Exchange Rates', 'Failed to load rates.');
     }),
     fetchCLZRecord({ cacheBust: true }).then(renderCLZRecord).catch(e => {
       if (e.message === 'NOT_CONFIGURED') { renderCLZSetup(); return; }
@@ -943,6 +1119,10 @@ async function refresh() {
          <div class="record-actions">
            <a class="record-link" href="https://www.discogs.com" target="_blank" rel="noopener">Discogs &#8599;</a>
          </div>`;
+    }),
+    loadTodoistTasks().catch(e => {
+      console.error('Todoist load failed:', e);
+      setCardMessage('todoist-card', 'Tareas', 'No se pudieron cargar las tareas.');
     }),
   ]);
 
@@ -971,6 +1151,7 @@ function bindEvents() {
     if (action === 'roll-discogs') rollDiscogsAlbum();
     if (action === 'refresh-clz') refreshCLZCollection();
     if (action === 'reload') location.reload();
+    if (action === 'save-todoist') saveTodoistToken();
   });
 
   document.addEventListener('input', event => {
@@ -1064,21 +1245,6 @@ function renderWeatherSkeleton() {
           </div>
         `).join('')}
       </div>
-    </div>`;
-}
-
-function renderRatesSkeleton() {
-  const body = byId('rates-card');
-  if (!body) return;
-  body.innerHTML = `
-    <div class="card-title">Exchange Rates &mdash; EUR Base</div>
-    <div class="rates-grid">
-      ${Array(4).fill(0).map(() => `
-        <div class="rate-item" style="border: 1px solid var(--border); background: transparent;">
-          <div class="skeleton" style="width: 50px; height: 10px; margin-bottom: 8px; border-radius: 2px;"></div>
-          <div class="skeleton" style="width: 80px; height: 24px; border-radius: 4px;"></div>
-        </div>
-      `).join('')}
     </div>`;
 }
 
