@@ -16,14 +16,21 @@ function raw(overrides = {}) {
 }
 
 test('normalizeTask projects the fields the card needs', () => {
-  const task = normalizeTask(raw({ due: { date: TODAY, datetime: `${TODAY}T09:30:00` } }));
+  const task = normalizeTask(raw({ due: { date: TODAY, datetime: `${TODAY}T09:30:00`, is_recurring: true } }));
   assert.equal(task.id, '7001');
   assert.equal(task.content, 'Review the framework contract');
   assert.equal(task.date, TODAY);
   assert.equal(task.time, '09:30');
+  assert.equal(task.isRecurring, true);
   assert.equal(task.priority, 1);
   assert.equal(task.projectId, '220');
   assert.equal(task.url, 'https://app.todoist.com/app/task/7001');
+});
+
+test('normalizeTask handles ISO strings in due.date or due.datetime', () => {
+  const task = normalizeTask(raw({ due: { date: `${TODAY}T14:15:00` } }));
+  assert.equal(task.date, TODAY);
+  assert.equal(task.time, '14:15');
 });
 
 test('normalizeTask coerces a numeric id to a string', () => {

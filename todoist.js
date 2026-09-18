@@ -15,6 +15,43 @@
     return typeof value === 'string' ? value.trim() : '';
   }
 
+  function extractDue(due) {
+    if (!due || typeof due !== 'object') return { date: null, time: null, isRecurring: false };
+    const rawDate = typeof due.date === 'string' ? due.date : '';
+    const rawDatetime = typeof due.datetime === 'string' ? due.datetime : '';
+    const isRecurring = Boolean(due.is_recurring);
+
+    const timeSource = rawDatetime || (rawDate.includes('T') ? rawDate : '');
+    if (timeSource) {
+      if (timeSource.endsWith('Z') || /[+-]\d{2}:\d{2}$/.test(timeSource)) {
+        const d = new Date(timeSource);
+        if (!isNaN(d.getTime())) {
+          const year = d.getFullYear();
+          const month = String(d.getMonth() + 1).padStart(2, '0');
+          const day = String(d.getDate()).padStart(2, '0');
+          const hours = String(d.getHours()).padStart(2, '0');
+          const minutes = String(d.getMinutes()).padStart(2, '0');
+          return {
+            date: `${year}-${month}-${day}`,
+            time: `${hours}:${minutes}`,
+            isRecurring,
+          };
+        }
+      }
+      return {
+        date: timeSource.slice(0, 10),
+        time: timeSource.length >= 16 ? timeSource.slice(11, 16) : null,
+        isRecurring,
+      };
+    }
+
+    return {
+      date: rawDate.slice(0, 10) || null,
+      time: null,
+      isRecurring,
+    };
+  }
+
   function normalizeTask(raw) {
     if (!raw || typeof raw !== 'object') return null;
 
@@ -22,18 +59,17 @@
     const content = text(raw.content);
     if (!id || !content) return null;
 
-    const due = raw.due && typeof raw.due === 'object' ? raw.due : null;
-    const date = due && typeof due.date === 'string' ? due.date.slice(0, 10) : null;
+    const { date, time, isRecurring } = extractDue(raw.due);
     if (!date) return null;
 
-    const datetime = due && typeof due.datetime === 'string' ? due.datetime : null;
     const priority = Number(raw.priority);
 
     return {
       id,
       content,
       date,
-      time: datetime && datetime.length >= 16 ? datetime.slice(11, 16) : null,
+      time,
+      isRecurring,
       priority: Number.isFinite(priority) ? priority : DEFAULT_PRIORITY,
       projectId: raw.project_id == null ? null : String(raw.project_id),
       url: typeof raw.url === 'string' ? raw.url : null,
@@ -48,7 +84,8 @@
       const aTime = a.time || NO_TIME;
       const bTime = b.time || NO_TIME;
       if (aTime !== bTime) return aTime < bTime ? -1 : 1;
-      return b.priority - a.priority;
+      if (b.priority !== a.priority) return b.priority - a.priority;
+      return a.content.localeCompare(b.content);
     });
   }
 

@@ -904,7 +904,7 @@ function renderDiscogsSetup() {
 }
 
 // ── Todoist ───────────────────────────────────────────────────────────────────
-const TODOIST_API = 'https://api.todoist.com/api/v1/tasks?filter=today';
+const TODOIST_API = 'https://api.todoist.com/api/v1/tasks';
 const TODOIST_PROJECTS_API = 'https://api.todoist.com/api/v1/projects';
 const TODOIST_TOKEN_HELP = 'https://app.todoist.com/app/settings/integrations/developer';
 
@@ -964,7 +964,7 @@ function renderTodoistSetup(message = '') {
 async function fetchTodoistTasks(token) {
   let allResults = [];
   let cursor = null;
-  const maxPages = 5;
+  const maxPages = 30;
 
   for (let page = 0; page < maxPages; page++) {
     const url = new URL(TODOIST_API);
@@ -1020,50 +1020,68 @@ function localTodayISO(now = new Date()) {
   return `${year}-${month}-${day}`;
 }
 
-function todoistTaskHtml(task, overdue, projectNames) {
-  const urgent = task.priority >= 3 ? ' urgent' : '';
-  const meta = [];
-
+function todoistTaskHtml(task, projectNames = {}) {
   const project = task.projectId ? projectNames[task.projectId] : null;
-  if (project) meta.push(project);
+  const projectHtml = project
+    ? `<span class="todoist-project-tag">${escapeHtml(project)} #</span>`
+    : '';
 
-  if (overdue) meta.push(`vencía ${task.date}`);
-  else if (task.time) meta.push(task.time);
+  const timeHtml = task.time
+    ? `<span class="todoist-time-pill">&#128197; ${escapeHtml(task.time)}</span>`
+    : '';
 
-  const link = task.url
-    ? `<a class="todoist-content" href="${safeUrl(task.url)}" target="_blank" rel="noopener">${escapeHtml(task.content)}</a>`
-    : `<span class="todoist-content">${escapeHtml(task.content)}</span>`;
+  const recurringHtml = task.isRecurring
+    ? `<span class="todoist-recurring" title="Periódica">&#128257;</span>`
+    : '';
 
-  return `<li class="todoist-task${urgent}">
-    ${link}
-    ${meta.length ? `<span class="todoist-meta">${escapeHtml(meta.join(' · '))}</span>` : ''}
+  const subMeta = (timeHtml || recurringHtml)
+    ? `<span class="todoist-task-sub">${timeHtml}${recurringHtml}</span>`
+    : '';
+
+  const titleLink = task.url
+    ? `<a class="todoist-title" href="${safeUrl(task.url)}" target="_blank" rel="noopener">${escapeHtml(task.content)}</a>`
+    : `<span class="todoist-title">${escapeHtml(task.content)}</span>`;
+
+  return `<li class="todoist-task-row">
+    <div class="todoist-task-left">
+      <span class="todoist-circle priority-p${task.priority}" aria-hidden="true"></span>
+      <div class="todoist-task-details">
+        ${titleLink}
+        ${subMeta}
+      </div>
+    </div>
+    <div class="todoist-task-right">
+      ${projectHtml}
+    </div>
   </li>`;
 }
 
 function renderTodoistCard(groups, projectNames = {}) {
-  const total = groups.overdue.length + groups.dueToday.length;
+  const tasks = groups.dueToday || [];
 
-  if (!total) {
+  if (!tasks.length) {
     byId('todoist-card').innerHTML = `
-      <div class="card-title">Tareas</div>
-      <div class="todoist-empty">Nada pendiente para hoy.</div>`;
+      <div class="card-header">
+        <span class="card-title tight">Tareas de hoy</span>
+        <a class="todoist-app-link" href="https://app.todoist.com/app/today" target="_blank" rel="noopener">Todoist &#8599;</a>
+      </div>
+      <div class="todoist-empty">&#127881; Nada pendiente para hoy.</div>`;
     return;
   }
 
-  // Spec wording: "Tareas — 2 atrasadas · 5 para hoy". Singular when there is one.
-  const summary = [];
-  if (groups.overdue.length) {
-    summary.push(`${groups.overdue.length} ${groups.overdue.length === 1 ? 'atrasada' : 'atrasadas'}`);
-  }
-  if (groups.dueToday.length) summary.push(`${groups.dueToday.length} para hoy`);
-
-  const items = groups.overdue.map(t => todoistTaskHtml(t, true, projectNames))
-    .concat(groups.dueToday.map(t => todoistTaskHtml(t, false, projectNames)))
-    .join('');
+  const items = tasks.map(t => todoistTaskHtml(t, projectNames)).join('');
 
   byId('todoist-card').innerHTML = `
-    <div class="card-title">Tareas &mdash; ${escapeHtml(summary.join(' · '))}</div>
-    <ul class="todoist-list">${items}</ul>`;
+    <div class="card-header">
+      <div class="section-title-row">
+        <span class="card-title tight">Tareas de hoy</span>
+        <span class="todoist-badge">${tasks.length}</span>
+      </div>
+      <a class="todoist-app-link" href="https://app.todoist.com/app/today" target="_blank" rel="noopener">Todoist &#8599;</a>
+    </div>
+    <div class="todoist-list-container">
+      <ul class="todoist-list">${items}</ul>
+    </div>`;
 }
 
 async function loadTodoistTasks() {

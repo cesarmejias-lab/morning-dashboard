@@ -1,4 +1,4 @@
-const CACHE_NAME = 'morning-dashboard-v7';
+const CACHE_NAME = 'morning-dashboard-v8';
 
 // App shell files carry the code, so they are served network-first: a deploy
 // reaches clients on their next load instead of the one after it. Everything
