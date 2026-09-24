@@ -1,8 +1,633 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-09-08T08:29:38.342Z",
-  "total": 5192,
+  "syncedAt": "2026-09-24T15:26:41.129Z",
+  "total": 5217,
   "albums": [
+    {
+      "id": "12046226",
+      "title": "Misplaced Childhood",
+      "artist": "Marillion",
+      "year": "1985",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2c/2c_4134579_0_MarillionMisplacedChildhood.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12046225",
+      "title": "The Singer In My Band",
+      "artist": "This Is Lorelei",
+      "year": "2026",
+      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12046224",
+      "title": "Boots On The Ground",
+      "artist": "Massive Attack; Tom Waits",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/68/68_38235657_0_BootsOnTheGround.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12040178",
+      "title": "I Must Be Dreaming",
+      "artist": "Alabama Shakes",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d9/d9_38276712_0_IMustBeDreaming.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12040177",
+      "title": "Jenius",
+      "artist": "Paul Heaton",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f2/f2_38221881_0_Jenius.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12039971",
+      "title": "Music From The Film Jawbone",
+      "artist": "Paul Weller",
+      "year": "2017",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b0/b0_9976372_0_MusicFromTheFilmJawbone.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12039970",
+      "title": "I Was The King, I Really Was The King",
+      "artist": "Animals That Swim",
+      "year": "1996",
+      "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/a8/a8_2401250_0_AnimalsThatSwimIWasTheKingIRea.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12037935",
+      "title": "Circus Days Volume One (UK Pop-Sike Obscurities 1966-1970)",
+      "artist": "Various",
+      "year": "1990",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/5a/5a_3650365_0_CircusDaysVolumeOneUKPopSikeOb.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12037934",
+      "title": "Shot Of Love",
+      "artist": "Bob Dylan",
+      "year": "1981",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c9/c9_8831261_0_ShotOfLove.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12037933",
+      "title": "Neon Pink",
+      "artist": "Sunlit",
+      "year": "2026",
+      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12037932",
+      "title": "Past Lives",
+      "artist": "Rush Week",
+      "year": "2020",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/35/35_15447162_0_PastLives.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12037137",
+      "title": "Music, Fashion, Film",
+      "artist": "Charli XCX",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f2/f2_37963734_0_MusicFashionFilm.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12037136",
+      "title": "The New World",
+      "artist": "Shearwater",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4e/4e_38033307_0_TheNewWorld.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12032617",
+      "title": "La La Land (Original Motion Picture Soundtrack)",
+      "artist": "Justin Hurwitz",
+      "year": "2017",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a8/a8_9713132_0_LaLaLandOriginalMotionPictureS.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12032248",
+      "title": "Rock Steady - Ska & Rock Steady From Treasure Isle Vol. 1",
+      "artist": "Various",
+      "year": "2024",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0e/0e_31429802_0_RockSteadySkaRockSteadyFromTre.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12030356",
+      "title": "So",
+      "artist": "Peter Gabriel",
+      "year": "1986",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f3/f3_2394229_0_PeterGabrielSo.jpeg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12030181",
+      "title": "Garlands",
+      "artist": "Cocteau Twins",
+      "year": "2020",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a3/a3_14941000_0_Garlands.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12013808",
+      "title": "Punching The Clown",
+      "artist": "Lambchop",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/51/51_38261688_0_PunchingTheClown.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004831",
+      "title": "Midnight Cruisin'",
+      "artist": "Kingo Hamada; Kingo Hamada",
+      "year": "2021",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/16/16_20060035_0_MidnightCruisin.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004830",
+      "title": "Emergency On Planet Earth",
+      "artist": "Jamiroquai",
+      "year": "2022",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/22/22_24817685_0_EmergencyOnPlanetEarth.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004829",
+      "title": "Love",
+      "artist": "Dexys Midnight Runners",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/3f/3f_38338737_0_Love.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004828",
+      "title": "Sanctuary Park",
+      "artist": "The Jayhawks",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f3/f3_38300568_0_SanctuaryPark.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004827",
+      "title": "Mia Wilson",
+      "artist": "Mia Wilson",
+      "year": "2025",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/86/86_36162046_0_MiaWilson.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004826",
+      "title": "Un Dígito Binario Dudoso. Recital Para Alan Turing",
+      "artist": "Hidrogenesse",
+      "year": "2022",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b1/b1_24745931_0_UnDgitoBinarioDudosoRecitalPar.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12004825",
+      "title": "Waysides",
+      "artist": "Bedouine",
+      "year": "2022",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2b/2b_23449916_0_Waysides.jpg",
+      "genres": [],
+      "styles": [],
+      "moods": [],
+      "format": null,
+      "edition": null,
+      "addedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
+      "metadataQuality": {
+        "level": "basic",
+        "missing": [
+          "genres",
+          "styles",
+          "moods",
+          "format",
+          "edition",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "12002149",
       "title": "El Chico Más Pálido De La Playa Del Gros",
@@ -19515,7 +20140,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19540,7 +20165,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19565,7 +20190,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19590,7 +20215,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19615,7 +20240,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19640,7 +20265,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19665,7 +20290,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19690,7 +20315,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19715,7 +20340,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19740,7 +20365,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19765,7 +20390,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19790,7 +20415,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19815,7 +20440,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19840,7 +20465,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19865,7 +20490,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19890,7 +20515,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19915,7 +20540,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19940,7 +20565,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19965,7 +20590,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19990,7 +20615,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20015,7 +20640,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20040,7 +20665,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20065,7 +20690,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20090,7 +20715,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20115,7 +20740,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20140,7 +20765,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20165,7 +20790,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20190,7 +20815,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20215,7 +20840,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20240,7 +20865,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20265,7 +20890,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20290,7 +20915,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20315,7 +20940,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20340,7 +20965,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -20365,7 +20990,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-24T15:25:54.415Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80158,7 +80783,7 @@
       "title": "Lonerism",
       "artist": "Tame Impala",
       "year": "2012",
-      "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/58/58_3788463_0_Lonerism.jpg",
+      "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/d5/d5_3788463_0_Lonerism.jpg",
       "genres": [],
       "styles": [],
       "moods": [],
@@ -86958,7 +87583,7 @@
       "title": "The Ultimate Collection",
       "artist": "Sade",
       "year": "2011",
-      "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/7a/7a_3655843_0_TheUltimateCollectiondisc1.jpg",
+      "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/a1/a1_3655843_0_TheUltimateCollectiondisc1.jpg",
       "genres": [],
       "styles": [],
       "moods": [],
@@ -129811,11 +130436,11 @@
     "decades": [
       {
         "name": "2010s",
-        "count": 1330
+        "count": 1332
       },
       {
         "name": "2020s",
-        "count": 1170
+        "count": 1188
       },
       {
         "name": "2000s",
@@ -129823,11 +130448,11 @@
       },
       {
         "name": "1990s",
-        "count": 641
+        "count": 643
       },
       {
         "name": "1980s",
-        "count": 552
+        "count": 555
       },
       {
         "name": "1970s",
@@ -129851,7 +130476,7 @@
       }
     ],
     "metadataQuality": {
-      "basic": 5192,
+      "basic": 5217,
       "partial": 0,
       "enriched": 0
     }

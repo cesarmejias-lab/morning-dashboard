@@ -11,15 +11,23 @@ const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
 };
 
 const STATIC_FILES = new Set([
   'index.html',
   'morning-dashboard.html',
   'clz-radar.js',
+  'weather-verdict.js',
+  'todoist.js',
+  'news-feed.js',
   'dashboard.js',
   'styles.css',
   'music-collection.json',
+  'manifest.json',
+  'sw.js',
+  'icon-192.png',
+  'icon-512.png',
 ]);
 
 function withCors(headers = {}) {
