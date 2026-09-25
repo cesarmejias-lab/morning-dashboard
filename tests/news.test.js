@@ -7,6 +7,8 @@ const {
   timeAgo,
   normalizeAlgoliaHit,
   normalizeFirebaseStory,
+  normalizeDevToArticle,
+  mergeAndDeduplicate,
 } = require('../news-feed');
 
 test('CATEGORIES defines top tech, AI, cybersecurity, and dev & open source', () => {
@@ -101,3 +103,49 @@ test('normalizeFirebaseStory rejects invalid items', () => {
   assert.equal(normalizeFirebaseStory(null), null);
   assert.equal(normalizeFirebaseStory({ id: 123, title: '   ' }), null);
 });
+
+test('normalizeDevToArticle normalizes Dev.to article objects', () => {
+  const article = {
+    id: 12345,
+    title: 'Building Modern Web Apps with Web Workers',
+    url: 'https://dev.to/user/building-modern-apps-12345',
+    public_reactions_count: 85,
+    comments_count: 14,
+    published_timestamp: '2026-09-20T10:00:00Z',
+  };
+
+  const normalized = normalizeDevToArticle(article);
+  assert.equal(normalized.id, 'devto-12345');
+  assert.equal(normalized.title, 'Building Modern Web Apps with Web Workers');
+  assert.equal(normalized.url, 'https://dev.to/user/building-modern-apps-12345');
+  assert.equal(normalized.source, 'devto');
+  assert.equal(normalized.sourceLabel, 'Dev.to');
+  assert.equal(normalized.domain, 'dev.to');
+  assert.equal(normalized.points, 85);
+  assert.equal(normalized.comments, 14);
+  assert.equal(normalized.time, 1789898400);
+});
+
+test('normalizeDevToArticle rejects invalid items', () => {
+  assert.equal(normalizeDevToArticle(null), null);
+  assert.equal(normalizeDevToArticle({ id: 123 }), null);
+  assert.equal(normalizeDevToArticle({ id: 123, title: 'hi' }), null);
+});
+
+test('mergeAndDeduplicate removes duplicate URLs and sorts newest first', () => {
+  const listA = [
+    { id: '1', title: 'OpenAI announces new features', url: 'https://tech.com/story1', time: 100 },
+    { id: '2', title: 'Rust 2026 released', url: 'https://rust-lang.org/news', time: 300 },
+  ];
+  const listB = [
+    { id: '3', title: 'Rust 2026 released', url: 'https://rust-lang.org/news/', time: 300 }, // dup
+    { id: '4', title: 'Latest Linux Kernel', url: 'https://kernel.org', time: 200 },
+  ];
+
+  const merged = mergeAndDeduplicate(listA, listB);
+  assert.equal(merged.length, 3);
+  assert.equal(merged[0].id, '2'); // newest (300)
+  assert.equal(merged[1].id, '4'); // 200
+  assert.equal(merged[2].id, '1'); // 100
+});
+

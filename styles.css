@@ -589,6 +589,75 @@
       opacity: 0.85;
     }
 
+    .hn-source {
+      font-size: 0.64rem;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .hn-source.source-hn {
+      background: rgba(255, 102, 0, 0.12);
+      color: #ff742b;
+      border: 1px solid rgba(255, 102, 0, 0.35);
+    }
+
+    .hn-source.source-devto {
+      background: rgba(168, 85, 247, 0.14);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+    }
+
+    .news-count-badge {
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 10px;
+    }
+
+    .news-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 0 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 8px;
+    }
+
+    .news-more-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+      font-family: inherit;
+    }
+
+    .news-more-btn:hover {
+      background: var(--border);
+      border-color: var(--accent);
+    }
+
+    .news-more-btn:active {
+      transform: scale(0.98);
+    }
+
+    .news-count-all {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
     /* ── Daily Record ───────────────────────────────────────────────────── */
     .record-card {
       position: relative;

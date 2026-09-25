@@ -49,6 +49,8 @@
       title,
       url,
       hnUrl,
+      source: 'hn',
+      sourceLabel: 'Hacker News',
       domain: getDomain(url),
       points,
       comments,
@@ -73,11 +75,70 @@
       title,
       url,
       hnUrl,
+      source: 'hn',
+      sourceLabel: 'Hacker News',
       domain: getDomain(url),
       points,
       comments,
       time,
     };
+  }
+
+  function normalizeDevToArticle(item) {
+    if (!item || typeof item !== 'object') return null;
+    const id = item.id != null ? String(item.id) : '';
+    const title = typeof item.title === 'string' ? item.title.trim() : '';
+    const url = typeof item.url === 'string' ? item.url.trim() : '';
+    if (!id || !title || !url) return null;
+
+    const points = Number.isFinite(item.public_reactions_count)
+      ? item.public_reactions_count
+      : (Number.isFinite(item.positive_reactions_count) ? item.positive_reactions_count : 0);
+    const comments = Number.isFinite(item.comments_count) ? item.comments_count : 0;
+    const time = item.published_timestamp
+      ? Math.floor(new Date(item.published_timestamp).getTime() / 1000)
+      : (item.published_at ? Math.floor(new Date(item.published_at).getTime() / 1000) : Math.floor(Date.now() / 1000));
+
+    return {
+      id: `devto-${id}`,
+      title,
+      url,
+      hnUrl: url,
+      source: 'devto',
+      sourceLabel: 'Dev.to',
+      domain: getDomain(url),
+      points,
+      comments,
+      time,
+    };
+  }
+
+  function mergeAndDeduplicate(...lists) {
+    const seenUrls = new Set();
+    const seenTitles = new Set();
+    const result = [];
+
+    function cleanTitle(t) {
+      return (t || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+
+    for (const list of lists) {
+      if (!Array.isArray(list)) continue;
+      for (const item of list) {
+        if (!item || !item.title) continue;
+        const normalizedUrl = (item.url || '').toLowerCase().replace(/\/+$/, '');
+        const titleKey = cleanTitle(item.title);
+
+        if (normalizedUrl && seenUrls.has(normalizedUrl)) continue;
+        if (titleKey && titleKey.length > 10 && seenTitles.has(titleKey)) continue;
+
+        if (normalizedUrl) seenUrls.add(normalizedUrl);
+        if (titleKey) seenTitles.add(titleKey);
+        result.push(item);
+      }
+    }
+
+    return result.sort((a, b) => (b.time || 0) - (a.time || 0));
   }
 
   function getCategory(categoryId) {
@@ -91,5 +152,7 @@
     timeAgo,
     normalizeAlgoliaHit,
     normalizeFirebaseStory,
+    normalizeDevToArticle,
+    mergeAndDeduplicate,
   };
 }));

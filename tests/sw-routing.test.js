@@ -100,4 +100,7 @@ test('other APIs remain network-first', async () => {
 
   const algolia = await route('https://hn.algolia.com/api/v1/search_by_date?tags=story', 'cors');
   assert.equal(algolia.strategy, 'network-first');
+
+  const devto = await route('https://dev.to/api/articles?tag=ai', 'cors');
+  assert.equal(devto.strategy, 'network-first');
 });

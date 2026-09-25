@@ -318,45 +318,76 @@ function switchWeatherTab(cityName) {
 let activeNewsCategory = localStorage.getItem(STORAGE.newsCategory) || 'general';
 let newsDataCache = {};
 
+let newsDisplayLimit = 20;
+
 function getNewsApi() {
   return typeof NewsFeed !== 'undefined' ? NewsFeed : null;
+}
+
+function loadMoreNews() {
+  newsDisplayLimit += 15;
+  renderNews();
 }
 
 async function fetchNews(category = activeNewsCategory) {
   const api = getNewsApi();
 
+  let hnUrl = '';
+  let devUrl = '';
+
   if (category === 'ai') {
-    const url = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>=10&query=AI+OR+LLM+OR+GPT+OR+OpenAI+OR+Claude+OR+Anthropic+OR+DeepSeek&hitsPerPage=10';
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Algolia API HTTP ${res.status}`);
-    const data = await res.json();
-    return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+    hnUrl = 'https://hn.algolia.com/api/v1/search?tags=story&query=AI&optionalWords=LLM+GPT+Claude+Anthropic+OpenAI+DeepSeek+Gemini+agent&hitsPerPage=30';
+    devUrl = 'https://dev.to/api/articles?tag=ai&per_page=15';
+  } else if (category === 'security') {
+    hnUrl = 'https://hn.algolia.com/api/v1/search?tags=story&query=security&optionalWords=vulnerability+cybersecurity+malware+cve+ransomware+exploit+phishing&hitsPerPage=30';
+    devUrl = 'https://dev.to/api/articles?tag=security&per_page=15';
+  } else if (category === 'dev') {
+    hnUrl = 'https://hn.algolia.com/api/v1/search?tags=story&query=programming&optionalWords=developer+code+rust+python+linux+opensource+github+architecture&hitsPerPage=30';
+    devUrl = 'https://dev.to/api/articles?tag=programming&per_page=15';
+  } else {
+    // General Top Tech
+    hnUrl = 'https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=30';
+    devUrl = 'https://dev.to/api/articles?top=1&per_page=15';
   }
 
-  if (category === 'security') {
-    const url = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>=10&query=security+OR+cybersecurity+OR+vulnerability+OR+cve+OR+malware+OR+ransomware+OR+exploit&hitsPerPage=10';
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Algolia API HTTP ${res.status}`);
-    const data = await res.json();
-    return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+  const [hnRes, devRes] = await Promise.allSettled([
+    fetch(hnUrl).then(r => {
+      if (!r.ok) throw new Error(`HN API HTTP ${r.status}`);
+      return r.json();
+    }),
+    fetch(devUrl).then(r => {
+      if (!r.ok) throw new Error(`Dev.to API HTTP ${r.status}`);
+      return r.json();
+    })
+  ]);
+
+  let hnStories = [];
+  if (hnRes.status === 'fulfilled' && hnRes.value && Array.isArray(hnRes.value.hits)) {
+    hnStories = hnRes.value.hits.map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+  } else if (category === 'general') {
+    // Fallback for general to Firebase topstories
+    try {
+      const ids = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json').then(r => r.json());
+      const rawStories = await Promise.all(
+        (ids || []).slice(0, 20).map(id =>
+          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(r => r.json()).catch(() => null)
+        )
+      );
+      hnStories = rawStories.map(s => api ? api.normalizeFirebaseStory(s) : s).filter(Boolean);
+    } catch {
+      hnStories = [];
+    }
   }
 
-  if (category === 'dev') {
-    const url = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>=10&query=programming+OR+github+OR+rust+OR+python+OR+linux+OR+"open+source"+OR+developer&hitsPerPage=10';
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Algolia API HTTP ${res.status}`);
-    const data = await res.json();
-    return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+  let devStories = [];
+  if (devRes.status === 'fulfilled' && Array.isArray(devRes.value)) {
+    devStories = devRes.value.map(d => api ? api.normalizeDevToArticle(d) : d).filter(Boolean);
   }
 
-  // Default: General Top Tech
-  const ids = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json').then(r => r.json());
-  const stories = await Promise.all(
-    ids.slice(0, 10).map(id =>
-      fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(r => r.json())
-    )
-  );
-  return stories.map(s => api ? api.normalizeFirebaseStory(s) : s).filter(Boolean);
+  if (api && typeof api.mergeAndDeduplicate === 'function') {
+    return api.mergeAndDeduplicate(hnStories, devStories);
+  }
+  return [...hnStories, ...devStories];
 }
 
 function renderNews() {
@@ -376,12 +407,12 @@ function renderNews() {
     return `<button type="button" class="news-tab-btn ${activeClass}" data-action="switch-news" data-category="${escapeHtml(cat.id)}">${escapeHtml(cat.label)}</button>`;
   }).join('');
 
-  const stories = newsDataCache[activeNewsCategory];
+  const allStories = newsDataCache[activeNewsCategory];
 
   let bodyHtml = '';
-  if (!stories) {
+  if (!allStories) {
     bodyHtml = `<ul class="hn-list">
-      ${Array(6).fill(0).map((_, i) => `
+      ${Array(8).fill(0).map((_, i) => `
         <li class="hn-item">
           <span class="hn-n">${i + 1}</span>
           <div style="flex: 1;">
@@ -391,16 +422,25 @@ function renderNews() {
         </li>
       `).join('')}
     </ul>`;
-  } else if (stories.length === 0) {
-    bodyHtml = '<div class="placeholder">No stories found right now.</div>';
+  } else if (allStories.length === 0) {
+    bodyHtml = '<div class="placeholder">No se encontraron noticias en esta categoría.</div>';
   } else {
-    const items = stories.map((s, i) => {
+    const visibleStories = allStories.slice(0, newsDisplayLimit);
+    const items = visibleStories.map((s, i) => {
       const href = safeUrl(s.url || s.hnUrl);
       const hnCommentsUrl = safeUrl(s.hnUrl || `https://news.ycombinator.com/item?id=${s.id}`);
       const domain = s.domain || (api ? api.getDomain(href) : 'news.ycombinator.com');
       const ago = api ? api.timeAgo(s.time) : '';
       const points = Number(s.points || s.score) || 0;
       const comments = Number(s.comments || s.descendants) || 0;
+      const isDevTo = s.source === 'devto';
+      const sourceBadge = isDevTo
+        ? `<span class="hn-source source-devto" title="Fuente: Dev.to">Dev.to</span>`
+        : `<span class="hn-source source-hn" title="Fuente: Hacker News">HN</span>`;
+      const pointsIcon = isDevTo ? '❤️' : '▲';
+      const commentsLink = isDevTo
+        ? `<a class="hn-comments-link" href="${href}" target="_blank" rel="noopener" title="Comentarios en Dev.to">&#128172; ${comments}</a>`
+        : `<a class="hn-comments-link" href="${hnCommentsUrl}" target="_blank" rel="noopener" title="Comentarios en Hacker News">&#128172; ${comments}</a>`;
 
       return `<li class="hn-item">
         <span class="hn-n">${i + 1}</span>
@@ -409,24 +449,48 @@ function renderNews() {
             <a href="${href}" target="_blank" rel="noopener">${escapeHtml(s.title)}</a>
           </div>
           <div class="hn-meta">
-            <span class="hn-points">&#9650; ${points}</span>
+            ${sourceBadge}
+            <span class="hn-points">${pointsIcon} ${points}</span>
             <span class="hn-sep">&middot;</span>
             <span class="hn-domain">${escapeHtml(domain)}</span>
             <span class="hn-sep">&middot;</span>
-            <a class="hn-comments-link" href="${hnCommentsUrl}" target="_blank" rel="noopener" title="Comments on Hacker News">&#128172; ${comments}</a>
+            ${commentsLink}
             ${ago ? `<span class="hn-sep">&middot;</span><span class="hn-ago">${escapeHtml(ago)}</span>` : ''}
           </div>
         </div>
       </li>`;
     }).join('');
 
-    bodyHtml = `<ul class="hn-list">${items}</ul>`;
+    let footerHtml = '';
+    if (allStories.length > newsDisplayLimit) {
+      const remaining = allStories.length - newsDisplayLimit;
+      const nextBatch = Math.min(15, remaining);
+      footerHtml = `
+        <div class="news-footer">
+          <button type="button" class="news-more-btn" data-action="more-news">
+            Mostrar m&aacute;s noticias (+${nextBatch}) &middot; ${allStories.length} disponibles
+          </button>
+        </div>`;
+    } else if (allStories.length > 10) {
+      footerHtml = `
+        <div class="news-footer">
+          <span class="news-count-all">Mostrando todas las ${allStories.length} noticias (Hacker News + Dev.to)</span>
+        </div>`;
+    }
+
+    bodyHtml = `<ul class="hn-list">${items}</ul>${footerHtml}`;
   }
+
+  const totalCount = allStories ? allStories.length : 0;
+  const countBadgeHtml = totalCount > 0
+    ? `<span class="news-count-badge" title="Fuentes: Hacker News + Dev.to">${totalCount} noticias</span>`
+    : '';
 
   card.innerHTML = `
     <div class="card-header">
       <div class="section-title-row">
         <span class="card-title tight">News</span>
+        ${countBadgeHtml}
         <div class="news-tabs" id="news-tabs">${tabsHtml}</div>
       </div>
       <div class="news-header-actions">
@@ -1497,6 +1561,7 @@ function bindEvents() {
     if (action === 'switch-weather') switchWeatherTab(trigger.dataset.city);
     if (action === 'switch-news') switchNewsTab(trigger.dataset.category);
     if (action === 'refresh-news') refreshNews();
+    if (action === 'more-news') loadMoreNews();
     if (action === 'roll-quote') rollQuote();
     if (action === 'copy-quote') copyQuote(trigger);
     if (action === 'copy-record') copyRecord(trigger);

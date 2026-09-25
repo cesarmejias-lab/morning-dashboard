@@ -1,4 +1,4 @@
-const CACHE_NAME = 'morning-dashboard-v10';
+const CACHE_NAME = 'morning-dashboard-v11';
 
 // App shell files carry the code, so they are served network-first: a deploy
 // reaches clients on their next load instead of the one after it. Everything
@@ -103,10 +103,11 @@ self.addEventListener('fetch', event => {
   // in the clear. See docs/superpowers/specs/2026-08-14-morning-utility-weather-todoist-design.md
   if (url.hostname === 'api.todoist.com') return;
 
-  // API endpoints (Open-Meteo, Hacker News, Discogs, Algolia)
+  // API endpoints (Open-Meteo, Hacker News, Discogs, Algolia, Dev.to)
   const isApiRequest = url.hostname.includes('open-meteo.com') ||
                        url.hostname.includes('firebaseio.com') ||
                        url.hostname.includes('algolia.com') ||
+                       url.hostname.includes('dev.to') ||
                        url.hostname.includes('discogs.com');
 
   // The HTML entry point and the code it loads
