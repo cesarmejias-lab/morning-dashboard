@@ -42,14 +42,39 @@ test('mergeAlbumMetadata preserves listing fields and adds detail quality', () =
   assert.equal(merged.metadataQuality.level, 'partial');
 });
 
-test('selectAlbumsForEnrichment prefers albums without checked metadata', () => {
+test('parseDetailMetadata extracts format, genres and edition from CLZ Cloud markup', () => {
+  const html = `
+    <div id="container-label-release">
+      <a href="#" class="scope-filter-link" data-scope-key="label">EMI</a>
+      <a href="#" class="scope-filter-link" data-scope-key="releaseyear">(1985)</a>
+    </div>
+    <div id="container-genres">
+      <a href="#" class="scope-filter-link" data-scope-key="genre">Pop Rock</a>
+      <a href="#" class="scope-filter-link" data-scope-key="genre">Prog Rock</a>
+    </div>
+    <div id="container-discs-total">
+      <a href="#" class="scope-filter-link" data-scope-key="format"><b>Vinyl</b></a> | 1 Disc | 10 Tracks
+    </div>
+  `;
+
+  assert.deepEqual(parseDetailMetadata(html), {
+    genres: ['Pop Rock', 'Prog Rock'],
+    styles: [],
+    moods: [],
+    format: 'Vinyl',
+    edition: 'EMI',
+    addedAt: null,
+  });
+});
+
+test('selectAlbumsForEnrichment prefers albums without checked metadata or missing format', () => {
   const albums = [
     { id: '1', title: 'One' },
     { id: '2', title: 'Two' },
     { id: '3', title: 'Three' },
   ];
   const existing = [
-    { id: '2', title: 'Two', detailCheckedAt: '2026-05-01T10:00:00.000Z' },
+    { id: '2', title: 'Two', detailCheckedAt: '2026-05-01T10:00:00.000Z', format: 'Vinyl' },
   ];
 
   assert.deepEqual(selectAlbumsForEnrichment(albums, existing, 2).map(album => album.id), ['1', '3']);

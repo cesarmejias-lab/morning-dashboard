@@ -823,17 +823,51 @@ function recordBgHtml(cover) {
     : '';
 }
 
+function formatBadgeHtml(format) {
+  if (!format) return '';
+  const raw = String(format).trim();
+  const lower = raw.toLowerCase();
+  let icon = '💿';
+  let label = raw;
+  let typeClass = 'format-other';
+
+  if (lower.includes('vinyl') || lower.includes('lp') || lower.includes('12"') || lower.includes('7"')) {
+    icon = '💽';
+    label = lower === 'vinyl' ? 'Vinilo' : raw;
+    typeClass = 'format-vinyl';
+  } else if (lower.includes('cd')) {
+    icon = '💿';
+    label = 'CD';
+    typeClass = 'format-cd';
+  } else if (lower.includes('cassette') || lower.includes('tape')) {
+    icon = '📼';
+    label = 'Cassette';
+    typeClass = 'format-cassette';
+  } else if (lower.includes('digital') || lower.includes('file') || lower.includes('flac') || lower.includes('mp3')) {
+    icon = '💾';
+    label = 'Digital';
+    typeClass = 'format-digital';
+  } else if (lower.includes('box')) {
+    icon = '📦';
+    label = raw;
+    typeClass = 'format-box';
+  }
+
+  return `<span class="record-tag record-format-tag ${typeClass}" title="Formato: ${escapeHtml(raw)}"><span class="format-icon">${icon}</span> ${escapeHtml(label)}</span>`;
+}
+
 function renderCLZRecord(rec, syncMessage = '') {
   const detailUrl = safeUrl(`${CLZ_URL}/detail/${encodeURIComponent(rec.id)}`);
   const coverHTML = recordCoverHtml(rec.cover, rec.title);
-  const tags = [
+  const formatTag = formatBadgeHtml(rec.format);
+  const metaTags = [
     rec.year,
-    rec.format,
     rec.edition,
     ...(rec.genres || []).slice(0, 2),
     ...(rec.styles || []).slice(0, 1),
   ].filter(Boolean)
     .map(t => `<span class="record-tag">${escapeHtml(t)}</span>`).join('');
+  const tags = `${formatTag}${metaTags}`;
   const signals = Array.isArray(rec.signals) ? rec.signals : [];
   const signalHtml = signals.map(signal => `
     <div class="radar-signal">

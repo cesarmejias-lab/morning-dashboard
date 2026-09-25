@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "clz:refresh": "node refresh-clz.js",
+    "clz:enrich": "node scripts/enrich-collection.js",
     "test": "node --test tests/*.test.js",
     "check": "node --check sw.js && node --check dashboard.js && node --check clz-radar.js && node --check weather-verdict.js && node --check todoist.js && node --check news-feed.js && node --check clz-sync-metadata.js && node --check sync-collection.js && node --check refresh-clz.js && node --check server.js && npm test"
   },

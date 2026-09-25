@@ -576,6 +576,55 @@
       color: var(--muted);
     }
 
+    .record-format-tag {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .record-format-tag .format-icon {
+      font-size: 0.95em;
+      line-height: 1;
+    }
+
+    .record-format-tag.format-vinyl {
+      background: rgba(230, 81, 0, 0.18);
+      border-color: rgba(239, 108, 0, 0.45);
+      color: #ffab91;
+    }
+
+    .record-format-tag.format-cd {
+      background: rgba(2, 136, 209, 0.18);
+      border-color: rgba(3, 169, 244, 0.45);
+      color: #81d4fa;
+    }
+
+    .record-format-tag.format-cassette {
+      background: rgba(251, 140, 0, 0.18);
+      border-color: rgba(255, 179, 0, 0.45);
+      color: #ffe082;
+    }
+
+    .record-format-tag.format-digital {
+      background: rgba(76, 175, 80, 0.18);
+      border-color: rgba(129, 199, 132, 0.45);
+      color: #a5d6a7;
+    }
+
+    .record-format-tag.format-box {
+      background: rgba(156, 39, 176, 0.18);
+      border-color: rgba(186, 104, 200, 0.45);
+      color: #ce93d8;
+    }
+
+    .record-format-tag.format-other {
+      background: rgba(120, 144, 156, 0.2);
+      border-color: rgba(144, 164, 174, 0.4);
+      color: #cfd8dc;
+    }
+
     .record-reason {
       color: var(--text);
       font-size: 0.84rem;

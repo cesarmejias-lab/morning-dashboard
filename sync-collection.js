@@ -21,8 +21,10 @@ const CLZ_USERNAME = process.env.CLZ_USERNAME || process.argv[2] || 'cesarmejias
 const BASE_URL = `https://cloud.clz.com/${encodeURIComponent(CLZ_USERNAME)}/music`;
 const OUTPUT_FILE = path.join(__dirname, 'music-collection.json');
 const ENRICH_DETAILS = process.env.CLZ_ENRICH_DETAILS !== 'false';
-const CLZ_ENRICH_LIMIT = Math.max(0, Number(process.env.CLZ_ENRICH_LIMIT || 60));
-const CLZ_DETAIL_DELAY_MS = Math.max(100, Number(process.env.CLZ_DETAIL_DELAY_MS || 350));
+const CLZ_ENRICH_LIMIT = Math.max(0, Number(process.env.CLZ_ENRICH_LIMIT || 120));
+const CLZ_DETAIL_DELAY_MS = Math.max(50, Number(process.env.CLZ_DETAIL_DELAY_MS || 150));
+
+const httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 5 });
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -30,7 +32,13 @@ function delay(ms) {
 
 function httpsGet(urlOrOptions) {
   return new Promise((resolve, reject) => {
-    const req = https.get(urlOrOptions, res => {
+    const isString = typeof urlOrOptions === 'string';
+    const opts = isString ? { agent: httpsAgent } : { agent: httpsAgent, ...urlOrOptions };
+    const getFn = isString ? (url, cb) => https.get(url, opts, cb) : (cb) => https.get(opts, cb);
+
+    const req = isString ? getFn(urlOrOptions, onResponse) : getFn(onResponse);
+
+    function onResponse(res) {
       let body = '';
       res.setEncoding('utf8');
       res.on('data', chunk => { body += chunk; });
@@ -41,7 +49,7 @@ function httpsGet(urlOrOptions) {
           body,
         });
       });
-    });
+    }
 
     req.setTimeout(30000, () => {
       req.destroy(new Error('Request timed out'));
