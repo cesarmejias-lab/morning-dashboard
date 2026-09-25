@@ -268,6 +268,7 @@
       ...selected,
       total: collection.total || collection.albums.length,
       syncedAt: collection.syncedAt,
+      summary: collection.summary,
       reason,
       signals,
     };

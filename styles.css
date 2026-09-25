@@ -121,7 +121,10 @@
 
     .w-stats {
       display: flex;
-      gap: 18px;
+      flex-wrap: wrap;
+      column-gap: 16px;
+      row-gap: 8px;
+      align-items: center;
       color: var(--muted);
       font-size: 0.82rem;
       margin-bottom: 16px;
@@ -324,6 +327,19 @@
       gap: 6px;
     }
 
+    .clock-offset {
+      margin-left: auto;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
+    }
+
     .dot {
       width: 7px;
       height: 7px;
@@ -360,6 +376,51 @@
       background: linear-gradient(135deg, #161b22 0%, #1a2132 100%);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .quote-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .quote-action-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: inherit;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .quote-action-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .quote-action-btn.copied {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .quote-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
     }
 
@@ -367,6 +428,39 @@
     .quote-author { font-size: 0.78rem; color: var(--accent); margin-top: 10px; }
 
     /* ── News Feed & HN ─────────────────────────────────────────────────── */
+    .news-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .news-refresh-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: inherit;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .news-refresh-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .news-refresh-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .news-tabs {
       display: flex;
       gap: 6px;
@@ -689,6 +783,19 @@
       background: rgba(255,255,255,0.08);
       color: var(--text);
       border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .record-link.copied {
+      color: var(--green) !important;
+      border-color: var(--green) !important;
+    }
+
+    .clz-format-stats {
+      font-weight: 500;
+      color: var(--accent);
+      font-size: 0.72rem;
+      text-transform: none;
+      letter-spacing: normal;
     }
 
     .record-actions {

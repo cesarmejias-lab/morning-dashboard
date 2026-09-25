@@ -284,6 +284,10 @@ function renderWeather() {
     </div>`;
   }).join('');
 
+  const sunrise = d.sunrise && d.sunrise[0] ? d.sunrise[0].slice(11, 16) : null;
+  const sunset = d.sunset && d.sunset[0] ? d.sunset[0].slice(11, 16) : null;
+  const rainProb = d.precipitation_probability_max && d.precipitation_probability_max[0] != null ? d.precipitation_probability_max[0] : null;
+
   bodyContainer.innerHTML = `
     <div class="weather-fade-wrapper">
       ${weatherVerdictHtml(data)}
@@ -295,8 +299,11 @@ function renderWeather() {
         </div>
       </div>
       <div class="w-stats">
-        <span>💧 Humidity ${c.relativehumidity_2m}%</span>
-        <span>💨 Wind ${Math.round(c.windspeed_10m)} km/h</span>
+        <span>💧 Humedad ${c.relativehumidity_2m}%</span>
+        <span>💨 Viento ${Math.round(c.windspeed_10m)} km/h</span>
+        ${rainProb !== null ? `<span>☔ Lluvia ${rainProb}%</span>` : ''}
+        ${sunrise ? `<span>🌅 ${escapeHtml(sunrise)}</span>` : ''}
+        ${sunset ? `<span>🌇 ${escapeHtml(sunset)}</span>` : ''}
       </div>
       <div class="forecast">${forecastHTML}</div>
     </div>`;
@@ -334,6 +341,14 @@ async function fetchNews(category = activeNewsCategory) {
     return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
   }
 
+  if (category === 'dev') {
+    const url = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>=10&query=programming+OR+github+OR+rust+OR+python+OR+linux+OR+"open+source"+OR+developer&hitsPerPage=10';
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Algolia API HTTP ${res.status}`);
+    const data = await res.json();
+    return (data.hits || []).map(h => api ? api.normalizeAlgoliaHit(h) : h).filter(Boolean);
+  }
+
   // Default: General Top Tech
   const ids = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json').then(r => r.json());
   const stories = await Promise.all(
@@ -353,6 +368,7 @@ function renderNews() {
     { id: 'general', label: '🔥 Top Tech' },
     { id: 'ai', label: '🤖 IA & LLMs' },
     { id: 'security', label: '🛡️ Ciberseguridad' },
+    { id: 'dev', label: '💻 Dev & Open Source' },
   ];
 
   const tabsHtml = categories.map(cat => {
@@ -413,6 +429,9 @@ function renderNews() {
         <span class="card-title tight">News</span>
         <div class="news-tabs" id="news-tabs">${tabsHtml}</div>
       </div>
+      <div class="news-header-actions">
+        <button type="button" class="news-refresh-btn" data-action="refresh-news" title="Refrescar noticias" aria-label="Refrescar noticias">&#8635; Recargar</button>
+      </div>
     </div>
     <div class="news-fade-wrapper">
       ${bodyHtml}
@@ -446,15 +465,51 @@ async function switchNewsTab(categoryId) {
   }
 }
 
+async function refreshNews(category = activeNewsCategory) {
+  delete newsDataCache[category];
+  renderNews();
+  try {
+    const stories = await fetchNews(category);
+    newsDataCache[category] = stories;
+    if (activeNewsCategory === category) {
+      renderNews();
+    }
+  } catch (err) {
+    console.error(`Failed to refresh ${category} news:`, err);
+    if (activeNewsCategory === category) {
+      setCardMessage('hn-card', 'News', `Failed to load ${category} stories.`);
+    }
+  }
+}
+
 function cycleNewsTab() {
   const api = getNewsApi();
-  const categories = api ? api.CATEGORIES.map(c => c.id) : ['general', 'ai', 'security'];
+  const categories = api ? api.CATEGORIES.map(c => c.id) : ['general', 'ai', 'security', 'dev'];
   const currentIndex = categories.indexOf(activeNewsCategory);
   const nextIndex = (currentIndex + 1) % categories.length;
   switchNewsTab(categories[nextIndex]);
 }
 
 // ── World clocks ─────────────────────────────────────────────────────────────
+function getTimeZoneOffsetMinutes(tz, date = new Date()) {
+  try {
+    const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
+    const tzDate = new Date(date.toLocaleString('en-US', { timeZone: tz }));
+    return Math.round((tzDate - utcDate) / 60000);
+  } catch {
+    return 0;
+  }
+}
+
+function formatRelativeOffset(tz, date = new Date()) {
+  const targetOffset = getTimeZoneOffsetMinutes(tz, date);
+  const localOffset = -date.getTimezoneOffset();
+  const diffHours = (targetOffset - localOffset) / 60;
+  if (diffHours === 0) return 'Local';
+  const sign = diffHours > 0 ? '+' : '';
+  return Number.isInteger(diffHours) ? `${sign}${diffHours}h` : `${sign}${diffHours.toFixed(1)}h`;
+}
+
 function clockStatus(tz) {
   const h = +new Intl.DateTimeFormat('en', {
     hour: 'numeric', hour12: false, timeZone: tz
@@ -465,7 +520,6 @@ function clockStatus(tz) {
   return                         { dot: 'dot-off',   cls: 'status-off',  label: 'Sleeping' };
 }
 
-// ── World clocks ─────────────────────────────────────────────────────────────
 function updateClocks() {
   const now  = new Date();
   const grid = byId('clocks-grid');
@@ -475,11 +529,13 @@ function updateClocks() {
     const time   = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: city.tz });
     const date   = now.toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric', timeZone: city.tz });
     const status = clockStatus(city.tz);
+    const offset = formatRelativeOffset(city.tz, now);
 
     return `<div class="clock-item">
       <div class="clock-city">
         <span class="dot ${status.dot}"></span>
-        ${escapeHtml(city.flag)} ${escapeHtml(city.name)}
+        <span>${escapeHtml(city.flag)} ${escapeHtml(city.name)}</span>
+        <span class="clock-offset" title="Diferencia con tu hora local (${offset})">${escapeHtml(offset)}</span>
       </div>
       <div class="clock-time">${escapeHtml(time)}</div>
       <div class="clock-date">${escapeHtml(date)}</div>
@@ -741,14 +797,82 @@ const QUOTES = [
   { text: 'The best time to plant a tree was 20 years ago. The second best time is now.',     author: 'Chinese Proverb' },
   { text: 'An unexamined life is not worth living.',                                           author: 'Socrates' },
   { text: 'Simplicity is the ultimate sophistication.',                                        author: 'Leonardo da Vinci' },
+  { text: 'Talk is cheap. Show me the code.',                                                  author: 'Linus Torvalds' },
+  { text: 'Sometimes it is the people no one can imagine anything of who do the things that no one can imagine.', author: 'Alan Turing' },
+  { text: 'The most dangerous phrase in the language is, "We\'ve always done it this way."',  author: 'Grace Hopper' },
+  { text: 'Somewhere, something incredible is waiting to be known.',                            author: 'Carl Sagan' },
+  { text: 'When you arise in the morning think of what a privilege it is to be alive, to think, to enjoy, to love.', author: 'Marcus Aurelius' },
+  { text: 'Luck is what happens when preparation meets opportunity.',                          author: 'Seneca' },
+  { text: 'I would rather have questions that can\'t be answered than answers that can\'t be questioned.', author: 'Richard Feynman' },
+  { text: 'Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.', author: 'Antoine de Saint-Exupéry' },
+  { text: 'The only way of discovering the limits of the possible is to venture a little way past them into the impossible.', author: 'Arthur C. Clarke' },
+  { text: 'Simplicity is prerequisite for reliability.',                                       author: 'Edsger W. Dijkstra' },
+  { text: 'Make each day your masterpiece.',                                                   author: 'John Wooden' },
+  { text: 'Nothing in life is to be feared, it is only to be understood.',                     author: 'Marie Curie' },
+  { text: 'The present is theirs; the future, for which I really worked, is mine.',            author: 'Nikola Tesla' },
+  { text: 'Focus is a matter of deciding what things you\'re not going to do.',                author: 'John Carmack' },
 ];
 
-function renderQuote() {
-  const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
-  byId('quote-card').innerHTML = `
-    <div class="card-title">Inspiration</div>
-    <div class="quote-text">&ldquo;${escapeHtml(q.text)}&rdquo;</div>
-    <div class="quote-author">&mdash; ${escapeHtml(q.author)}</div>`;
+let currentQuote = null;
+
+function pickRandomQuote() {
+  let q;
+  do {
+    q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+  } while (QUOTES.length > 1 && currentQuote && q.text === currentQuote.text);
+  currentQuote = q;
+  return q;
+}
+
+function renderQuote(q = currentQuote || pickRandomQuote()) {
+  currentQuote = q;
+  const card = byId('quote-card');
+  if (!card) return;
+  card.innerHTML = `
+    <div class="quote-header">
+      <span class="card-title tight">Inspiration</span>
+      <div class="quote-actions">
+        <button type="button" class="quote-action-btn" data-action="roll-quote" title="Nueva cita (Q)" aria-label="Nueva cita">&#8635; Roll</button>
+        <button type="button" class="quote-action-btn" data-action="copy-quote" title="Copiar cita al portapapeles" aria-label="Copiar cita">&#128203; Copiar</button>
+      </div>
+    </div>
+    <div class="quote-body">
+      <div class="quote-text">&ldquo;${escapeHtml(q.text)}&rdquo;</div>
+      <div class="quote-author">&mdash; ${escapeHtml(q.author)}</div>
+    </div>`;
+}
+
+function rollQuote() {
+  const q = pickRandomQuote();
+  renderQuote(q);
+}
+
+async function copyQuote(button) {
+  if (!currentQuote) return;
+  const textToCopy = `"${currentQuote.text}" — ${currentQuote.author}`;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(textToCopy);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = textToCopy;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+    if (button) {
+      const originalText = button.innerHTML;
+      button.classList.add('copied');
+      button.innerHTML = '&#10003; Copiada';
+      setTimeout(() => {
+        button.classList.remove('copied');
+        button.innerHTML = originalText;
+      }, 1800);
+    }
+  } catch (err) {
+    console.warn('Failed to copy quote:', err);
+  }
 }
 
 // ── CLZ Music Recommendation ──────────────────────────────────────────────────
@@ -856,6 +980,43 @@ function formatBadgeHtml(format) {
   return `<span class="record-tag record-format-tag ${typeClass}" title="Formato: ${escapeHtml(raw)}"><span class="format-icon">${icon}</span> ${escapeHtml(label)}</span>`;
 }
 
+function spotifyIconSvg() {
+  return '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.472-.076-.336.135-.67.472-.746 3.856-.88 7.15-.505 9.822 1.13.295.18.387.565.204.863zm1.224-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.076-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.224-.563 11.346 1.354.366.226.486.707.258 1.074zm.105-2.82c-3.26-1.937-8.643-2.12-11.758-1.173-.5.15-1.025-.133-1.177-.633-.15-.5.133-1.025.633-1.177 3.616-1.1 9.54-.888 13.293 1.342.45.267.6.846.333 1.296-.267.45-.846.6-1.296.333z"/></svg>';
+}
+
+function youtubeIconSvg() {
+  return '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>';
+}
+
+async function copyRecord(button) {
+  if (!button) return;
+  const artist = button.getAttribute('data-artist') || '';
+  const title = button.getAttribute('data-title') || '';
+  const year = button.getAttribute('data-year') || '';
+  const text = `${artist} — ${title}${year ? ` (${year})` : ''}`;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+    const originalText = button.innerHTML;
+    button.classList.add('copied');
+    button.innerHTML = '&#10003; Copiado';
+    setTimeout(() => {
+      button.classList.remove('copied');
+      button.innerHTML = originalText;
+    }, 1800);
+  } catch (err) {
+    console.warn('Failed to copy record:', err);
+  }
+}
+
 function renderCLZRecord(rec, syncMessage = '') {
   const detailUrl = safeUrl(`${CLZ_URL}/detail/${encodeURIComponent(rec.id)}`);
   const coverHTML = recordCoverHtml(rec.cover, rec.title);
@@ -878,11 +1039,23 @@ function renderCLZRecord(rec, syncMessage = '') {
   const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(rec.artist + ' ' + rec.title)}`;
   const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(rec.artist + ' ' + rec.title + ' album')}`;
 
+  const topFormats = rec.summary && Array.isArray(rec.summary.formats)
+    ? rec.summary.formats
+        .filter(f => f.name && f.name !== '1 Disc')
+        .slice(0, 2)
+        .map(f => {
+          const label = f.name === 'Vinyl' ? 'vinilos' : (f.name === 'CD' ? 'CDs' : f.name);
+          return `${f.count} ${label}`;
+        })
+        .join(' · ')
+    : '';
+  const formatStatsHtml = topFormats ? `<span class="clz-format-stats">&middot; ${escapeHtml(topFormats)}</span>` : '';
+
   byId('clz-card').innerHTML = `
     ${recordBgHtml(rec.cover)}
     <div class="card-header">
       <span class="card-title tight">
-        <span>&#9679; Daily Collection Radar &mdash; ${rec.total.toLocaleString()} releases</span>
+        <span>&#9679; Daily Collection Radar &mdash; ${rec.total.toLocaleString()} releases ${formatStatsHtml}</span>
         ${rec.syncedAt ? `<span class="sync-status">Last synced: ${escapeHtml(new Date(rec.syncedAt).toLocaleString())}</span>` : ''}
       </span>
       <div class="record-header-actions">
@@ -899,8 +1072,9 @@ function renderCLZRecord(rec, syncMessage = '') {
         ${signalHtml ? `<div class="radar-signals">${signalHtml}</div>` : ''}
         <div class="record-actions">
           <button type="button" class="record-link" data-action="roll-clz">Roll</button>
-          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">Spotify</a>
-          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">YouTube</a>
+          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">${spotifyIconSvg()}Spotify</a>
+          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">${youtubeIconSvg()}YouTube</a>
+          <button type="button" class="record-link secondary record-copy-btn" data-action="copy-record" data-artist="${escapeHtml(rec.artist)}" data-title="${escapeHtml(rec.title)}" data-year="${escapeHtml(rec.year || '')}" title="Copiar álbum y artista">&#128203; Copiar</button>
           <a class="record-link secondary" href="${detailUrl}" target="_blank" rel="noopener">View on CLZ &#8599;</a>
           <a class="record-link secondary" href="${CLZ_URL}" target="_blank" rel="noopener">My CLZ Collection &#8599;</a>
           <a class="record-link secondary" href="${GITHUB_ACTIONS_URL}" target="_blank" rel="noopener">Actions &#8599;</a>
@@ -988,8 +1162,10 @@ async function fetchDiscogsRecord() {
 
 function renderDiscogsRecord(rec) {
   const coverHTML = recordCoverHtml(rec.cover, rec.title);
-  const tags = [rec.year, rec.format, rec.label].filter(Boolean)
+  const formatTag = formatBadgeHtml(rec.format);
+  const metaTags = [rec.year, rec.label].filter(Boolean)
     .map(t => `<span class="record-tag">${escapeHtml(t)}</span>`).join('');
+  const tags = `${formatTag}${metaTags}`;
 
   const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(rec.artist + ' ' + rec.title)}`;
   const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(rec.artist + ' ' + rec.title + ' album')}`;
@@ -1007,12 +1183,9 @@ function renderDiscogsRecord(rec) {
         ${tags ? `<div class="record-tags">${tags}</div>` : ''}
         <div class="record-actions">
           <button type="button" class="record-link" data-action="roll-discogs">Roll</button>
-          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.472-.076-.336.135-.67.472-.746 3.856-.88 7.15-.505 9.822 1.13.295.18.387.565.204.863zm1.224-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.076-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.224-.563 11.346 1.354.366.226.486.707.258 1.074zm.105-2.82c-3.26-1.937-8.643-2.12-11.758-1.173-.5.15-1.025-.133-1.177-.633-.15-.5.133-1.025.633-1.177 3.616-1.1 9.54-.888 13.293 1.342.45.267.6.846.333 1.296-.267.45-.846.6-1.296.333z"/></svg>Spotify
-          </a>
-          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px;"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube
-          </a>
+          <a class="record-link secondary spotify-link" href="${safeUrl(spotifySearchUrl)}" target="_blank" rel="noopener">${spotifyIconSvg()}Spotify</a>
+          <a class="record-link secondary youtube-link" href="${safeUrl(youtubeSearchUrl)}" target="_blank" rel="noopener">${youtubeIconSvg()}YouTube</a>
+          <button type="button" class="record-link secondary record-copy-btn" data-action="copy-record" data-artist="${escapeHtml(rec.artist)}" data-title="${escapeHtml(rec.title)}" data-year="${escapeHtml(rec.year || '')}" title="Copiar álbum y artista">&#128203; Copiar</button>
           <a class="record-link secondary" href="${safeUrl(rec.discogsUrl)}" target="_blank" rel="noopener">View on Discogs &#8599;</a>
           <a class="record-link secondary" href="https://www.discogs.com" target="_blank" rel="noopener">Go to Discogs &#8599;</a>
         </div>
@@ -1323,6 +1496,10 @@ function bindEvents() {
     if (action === 'save-clocks') saveClocksSettings();
     if (action === 'switch-weather') switchWeatherTab(trigger.dataset.city);
     if (action === 'switch-news') switchNewsTab(trigger.dataset.category);
+    if (action === 'refresh-news') refreshNews();
+    if (action === 'roll-quote') rollQuote();
+    if (action === 'copy-quote') copyQuote(trigger);
+    if (action === 'copy-record') copyRecord(trigger);
     if (action === 'roll-clz') rollCLZAlbum();
     if (action === 'roll-discogs') rollDiscogsAlbum();
     if (action === 'refresh-clz') refreshCLZCollection();
@@ -1370,6 +1547,12 @@ function bindEvents() {
     if (key === 'r') {
       event.preventDefault();
       refresh();
+    }
+
+    // Q: Roll quote
+    if (key === 'q') {
+      event.preventDefault();
+      rollQuote();
     }
     
     // C: Roll CLZ Album

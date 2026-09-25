@@ -9,11 +9,12 @@ const {
   normalizeFirebaseStory,
 } = require('../news-feed');
 
-test('CATEGORIES defines top tech, AI, and cybersecurity', () => {
+test('CATEGORIES defines top tech, AI, cybersecurity, and dev & open source', () => {
   const ids = CATEGORIES.map(c => c.id);
-  assert.deepEqual(ids, ['general', 'ai', 'security']);
+  assert.deepEqual(ids, ['general', 'ai', 'security', 'dev']);
   assert.equal(getCategory('ai').label, '🤖 IA & LLMs');
   assert.equal(getCategory('security').label, '🛡️ Ciberseguridad');
+  assert.equal(getCategory('dev').label, '💻 Dev & Open Source');
   assert.equal(getCategory('unknown').id, 'general');
 });
 

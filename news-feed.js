@@ -11,6 +11,7 @@
     { id: 'general', label: '🔥 Top Tech', description: 'Top stories from Hacker News' },
     { id: 'ai', label: '🤖 IA & LLMs', description: 'Artificial Intelligence, LLMs, agents & machine learning' },
     { id: 'security', label: '🛡️ Ciberseguridad', description: 'Cybersecurity, vulnerabilities, CVEs & malware' },
+    { id: 'dev', label: '💻 Dev & Open Source', description: 'Software engineering, programming languages and open source' },
   ];
 
   function getDomain(url) {
