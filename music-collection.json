@@ -1,6 +1,6 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-09-26T22:18:53.868Z",
+  "syncedAt": "2026-09-27T02:53:13.609Z",
   "total": 5217,
   "albums": [
     {
@@ -2982,7 +2982,7 @@
       "format": null,
       "edition": "Meritorio Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -8739,7 +8739,7 @@
       "format": null,
       "edition": "Discos Centeneros",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -16160,7 +16160,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -18003,7 +18003,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -18518,7 +18518,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -21088,7 +21088,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -21424,7 +21424,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -22708,7 +22708,7 @@
       "format": null,
       "edition": "Alkilo Discos",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -25247,7 +25247,7 @@
       "format": null,
       "edition": "Fikasound",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -27789,7 +27789,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -29200,7 +29200,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -29225,7 +29225,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -30189,7 +30189,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-09-26T22:17:58.062Z",
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -31303,18 +31303,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Snap! Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31325,21 +31323,21 @@
       "artist": "Robert Forster",
       "year": "2023",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/da/da_26010064_0_TheCandleAndTheFlame.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Tapete Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31350,21 +31348,21 @@
       "artist": "Puzzles y Dragones",
       "year": "2023",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/e0/e0_9244121_0_PuzzlesyDragonesRecuerdosdePuz.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
       "format": null,
-      "edition": null,
+      "edition": "El Genio Equivocado",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
           "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31375,21 +31373,23 @@
       "artist": "Wax Machine",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ff/ff_21590131_0_HermitsGrove.jpg",
-      "genres": [],
+      "genres": [
+        "Folk, World, & Country",
+        "Funk / Soul",
+        "Latin",
+        "Psychedelic"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Batov Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31400,21 +31400,22 @@
       "artist": "Depeche Mode",
       "year": "1987",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a7/a7_643279_0_DepecheModeMusicForTheMasses.jpeg",
-      "genres": [],
+      "genres": [
+        "Electronic",
+        "New Wave",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Mute",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31425,21 +31426,24 @@
       "artist": "Triana",
       "year": "2015",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/27/27_6946475_0_ElPatio.jpg",
-      "genres": [],
+      "genres": [
+        "Folk",
+        "Folk, World, & Country",
+        "Prog Rock",
+        "Rock",
+        "Symphonic Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "All Media",
+      "edition": "Fonomusic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31450,21 +31454,21 @@
       "artist": "Beth Orton",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a6/a6_24606215_0_WeatherAlive.jpg",
-      "genres": [],
+      "genres": [
+        "Ethereal",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Partisan Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31475,21 +31479,21 @@
       "artist": "The Antlers",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/45/45_24141779_0_BurstApart.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Transgressive Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31500,21 +31504,24 @@
       "artist": "P J Moore & Co",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/28/28_25835602_0_WhenAGoodDayComes.jpg",
-      "genres": [],
+      "genres": [
+        "Electronic",
+        "Ethereal",
+        "Pop",
+        "Rock",
+        "Synthwave"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Mozie Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31525,21 +31532,23 @@
       "artist": "Belle & Sebastian",
       "year": "2023",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/7f/7f_25762129_0_LateDevelopers.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Indie Rock",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Matador",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31550,21 +31559,21 @@
       "artist": "The Church",
       "year": "1984",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/e2/e2_4640248_0_Seance.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Carrere",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31575,21 +31584,22 @@
       "artist": "Julio Bustamante",
       "year": "1998",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/66/66_8876092_0_Entusiastas.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Latin",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Virgin",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31600,21 +31610,24 @@
       "artist": "Martim Bernardes",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/29/29_25205149_0_MilCoisasInvisveis.jpg",
-      "genres": [],
+      "genres": [
+        "Bossanova",
+        "Folk",
+        "Folk, World, & Country",
+        "Latin",
+        "Neofolk"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Psychic Hotline",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31625,21 +31638,21 @@
       "artist": "Michael Nau",
       "year": "2017",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/3e/3e_10442317_0_SomeTwist.jpg",
-      "genres": [],
+      "genres": [
+        "Folk",
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Full Time Hobby",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31650,21 +31663,24 @@
       "artist": "Gil Scott-Heron; Jamie xx",
       "year": "2011",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/03/03_2733754_0_GilScottHeronJamiexxWereNewHer.jpeg",
-      "genres": [],
+      "genres": [
+        "Conscious",
+        "Dubstep",
+        "Electronic",
+        "Hip Hop",
+        "UK Garage"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Young Turks",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31675,21 +31691,20 @@
       "artist": "James Yorkston; Nina Persson; The Second Hand Orchestra",
       "year": "2023",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f0/f0_25762615_0_TheGreatWhiteSeaEagle.jpg",
-      "genres": [],
+      "genres": [
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Domino",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31700,21 +31715,22 @@
       "artist": "Chico y Chica",
       "year": "2023",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ba/ba_25712743_0_Senadora.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Spoken Word",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Austrohúngaro",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31725,21 +31741,24 @@
       "artist": "Trastos",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/79/79_25201807_0_LosTrastosEnDirecto.jpg",
-      "genres": [],
+      "genres": [
+        "New Wave",
+        "Pop",
+        "Pop Rock",
+        "Power Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Rick Blaine Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31750,21 +31769,21 @@
       "artist": "The The",
       "year": "1989",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d7/d7_5530940_0_MindBomb.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Epic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31775,21 +31794,21 @@
       "artist": "The The",
       "year": "1986",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/fa/fa_1680205_0_TheTheInfected.jpeg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Epic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31800,21 +31819,23 @@
       "artist": "Juan Perro",
       "year": "2020",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/95/95_17315173_0_RacesAlViento.jpg",
-      "genres": [],
+      "genres": [
+        "Latin",
+        "Pop Rock",
+        "Rock",
+        "Son"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Legacy",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31825,21 +31846,25 @@
       "artist": "Khruangbin",
       "year": "2020",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/da/da_15511528_0_Mordechai.jpg",
-      "genres": [],
+      "genres": [
+        "Disco",
+        "Funk",
+        "Funk / Soul",
+        "Psychedelic",
+        "Rhythm & Blues",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Dead Oceans",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31853,17 +31878,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "Vinyl",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -31875,21 +31899,21 @@
       "artist": "Nina Nastasia",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/1f/1f_25291756_0_RiderlessHorse.jpg",
-      "genres": [],
+      "genres": [
+        "Folk",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Temporary Residence Limited",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31900,20 +31924,20 @@
       "artist": "Various Artists",
       "year": "1992",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/76/76_2886655_0_SinglesOST.jpg",
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "CD",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -31925,21 +31949,20 @@
       "artist": "Various Artists",
       "year": "2013",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/22/22_3843876_0_ScaredtoGetHappyAStoryofIndieP.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop/Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Cherry Red Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31950,21 +31973,25 @@
       "artist": "Tom Waits",
       "year": "2011",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/b1/b1_3702476_0_BadAsMedisc1.jpg",
-      "genres": [],
+      "genres": [
+        "\"Blues, allgemein\"",
+        "Alternative",
+        "Alternative / Indie",
+        "Blues",
+        "Pop/Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Anti, Inc. / Epitaph",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -31975,21 +32002,23 @@
       "artist": "Joni Mitchell",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ef/ef_19358584_0_TheRepriseAlbums19681971.jpg",
-      "genres": [],
+      "genres": [
+        "Folk Rock",
+        "Folk, World, & Country",
+        "Rock",
+        "Soft Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Rhino Records (2)",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32000,21 +32029,21 @@
       "artist": "Low",
       "year": "2010",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b3/b3_2542843_0_LowChristmas.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Sub Pop",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32025,21 +32054,22 @@
       "artist": "Van Morrison; The Chieftains",
       "year": "1988",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0f/0f_1181957_0_VanMorrisonTheChieftainsIrishH.jpeg",
-      "genres": [],
+      "genres": [
+        "Celtic",
+        "Folk",
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Mercury",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32050,21 +32080,24 @@
       "artist": "Kate Bush",
       "year": "2018",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/cb/cb_12795892_0_HoundsOfLove.jpg",
-      "genres": [],
+      "genres": [
+        "Art Rock",
+        "Electronic",
+        "Pop",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Fish People",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32075,21 +32108,22 @@
       "artist": "Jimmy Somerville; Bronski Beat; The Communards",
       "year": "1989",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4b/4b_474369_0_JimmySomervilleBronskiBeatTheC.jpeg",
-      "genres": [],
+      "genres": [
+        "Disco",
+        "Electronic",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "London Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32100,21 +32134,22 @@
       "artist": "Diesel Park West",
       "year": "1990",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/e1/e1_2635545_0_Flipped.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Food",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32125,21 +32160,23 @@
       "artist": "Wim Mertens; Soft Verdict",
       "year": "1986",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d1/d1_21008074_0_MaximizingTheAudience.jpg",
-      "genres": [],
+      "genres": [
+        "Classical",
+        "Contemporary",
+        "Minimal",
+        "Stage & Screen"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Grabaciones Accidentales",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32150,21 +32187,21 @@
       "artist": "The Orchids",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/53/53_24702578_0_DreamingKind.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Skep Wax",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32175,21 +32212,25 @@
       "artist": "Wild Nothing",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/65/65_20792665_0_Nocturne.jpg",
-      "genres": [],
+      "genres": [
+        "Dream Pop",
+        "Electronic",
+        "New Wave",
+        "Pop",
+        "Rock",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Captured Tracks",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32200,21 +32241,21 @@
       "artist": "Makaya McCraven",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c5/c5_21044632_0_DecipheringTheMessage.jpg",
-      "genres": [],
+      "genres": [
+        "Contemporary Jazz",
+        "Jazz"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Blue Note",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32225,21 +32266,23 @@
       "artist": "Frank Sinatra",
       "year": "1971",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/99/99_7789387_0_Cycles.jpg",
-      "genres": [],
+      "genres": [
+        "Big Band",
+        "Jazz",
+        "Pop",
+        "Vocal"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Reprise Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32250,21 +32293,22 @@
       "artist": "The Reds, Pinks And Purples",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/3e/3e_24808022_0_TheyOnlyWantedYourSoul.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Lo-Fi",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Slumberland Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32275,21 +32319,23 @@
       "artist": "Michel Polnareff",
       "year": "1975",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b2/b2_4317570_0_MichelPolnareffMichelPolnareff.jpeg",
-      "genres": [],
+      "genres": [
+        "Ballad",
+        "Pop",
+        "Rock",
+        "Soft Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Atlantic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32300,21 +32346,21 @@
       "artist": "Antònia Font",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d3/d3_22699823_0_Unminutestroboscpica.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Primavera Labels",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32325,21 +32371,21 @@
       "artist": "Antònia Font",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ae/ae_25284937_0_Lamparetes.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Primavera Labels",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32350,21 +32396,21 @@
       "artist": "Marty Frawley",
       "year": "2019",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a3/a3_13247967_0_Undoneat31.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Merge Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32375,21 +32421,22 @@
       "artist": "The Cure",
       "year": "2016",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/91/91_9001832_0_SeventeenSeconds.jpg",
-      "genres": [],
+      "genres": [
+        "Electronic",
+        "New Wave",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Fiction Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32400,21 +32447,22 @@
       "artist": "Lightships",
       "year": "2012",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/43/43_3507300_0_LightshipsElectricCables.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Geographic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32425,21 +32473,24 @@
       "artist": "Weyes Blood",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f8/f8_25169083_0_AndInTheDarknessHeartsAglow.jpg",
-      "genres": [],
+      "genres": [
+        "Dream Pop",
+        "Indie Rock",
+        "Pop",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Sub Pop",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32450,21 +32501,22 @@
       "artist": "Wet Leg",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/37/37_22755569_0_WetLeg.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Domino",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32475,21 +32527,22 @@
       "artist": "Bee Gees",
       "year": "1969",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/42/42_893962_0_BeeGeesBestOfBeeGees.jpeg",
-      "genres": [],
+      "genres": [
+        "Psychedelic Rock",
+        "Rock",
+        "Soft Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Polydor",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32500,21 +32553,24 @@
       "artist": "La Bien Querida",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/1e/1e_25254532_0_Paprika.jpg",
-      "genres": [],
+      "genres": [
+        "Electronic",
+        "Folk, World, & Country",
+        "Latin",
+        "Pop",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Sonido Muchacho",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32525,21 +32581,23 @@
       "artist": "Fleetwood Mac",
       "year": "2017",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f8/f8_10342176_0_TangoInTheNight.jpg",
-      "genres": [],
+      "genres": [
+        "Classic Rock",
+        "Pop",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Warner Bros. Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32550,21 +32608,23 @@
       "artist": "Various",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d9/d9_24667064_0_GhostRiders.jpg",
-      "genres": [],
+      "genres": [
+        "Ballad",
+        "Garage Rock",
+        "Psychedelic Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Efficient Space",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32575,21 +32635,23 @@
       "artist": "The Cure",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/1d/1d_25263778_0_Wish.jpg",
-      "genres": [],
+      "genres": [
+        "Goth Rock",
+        "Indie Rock",
+        "New Wave",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Polydor",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32600,21 +32662,22 @@
       "artist": "Pearl Jam",
       "year": "2017",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f3/f3_11112928_0_Ten.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Grunge",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Epic Associated",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32625,21 +32688,21 @@
       "artist": "The Kinks",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b3/b3_24502532_0_EverybodysInShowbizEverybodysA.jpg",
-      "genres": [],
+      "genres": [
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "BMG",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32650,21 +32713,20 @@
       "artist": "Hidrogenesse",
       "year": "2019",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/e3/e3_13676880_0_JoterasBobas.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Austrohúngaro",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32675,21 +32737,22 @@
       "artist": "Dry Cleaning",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/27/27_24863336_0_Stumpwork.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Post Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "4AD",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32700,21 +32763,21 @@
       "artist": "Field School",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c8/c8_25203481_0_WhenSummerComes.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32725,21 +32788,23 @@
       "artist": "Mikel Laboa",
       "year": "2010",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/05/05_2628975_0_BatHiru.jpg",
-      "genres": [],
+      "genres": [
+        "Avantgarde",
+        "Basque Music",
+        "Folk",
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Elkar",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32750,21 +32815,22 @@
       "artist": "Mikel Laboa",
       "year": "2005",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f8/f8_2736803_0_Xoriek.jpg",
-      "genres": [],
+      "genres": [
+        "Basque Music",
+        "Folk, World, & Country",
+        "Jazz"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Elkar",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32775,21 +32841,22 @@
       "artist": "Brian Wilson",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/6f/6f_21300271_0_AtMyPiano.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Decca",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32800,21 +32867,21 @@
       "artist": "Simple Minds",
       "year": "1982",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/8f/8f_557589_0_SimpleMindsNewGoldDream8182838.jpeg",
-      "genres": [],
+      "genres": [
+        "Post-Punk",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "A&M Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32825,21 +32892,22 @@
       "artist": "Various",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0c/0c_23112596_0_PopParadeVol12.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Power Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Rock Indiana",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32850,21 +32918,23 @@
       "artist": "Poppel",
       "year": "2019",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ae/ae_14218597_0_MakeSense.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Jangle Pop",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Meritorio Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32875,21 +32945,22 @@
       "artist": "Piedad Os Lo Ruego",
       "year": "2016",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/fc/fc_8460123_0_GenteGuapaSitiosFeos.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Punk",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Club Social",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32903,17 +32974,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "Vinyl",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -32928,18 +32998,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Meritorio Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32950,21 +33018,24 @@
       "artist": "Crosby, Stills, Nash & Young",
       "year": "1972",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/90/90_3892677_0_NashYoungCrosbyStillsDjVu.jpeg",
-      "genres": [],
+      "genres": [
+        "Classic Rock",
+        "Folk Rock",
+        "Folk, World, & Country",
+        "Rock",
+        "Rock & Roll"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Atlantic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -32975,21 +33046,22 @@
       "artist": "BMX Bandits",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/1f/1f_22639193_0_LifeGoesOn.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock",
+        "Shoegaze"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Past Night From Glasgow",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33000,21 +33072,25 @@
       "artist": "Arctic Monkeys",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/5e/5e_24853802_0_TheCar.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Baroque Pop",
+        "Funk / Soul",
+        "Glam",
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Domino",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33025,21 +33101,22 @@
       "artist": "Father John Misty",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2a/2a_22816079_0_ChloAndTheNext20thCentury.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Bella Union",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33050,21 +33127,23 @@
       "artist": "Kanye West",
       "year": "2010",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/56/56_2606952_0_KanyeWestMyBeautifulDarkTwiste.jpeg",
-      "genres": [],
+      "genres": [
+        "Avantgarde",
+        "Contemporary R&B",
+        "Hip Hop",
+        "Pop Rap"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Roc-A-Fella Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33075,21 +33154,20 @@
       "artist": "Paul Young",
       "year": "2016",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/97/97_4037523_0_GoodThing.jpg",
-      "genres": [],
+      "genres": [
+        "Soul"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "New State Music",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33100,21 +33178,22 @@
       "artist": "Bruce Springsteen",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0f/0f_25130173_0_OnlyTheStrongSurvive.jpg",
-      "genres": [],
+      "genres": [
+        "Funk / Soul",
+        "Rock",
+        "Soul"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Columbia",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33125,21 +33204,22 @@
       "artist": "Les Swingle Singers; The Modern Jazz Quartet",
       "year": null,
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/1c/1c_640691_0_PlaceVendme.jpg",
-      "genres": [],
+      "genres": [
+        "Classical",
+        "Jazz",
+        "Neo-Classical"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Contour",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33150,20 +33230,20 @@
       "artist": "Paolo Conte",
       "year": "1998",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/0f/0f_2717653_0_TheBestofPaoloConte.jpg",
-      "genres": [],
+      "genres": [
+        "Vocal Music"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "CD",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -33175,21 +33255,25 @@
       "artist": "Paul Weller",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ce/ce_24981313_0_WillOfThePeople.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Electronic",
+        "Folk, World, & Country",
+        "Pop",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "UMC",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33200,21 +33284,22 @@
       "artist": "Sr. Chinarro",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/0a/0a_25055347_0_RealityShow.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Mushroom Pillow",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33225,21 +33310,21 @@
       "artist": "Ed Dowie",
       "year": "2017",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d8/d8_9744517_0_TheUncleSold.jpg",
-      "genres": [],
+      "genres": [
+        "Folk Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Lost Map Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33250,21 +33335,26 @@
       "artist": "The Holy Mackerel",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a0/a0_24626381_0_LoveForEveryoneTheRepriseMonoS.jpg",
-      "genres": [],
+      "genres": [
+        "Country Rock",
+        "Folk Rock",
+        "Folk, World, & Country",
+        "Pop",
+        "Psychedelic Rock",
+        "Rock",
+        "Soft Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Hanky Panky Records (2)",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33275,21 +33365,21 @@
       "artist": "Parade",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c1/c1_24830390_0_MaresPocoProfundos.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Jabalina Música",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33300,21 +33390,24 @@
       "artist": "Chico y Chica",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/93/93_19385275_0_S.jpg",
-      "genres": [],
+      "genres": [
+        "Electronic",
+        "Europop",
+        "Music Hall",
+        "Pop",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Austrohúngaro",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33325,21 +33418,21 @@
       "artist": "Pajaro Sunrise",
       "year": "2009",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/29/29_4343644_0_DoneUndone.jpg",
-      "genres": [],
+      "genres": [
+        "Folk, World, & Country",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Lovemonk",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33350,21 +33443,22 @@
       "artist": "The Nightingales",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/29/29_24749573_0_TheLastLaugh.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Post-Punk",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Tiny Global Productions",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33375,21 +33469,22 @@
       "artist": "Paul Williams",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/56/56_24625931_0_SoManyPeopleTheRepriseMonoSing.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Soft Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Hanky Panky Records (2)",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33400,21 +33495,22 @@
       "artist": "Genesis",
       "year": "1974",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/3c/3c_23373026_0_TheLambLiesDownOnBroadway.jpg",
-      "genres": [],
+      "genres": [
+        "Classic Rock",
+        "Prog Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Charisma",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33425,21 +33521,21 @@
       "artist": "The Godfathers",
       "year": "1988",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d2/d2_1184474_0_BirthSchoolWorkDeath.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Epic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33450,21 +33546,23 @@
       "artist": "The Modern Lovers",
       "year": "2016",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/44/44_8548563_0_TheModernLovers.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Art Rock",
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "BMG",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33475,21 +33573,23 @@
       "artist": "Sixto Rodriguez",
       "year": "2019",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c6/c6_14058533_0_ColdFact.jpg",
-      "genres": [],
+      "genres": [
+        "Folk Rock",
+        "Funk / Soul",
+        "Psychedelic",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "UMe",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33506,7 +33606,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -33525,21 +33625,20 @@
       "artist": "Various",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/fc/fc_24832478_0_LaVidaQueAmoUnHomenajeARafaelB.jpg",
-      "genres": [],
+      "genres": [
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Warner Music Spain",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33553,18 +33652,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Daptone Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33575,21 +33672,21 @@
       "artist": "The Specials",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/9c/9c_20431642_0_ProtestSongs19242012.jpg",
-      "genres": [],
+      "genres": [
+        "Reggae",
+        "Ska"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Island Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33600,21 +33697,23 @@
       "artist": "The Chesterf!elds",
       "year": "1987",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/2f/2f_9195358_0_Kettle.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Indie Rock",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Lamia (2)",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33625,21 +33724,21 @@
       "artist": "Momus",
       "year": "1987",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/17/17_1638097_0_ThePoisonBoyfriend.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Grabaciones Accidentales",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33650,21 +33749,23 @@
       "artist": "Lambchop",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/7e/7e_24618344_0_TheBible.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Art Rock",
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "City Slang",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33675,21 +33776,21 @@
       "artist": "Lily & Madeleine",
       "year": "2016",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/71/71_8165639_0_KeepItTogether.jpg",
-      "genres": [],
+      "genres": [
+        "Folk",
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "New West Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33700,21 +33801,23 @@
       "artist": "Melody's Echo Chamber",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/3b/3b_24660149_0_MelodysEchoChamber10thAnnivers.jpg",
-      "genres": [],
+      "genres": [
+        "Electronic",
+        "Lounge",
+        "Rock",
+        "Shoegaze"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Weird World (2)",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33725,21 +33828,21 @@
       "artist": "Cass McCombs",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/6e/6e_24658799_0_Heartmind.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Anti-",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33750,21 +33853,20 @@
       "artist": "Courtney Marie Andrews",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4b/4b_24721577_0_LooseFuture.jpg",
-      "genres": [],
+      "genres": [
+        "Folk, World, & Country"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Fat Possum Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33775,21 +33877,21 @@
       "artist": "Josh Rouse",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/17/17_23957507_0_GoingPlaces.jpg",
-      "genres": [],
+      "genres": [
+        "Folk, World, & Country",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Yep Roc Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33800,21 +33902,22 @@
       "artist": "Dominique A.",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/8e/8e_24541277_0_LeMondeRel.jpg",
-      "genres": [],
+      "genres": [
+        "Chanson",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Cinq 7",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33825,21 +33928,23 @@
       "artist": "Various",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/b0/b0_23868041_0_EccentricSoulTheShiptownLabel.jpg",
-      "genres": [],
+      "genres": [
+        "Funk / Soul",
+        "Pop",
+        "Rhythm & Blues",
+        "Soul"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Numero Group",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33850,21 +33955,20 @@
       "artist": "Los Secretos",
       "year": "2021",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/93/93_21490012_0_ConciertoHomenajeAEnriqueUrqui.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Universal",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33875,21 +33979,22 @@
       "artist": "The Poems",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a8/a8_22565258_0_YoungAmerica.jpg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Past Night From Glasgow",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33900,21 +34005,25 @@
       "artist": "George Michael",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c3/c3_24498857_0_Older.jpg",
-      "genres": [],
+      "genres": [
+        "Downtempo",
+        "Electronic",
+        "Funk / Soul",
+        "Pop",
+        "Synth-pop",
+        "Vocal"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Sony",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33925,21 +34034,23 @@
       "artist": "Real Estate",
       "year": "2020",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/75/75_14819804_0_TheMainThing.jpg",
-      "genres": [],
+      "genres": [
+        "Indie Pop",
+        "Indie Rock",
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Domino",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -33950,21 +34061,20 @@
       "artist": "Makaya McCraven",
       "year": "2022",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/7e/7e_24583775_0_InTheseTimes.jpg",
-      "genres": [],
+      "genres": [
+        "Jazz"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "Vinyl",
+      "edition": "Nonesuch",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-09-27T02:52:08.085Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -131974,91 +132084,95 @@
     "genres": [
       {
         "name": "Rock",
-        "count": 733
+        "count": 796
       },
       {
         "name": "Pop",
-        "count": 483
+        "count": 521
       },
       {
         "name": "Indie Rock",
-        "count": 219
+        "count": 236
       },
       {
         "name": "Electronic",
-        "count": 185
+        "count": 197
       },
       {
         "name": "Folk, World, & Country",
-        "count": 167
+        "count": 185
       },
       {
         "name": "Indie Pop",
-        "count": 146
-      },
-      {
-        "name": "Pop Rock",
-        "count": 126
+        "count": 156
       },
       {
         "name": "Alternative Rock",
-        "count": 123
+        "count": 139
+      },
+      {
+        "name": "Pop Rock",
+        "count": 136
       },
       {
         "name": "Funk / Soul",
-        "count": 112
+        "count": 119
       },
       {
         "name": "Folk Rock",
-        "count": 103
+        "count": 108
       },
       {
         "name": "Synth-pop",
-        "count": 87
+        "count": 94
       },
       {
         "name": "Jazz",
-        "count": 79
+        "count": 84
       },
       {
         "name": "Folk",
-        "count": 60
+        "count": 67
       },
       {
         "name": "Soul",
-        "count": 56
+        "count": 59
       },
       {
         "name": "Psychedelic Rock",
-        "count": 55
+        "count": 58
       },
       {
         "name": "New Wave",
-        "count": 42
+        "count": 47
+      },
+      {
+        "name": "Latin",
+        "count": 39
+      },
+      {
+        "name": "Art Rock",
+        "count": 38
       },
       {
         "name": "Acoustic",
         "count": 37
       },
       {
-        "name": "Art Rock",
-        "count": 35
+        "name": "Ballad",
+        "count": 32
       },
       {
-        "name": "Latin",
-        "count": 34
+        "name": "Power Pop",
+        "count": 32
+      },
+      {
+        "name": "Soft Rock",
+        "count": 32
       },
       {
         "name": "Experimental",
         "count": 31
-      },
-      {
-        "name": "Ballad",
-        "count": 30
-      },
-      {
-        "name": "Power Pop",
-        "count": 30
       },
       {
         "name": "Ambient",
@@ -132066,62 +132180,62 @@
       },
       {
         "name": "Country Rock",
-        "count": 27
-      },
-      {
-        "name": "Soft Rock",
-        "count": 27
+        "count": 28
       },
       {
         "name": "Funk",
-        "count": 25
+        "count": 26
       },
       {
         "name": "Lo-Fi",
-        "count": 25
+        "count": 26
       },
       {
         "name": "Blues",
-        "count": 24
+        "count": 25
       },
       {
         "name": "Dream Pop",
-        "count": 22
+        "count": 24
+      },
+      {
+        "name": "Post-Punk",
+        "count": 24
       },
       {
         "name": "Mod",
         "count": 22
       },
       {
-        "name": "Post-Punk",
+        "name": "Vocal",
         "count": 22
       },
       {
         "name": "Downtempo",
-        "count": 20
+        "count": 21
       },
       {
         "name": "Rock & Roll",
-        "count": 20
+        "count": 21
       },
       {
-        "name": "Vocal",
+        "name": "Shoegaze",
         "count": 20
       },
       {
         "name": "Chanson",
-        "count": 18
+        "count": 19
       },
       {
         "name": "Jangle Pop",
-        "count": 18
-      },
-      {
-        "name": "Shoegaze",
-        "count": 18
+        "count": 19
       },
       {
         "name": "Rhythm & Blues",
+        "count": 19
+      },
+      {
+        "name": "Ethereal",
         "count": 17
       },
       {
@@ -132129,12 +132243,8 @@
         "count": 16
       },
       {
-        "name": "Ethereal",
-        "count": 15
-      },
-      {
         "name": "Stage & Screen",
-        "count": 15
+        "count": 16
       },
       {
         "name": "Country",
@@ -132145,35 +132255,51 @@
         "count": 14
       },
       {
-        "name": "Blues Rock",
+        "name": "Avantgarde",
         "count": 13
       },
       {
         "name": "Baroque Pop",
-        "count": 12
+        "count": 13
       },
       {
-        "name": "Garage Rock",
-        "count": 12
-      },
-      {
-        "name": "Avantgarde",
-        "count": 11
+        "name": "Blues Rock",
+        "count": 13
       },
       {
         "name": "Disco",
-        "count": 11
+        "count": 13
       },
       {
-        "name": "Post Rock",
-        "count": 11
+        "name": "Garage Rock",
+        "count": 13
       },
       {
         "name": "Classical",
-        "count": 10
+        "count": 12
+      },
+      {
+        "name": "Post Rock",
+        "count": 12
+      },
+      {
+        "name": "Hip Hop",
+        "count": 11
+      },
+      {
+        "name": "Prog Rock",
+        "count": 11
+      },
+      {
+        "name": "Psychedelic",
+        "count": 11
       },
       {
         "name": "Punk",
+        "count": 11
+      },
+      {
+        "name": "Classic Rock",
         "count": 10
       },
       {
@@ -132181,32 +132307,16 @@
         "count": 10
       },
       {
-        "name": "Hip Hop",
-        "count": 9
-      },
-      {
         "name": "Jazz-Funk",
         "count": 9
       },
       {
-        "name": "Prog Rock",
-        "count": 9
+        "name": "Contemporary R&B",
+        "count": 8
       },
       {
         "name": "House",
         "count": 8
-      },
-      {
-        "name": "Psychedelic",
-        "count": 8
-      },
-      {
-        "name": "Classic Rock",
-        "count": 7
-      },
-      {
-        "name": "Contemporary R&B",
-        "count": 7
       },
       {
         "name": "Easy Listening",
@@ -132214,6 +132324,10 @@
       },
       {
         "name": "Electro",
+        "count": 7
+      },
+      {
+        "name": "Reggae",
         "count": 7
       },
       {
@@ -132226,6 +132340,10 @@
       },
       {
         "name": "Bossa Nova",
+        "count": 6
+      },
+      {
+        "name": "Contemporary Jazz",
         "count": 6
       },
       {
@@ -132245,10 +132363,6 @@
         "count": 6
       },
       {
-        "name": "Reggae",
-        "count": 6
-      },
-      {
         "name": "Smooth Jazz",
         "count": 6
       },
@@ -132261,15 +132375,19 @@
         "count": 5
       },
       {
-        "name": "Contemporary Jazz",
-        "count": 5
-      },
-      {
         "name": "Dub",
         "count": 5
       },
       {
         "name": "Flamenco",
+        "count": 5
+      },
+      {
+        "name": "Goth Rock",
+        "count": 5
+      },
+      {
+        "name": "Lounge",
         "count": 5
       },
       {
@@ -132281,7 +132399,19 @@
         "count": 5
       },
       {
+        "name": "Alternative",
+        "count": 4
+      },
+      {
         "name": "Avant-garde Jazz",
+        "count": 4
+      },
+      {
+        "name": "Bossanova",
+        "count": 4
+      },
+      {
+        "name": "Celtic",
         "count": 4
       },
       {
@@ -132289,11 +132419,11 @@
         "count": 4
       },
       {
-        "name": "Gospel",
+        "name": "Contemporary",
         "count": 4
       },
       {
-        "name": "Goth Rock",
+        "name": "Gospel",
         "count": 4
       },
       {
@@ -132301,7 +132431,7 @@
         "count": 4
       },
       {
-        "name": "Lounge",
+        "name": "Minimal",
         "count": 4
       },
       {
@@ -132313,6 +132443,10 @@
         "count": 4
       },
       {
+        "name": "Pop/Rock",
+        "count": 4
+      },
+      {
         "name": "Rocksteady",
         "count": 4
       },
@@ -132321,19 +132455,7 @@
         "count": 4
       },
       {
-        "name": "Alternative",
-        "count": 3
-      },
-      {
-        "name": "Bossanova",
-        "count": 3
-      },
-      {
-        "name": "Celtic",
-        "count": 3
-      },
-      {
-        "name": "Contemporary",
+        "name": "Big Band",
         "count": 3
       },
       {
@@ -132342,6 +132464,14 @@
       },
       {
         "name": "Drone",
+        "count": 3
+      },
+      {
+        "name": "Europop",
+        "count": 3
+      },
+      {
+        "name": "Glam",
         "count": 3
       },
       {
@@ -132357,19 +132487,11 @@
         "count": 3
       },
       {
-        "name": "Minimal",
-        "count": 3
-      },
-      {
         "name": "Modal",
         "count": 3
       },
       {
         "name": "MPB",
-        "count": 3
-      },
-      {
-        "name": "Pop/Rock",
         "count": 3
       },
       {
@@ -132389,6 +132511,10 @@
         "count": 3
       },
       {
+        "name": "UK Garage",
+        "count": 3
+      },
+      {
         "name": "Acid Jazz",
         "count": 2
       },
@@ -132401,11 +132527,11 @@
         "count": 2
       },
       {
-        "name": "Bass Music",
+        "name": "Basque Music",
         "count": 2
       },
       {
-        "name": "Big Band",
+        "name": "Bass Music",
         "count": 2
       },
       {
@@ -132425,11 +132551,11 @@
         "count": 2
       },
       {
-        "name": "Electric Blues",
+        "name": "Dubstep",
         "count": 2
       },
       {
-        "name": "Europop",
+        "name": "Electric Blues",
         "count": 2
       },
       {
@@ -132442,10 +132568,6 @@
       },
       {
         "name": "General Rock",
-        "count": 2
-      },
-      {
-        "name": "Glam",
         "count": 2
       },
       {
@@ -132465,6 +132587,10 @@
         "count": 2
       },
       {
+        "name": "Music Hall",
+        "count": 2
+      },
+      {
         "name": "New Jack Swing",
         "count": 2
       },
@@ -132474,6 +132600,10 @@
       },
       {
         "name": "POP",
+        "count": 2
+      },
+      {
+        "name": "Pop Rap",
         "count": 2
       },
       {
@@ -132489,12 +132619,28 @@
         "count": 2
       },
       {
+        "name": "Ska",
+        "count": 2
+      },
+      {
+        "name": "Son",
+        "count": 2
+      },
+      {
+        "name": "Spoken Word",
+        "count": 2
+      },
+      {
         "name": "Swing",
         "count": 2
       },
       {
-        "name": "UK Garage",
+        "name": "Symphonic Rock",
         "count": 2
+      },
+      {
+        "name": "\"Blues, allgemein\"",
+        "count": 1
       },
       {
         "name": "++",
@@ -132510,6 +132656,10 @@
       },
       {
         "name": "Alt. Pop/Rock",
+        "count": 1
+      },
+      {
+        "name": "Alternative / Indie",
         "count": 1
       },
       {
@@ -132565,6 +132715,10 @@
         "count": 1
       },
       {
+        "name": "Conscious",
+        "count": 1
+      },
+      {
         "name": "Danzon",
         "count": 1
       },
@@ -132582,10 +132736,6 @@
       },
       {
         "name": "Drum n Bass",
-        "count": 1
-      },
-      {
-        "name": "Dubstep",
         "count": 1
       },
       {
@@ -132637,6 +132787,10 @@
         "count": 1
       },
       {
+        "name": "Grunge",
+        "count": 1
+      },
+      {
         "name": "Guajira",
         "count": 1
       },
@@ -132650,6 +132804,10 @@
       },
       {
         "name": "Indie",
+        "count": 1
+      },
+      {
+        "name": "Indie Pop/Rock",
         "count": 1
       },
       {
@@ -132697,11 +132855,15 @@
         "count": 1
       },
       {
-        "name": "Music Hall",
+        "name": "Musique Concrète",
         "count": 1
       },
       {
-        "name": "Musique Concrète",
+        "name": "Neo-Classical",
+        "count": 1
+      },
+      {
+        "name": "Neofolk",
         "count": 1
       },
       {
@@ -132733,10 +132895,6 @@
         "count": 1
       },
       {
-        "name": "Pop Rap",
-        "count": 1
-      },
-      {
         "name": "Popular music",
         "count": 1
       },
@@ -132757,10 +132915,6 @@
         "count": 1
       },
       {
-        "name": "Ska",
-        "count": 1
-      },
-      {
         "name": "Ska Revival/3rd Wave",
         "count": 1
       },
@@ -132770,10 +132924,6 @@
       },
       {
         "name": "Slowcore",
-        "count": 1
-      },
-      {
-        "name": "Son",
         "count": 1
       },
       {
@@ -132793,15 +132943,11 @@
         "count": 1
       },
       {
-        "name": "Spoken Word",
-        "count": 1
-      },
-      {
         "name": "Stoner Rock",
         "count": 1
       },
       {
-        "name": "Symphonic Rock",
+        "name": "Synthwave",
         "count": 1
       },
       {
@@ -132817,6 +132963,10 @@
         "count": 1
       },
       {
+        "name": "Vocal Music",
+        "count": 1
+      },
+      {
         "name": "Worldbeat",
         "count": 1
       },
@@ -132829,19 +132979,19 @@
     "formats": [
       {
         "name": "Vinyl",
-        "count": 1093
+        "count": 1189
       },
       {
         "name": "CD",
-        "count": 77
+        "count": 85
+      },
+      {
+        "name": "All Media",
+        "count": 3
       },
       {
         "name": "Box Set",
         "count": 3
-      },
-      {
-        "name": "All Media",
-        "count": 2
       },
       {
         "name": "Cassette",
@@ -132895,8 +133045,8 @@
       }
     ],
     "metadataQuality": {
-      "basic": 4031,
-      "partial": 1186,
+      "basic": 3925,
+      "partial": 1292,
       "enriched": 0
     }
   }
