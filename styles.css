@@ -1102,6 +1102,7 @@
     .weather-tabs {
       display: flex;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     .weather-tab-btn {

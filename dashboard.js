@@ -128,7 +128,8 @@ function isClockList(value) {
 
 function isWeatherList(value) {
   return Array.isArray(value)
-    && value.length === 2
+    && value.length >= 1
+    && value.length <= 4
     && value.every(city => city && cityByName(city.name));
 }
 
@@ -791,12 +792,12 @@ function onWeatherCheckboxChange() {
   const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
   const count = checkedBoxes.length;
   
-  byId('weather-limit-info').textContent = `Selected: ${count}/2`;
+  byId('weather-limit-info').textContent = `Selected: ${count}/4`;
   
   const allLabels = container.querySelectorAll('.city-checkbox-label');
   allLabels.forEach(label => {
     const input = label.querySelector('input');
-    if (count >= 2 && !input.checked) {
+    if (count >= 4 && !input.checked) {
       label.classList.add('disabled');
       input.disabled = true;
     } else {
@@ -810,8 +811,12 @@ async function saveWeatherSettings() {
   const container = byId('weather-cities-list');
   const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
   
-  if (checkedBoxes.length !== 2) {
-    alert('Please select exactly 2 weather cities.');
+  if (checkedBoxes.length === 0) {
+    alert('Please select at least 1 weather city.');
+    return;
+  }
+  if (checkedBoxes.length > 4) {
+    alert('Please select up to 4 weather cities.');
     return;
   }
   
