@@ -1,8 +1,137 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-10-13T04:50:28.898Z",
-  "total": 5225,
+  "syncedAt": "2026-10-13T15:29:07.693Z",
+  "total": 5230,
   "albums": [
+    {
+      "id": "12117612",
+      "title": "Different Light",
+      "artist": "Bangles",
+      "year": "1986",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/25/25_368022_0_BanglesDifferentLight.jpeg",
+      "genres": [
+        "Pop Rock",
+        "Rock"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "Vinyl",
+      "edition": "CBS",
+      "addedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12117611",
+      "title": "A Man From The Future",
+      "artist": "Pet Shop Boys; Juliet Stevenson; Manchester Camerata Octet",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/c4/c4_38655624_0_AManFromTheFuture.jpg",
+      "genres": [
+        "Classical",
+        "Electronic",
+        "Modern Classical",
+        "Non-Music",
+        "Spoken Word",
+        "Synth-pop"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "Vinyl",
+      "edition": "Parlophone",
+      "addedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12117560",
+      "title": "Arriving Late In Torn And Filthy Jeans",
+      "artist": "Dead Famous People",
+      "year": "1989",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/1d/1d_1142277_0_DeadFamousPeopleArrivingLateIn.jpeg",
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "Vinyl",
+      "edition": "Utility",
+      "addedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12117559",
+      "title": "Silvio",
+      "artist": "Silvio Rodríguez",
+      "year": "1992",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/db/db_8956000_0_Silvio.jpg",
+      "genres": [
+        "Latin",
+        "Nueva Trova"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "Vinyl",
+      "edition": "Fonomusic",
+      "addedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
+    {
+      "id": "12117556",
+      "title": "Two Steps At A Time",
+      "artist": "Railcard",
+      "year": "2026",
+      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg",
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "Vinyl",
+      "edition": "Skep Wax",
+      "addedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "12111448",
       "title": "Inmersion",
@@ -3196,7 +3325,7 @@
       "format": null,
       "edition": "Meritorio Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -8953,7 +9082,7 @@
       "format": null,
       "edition": "Discos Centeneros",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -16374,7 +16503,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -18217,7 +18346,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -18732,7 +18861,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -21302,7 +21431,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -21638,7 +21767,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -22922,7 +23051,7 @@
       "format": null,
       "edition": "Alkilo Discos",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -25461,7 +25590,7 @@
       "format": null,
       "edition": "Fikasound",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -28003,7 +28132,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -29414,7 +29543,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -29439,7 +29568,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -30403,7 +30532,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -31570,7 +31699,7 @@
       "format": null,
       "edition": "El Genio Equivocado",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -33820,7 +33949,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -36586,7 +36715,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -37857,7 +37986,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -37882,7 +38011,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -37907,7 +38036,7 @@
       "format": null,
       "edition": "No Aloha Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -44518,7 +44647,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -47343,7 +47472,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -60223,7 +60352,7 @@
       "format": null,
       "edition": "Warner Bros. Records Inc.",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -65048,7 +65177,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -67365,7 +67494,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -67549,7 +67678,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -68692,7 +68821,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -70832,7 +70961,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -70857,7 +70986,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -72610,7 +72739,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -72660,7 +72789,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73075,7 +73204,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73380,7 +73509,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73630,7 +73759,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73756,7 +73885,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73856,7 +73985,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73881,7 +74010,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73955,7 +74084,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74146,7 +74275,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74393,7 +74522,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75049,7 +75178,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75225,7 +75354,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75406,7 +75535,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75459,7 +75588,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75510,7 +75639,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75535,7 +75664,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75732,7 +75861,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75859,7 +75988,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76257,7 +76386,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76306,7 +76435,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76611,7 +76740,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76740,7 +76869,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77047,7 +77176,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77455,7 +77584,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77826,7 +77955,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77924,7 +78053,7 @@
       "format": null,
       "edition": "Elefant",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -78048,7 +78177,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78073,7 +78202,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78475,7 +78604,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -79380,7 +79509,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -79726,7 +79855,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80074,7 +80203,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80248,7 +80377,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80321,7 +80450,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80672,7 +80801,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81027,7 +81156,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81883,7 +82012,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82135,7 +82264,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82640,7 +82769,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82748,7 +82877,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85215,7 +85344,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85266,7 +85395,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -85291,7 +85420,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86853,7 +86982,7 @@
       "format": null,
       "edition": "Lovemonk",
       "addedAt": null,
-      "detailCheckedAt": "2026-10-13T04:49:53.114Z",
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -129761,21 +129890,20 @@
       "artist": "Blur",
       "year": "1997",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/da/da_976089_0_Blur.jpg",
-      "genres": [],
+      "genres": [
+        "BritPop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Virgin Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129786,21 +129914,24 @@
       "artist": "The Blue Nile",
       "year": "2004",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/35/35_1002093_0_TheBlueNileHigh.jpeg",
-      "genres": [],
+      "genres": [
+        "Downtempo",
+        "Electronic",
+        "Pop Rock",
+        "Rock",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Sanctuary Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129811,21 +129942,20 @@
       "artist": "The Blue Nile",
       "year": "1983",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/d5/d5_544295_0_AWalkAcrossTheRooftops.jpg",
-      "genres": [],
+      "genres": [
+        "General Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Linn Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129836,21 +129966,20 @@
       "artist": "The Blue Nile",
       "year": "1989",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/95/95_2243965_0_Hats.jpg",
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "A&M Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129861,21 +129990,23 @@
       "artist": "The Blues Brothers",
       "year": null,
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/46/46_782638_0_TheBluesBrothersBriefcaseFullO.jpeg",
-      "genres": [],
+      "genres": [
+        "Blues",
+        "Chicago Blues",
+        "Funk / Soul",
+        "Rhythm & Blues"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Atlantic",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129886,21 +130017,20 @@
       "artist": "Blow Monkeys",
       "year": "1989",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/4f/4f_3114050_0_ChoicesTheSinglesCollection.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "BMG Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129911,21 +130041,24 @@
       "artist": "Black",
       "year": "2000",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/ef/ef_1183570_0_Black_TheCollection.jpg",
-      "genres": [],
+      "genres": [
+        "Acoustic",
+        "Electronic",
+        "Pop Rock",
+        "Rock",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Spectrum Music",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129936,21 +130069,25 @@
       "artist": "Bjork",
       "year": "1993",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/df/df_2431_0_BjrkDebut.jpeg",
-      "genres": [],
+      "genres": [
+        "Downtempo",
+        "Electronic",
+        "House",
+        "Leftfield",
+        "Pop",
+        "Synth-pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Elektra",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -129961,20 +130098,20 @@
       "artist": "Billy Joel",
       "year": "1997",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/62/62_2525828_0_GreatestHitsVolIII.jpg",
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "CD",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -129986,21 +130123,20 @@
       "artist": "Billy Bragg",
       "year": "1991",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/4b/4b_1760461_0_ThePeelSessions.jpg",
-      "genres": [],
+      "genres": [
+        "Alt-Folk"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Strange Fruit",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130011,21 +130147,21 @@
       "artist": "Billy Bragg",
       "year": "1996",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/86/86_1769125_0_WilliamBloke.jpg",
-      "genres": [],
+      "genres": [
+        "Folk",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Liberation Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130036,21 +130172,22 @@
       "artist": "Billy Bragg",
       "year": "2003",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f1/f1_618814_0_BillyBraggMustIPaintYouAPictur.jpeg",
-      "genres": [],
+      "genres": [
+        "Alternative Rock",
+        "Folk Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Cooking Vinyl",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130061,21 +130198,23 @@
       "artist": "Billy Bragg",
       "year": "2008",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d8/d8_1411112_0_BillyBraggMrLoveJustice.jpeg",
-      "genres": [],
+      "genres": [
+        "Folk Rock",
+        "Folk, World, & Country",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Anti-",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130086,21 +130225,21 @@
       "artist": "Billy Bragg",
       "year": null,
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/66/66_1799833_0_BillyBraggHelpSaveTheYouthOfAm.jpg",
-      "genres": [],
+      "genres": [
+        "Alt-Folk",
+        "General Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Wea/Elektra Entertainment",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130111,21 +130250,22 @@
       "artist": "Billy Bragg",
       "year": "1993",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/33/33_1094402_0_BillyBraggVictimOfGeography.jpeg",
-      "genres": [],
+      "genres": [
+        "Folk Rock",
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Cooking Vinyl",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130136,21 +130276,21 @@
       "artist": "Billy Bragg",
       "year": "1997",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/c8/c8_1770450_0_BlokeOnBloke.jpg",
-      "genres": [],
+      "genres": [
+        "Alt-Folk",
+        "General Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Cooking Vinyl",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130161,21 +130301,20 @@
       "artist": "Billy Bragg",
       "year": "1988",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/2e/2e_2401253_0_WorkersPlaytime.jpg",
-      "genres": [],
+      "genres": [
+        "Folk"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Cooking Vinyl",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130186,21 +130325,20 @@
       "artist": "Belle and Sebastian",
       "year": "1997",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/f3/f3_1189734_0_DogOnWheels.jpg",
-      "genres": [],
+      "genres": [
+        "Ambient/Dream Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Jeepster",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130211,21 +130349,21 @@
       "artist": "Belle and Sebastian",
       "year": "1997",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/f4/f4_368960_0_BelleSebastian369SecondsOfLigh.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Jeepster Recordings",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130236,21 +130374,20 @@
       "artist": "Belle and Sebastian",
       "year": "2010",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/3f/3f_3553201_0_WriteAboutLove.jpg",
-      "genres": [],
+      "genres": [
+        "Indie"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Matador Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130261,21 +130398,21 @@
       "artist": "Belle and Sebastian",
       "year": "2003",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ee/ee_441439_0_BelleSebastianDearCatastropheW.gif",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Rough Trade",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130286,21 +130423,20 @@
       "artist": "The Beloved",
       "year": "1993",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/da/da_3269925_0_Conscience.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Warner",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130314,17 +130450,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "CD",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -130336,21 +130471,21 @@
       "artist": "Benjamin Biolay",
       "year": "2007",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/be/be_1950816_0_BenjaminBiolayTrashYeye.jpeg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "EMI Music",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130361,21 +130496,22 @@
       "artist": "Beth Orton",
       "year": "2006",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/23/23_632722_0_BethOrtonComfortofStrangers.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Astralwerks",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130386,21 +130522,20 @@
       "artist": "La Bien Querida",
       "year": "2009",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/ed/ed_1776329_0_LaBienQueridaRomancero.jpeg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Elefant Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130411,21 +130546,20 @@
       "artist": "Bill Callahan",
       "year": "2009",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/7d/7d_2940048_0_SometimesIWishWeWereAnEagle.jpg",
-      "genres": [],
+      "genres": [
+        "Singer/Songwriter"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Drag City",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130436,21 +130570,21 @@
       "artist": "Belle and Sebastian",
       "year": "2008",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/48/48_1540958_0_BelleSebastianTheBBCSessions.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Matador",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130461,21 +130595,21 @@
       "artist": "Belle and Sebastian",
       "year": "2006",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4c/4c_666970_0_BelleSebastianTheBluesAreStill.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Rough Trade",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130486,21 +130620,21 @@
       "artist": "Belle and Sebastian",
       "year": "1998",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/21/21_368730_0_BelleSebastianTheBoyWithTheAra.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Matador",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130511,21 +130645,21 @@
       "artist": "Belle and Sebastian",
       "year": "2006",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/4b/4b_737202_0_BelleSebastianTheWhiteCollarBo.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Rough Trade",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130536,21 +130670,22 @@
       "artist": "Belle and Sebastian | Belle & Sebastian",
       "year": "1998",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/bf/bf_621277_0_BelleSebastianIfYoureFeelingSi.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Pop Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Matador",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130561,21 +130696,22 @@
       "artist": "Belle and Sebastian",
       "year": "2002",
       "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/63/63_441457_0_BelleSebastianStorytelling.jpeg",
-      "genres": [],
+      "genres": [
+        "Indie Rock",
+        "Rock",
+        "Stage & Screen"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Jeepster Recordings",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130586,21 +130722,21 @@
       "artist": "Beirut",
       "year": "2006",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/59/59_1183528_0_Beirut_GulagOrkestar.jpg",
-      "genres": [],
+      "genres": [
+        "Folk Rock",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Ba Da Bing!",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130611,21 +130747,20 @@
       "artist": "Belle and Sebastian",
       "year": "1996",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/6b/6b_1721416_0_Tigermilk.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Jeepster",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130636,21 +130771,20 @@
       "artist": "Beck",
       "year": "1999",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/59/59_2772742_0_MidniteVultures.jpg",
-      "genres": [],
+      "genres": [
+        "Bluegrass"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Geffen",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130661,21 +130795,21 @@
       "artist": "Beautiful World",
       "year": "1994",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/66/66_1507731_0_InExistence.jpg",
-      "genres": [],
+      "genres": [
+        "New Age",
+        "World music"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "WEA",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130686,20 +130820,20 @@
       "artist": "The Beautiful South",
       "year": "2006",
       "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/47/47_1183524_0_TheBeautifulSouth_GoldDiscOne.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "CD",
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
           "edition",
           "addedAt"
         ]
@@ -130714,18 +130848,16 @@
       "genres": [],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Parlophone",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
           "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130736,21 +130868,20 @@
       "artist": "The Beautiful South",
       "year": "1992",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/f8/f8_3357999_0_0898.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Polygram",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130761,21 +130892,20 @@
       "artist": "The Beautiful South",
       "year": "1994",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/7e/7e_856564_0_Miaow.jpg",
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Go! Discs",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -130786,21 +130916,21 @@
       "artist": "The Beautiful South",
       "year": "1998",
       "cover": "https://clzmusic.r.sizr.io/core/covers/md/2x/68/68_3134623_0_Quench.jpg",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "styles": [],
       "moods": [],
-      "format": null,
-      "edition": null,
+      "format": "CD",
+      "edition": "Mercury Records",
       "addedAt": null,
-      "detailCheckedAt": null,
+      "detailCheckedAt": "2026-10-13T15:28:26.174Z",
       "metadataQuality": {
-        "level": "basic",
+        "level": "partial",
         "missing": [
-          "genres",
           "styles",
           "moods",
-          "format",
-          "edition",
           "addedAt"
         ]
       }
@@ -134485,31 +134615,31 @@
     "genres": [
       {
         "name": "Rock",
-        "count": 2418
+        "count": 2441
       },
       {
         "name": "Pop",
-        "count": 1583
+        "count": 1593
       },
       {
         "name": "Indie Rock",
-        "count": 637
+        "count": 649
       },
       {
         "name": "Electronic",
-        "count": 625
+        "count": 629
       },
       {
         "name": "Pop Rock",
-        "count": 499
+        "count": 505
       },
       {
         "name": "Folk, World, & Country",
-        "count": 409
+        "count": 410
       },
       {
         "name": "Alternative Rock",
-        "count": 378
+        "count": 379
       },
       {
         "name": "Indie Pop",
@@ -134517,15 +134647,15 @@
       },
       {
         "name": "Synth-pop",
-        "count": 315
+        "count": 319
       },
       {
         "name": "Folk Rock",
-        "count": 295
+        "count": 299
       },
       {
         "name": "Funk / Soul",
-        "count": 255
+        "count": 256
       },
       {
         "name": "Jazz",
@@ -134533,7 +134663,7 @@
       },
       {
         "name": "Folk",
-        "count": 178
+        "count": 180
       },
       {
         "name": "Soul",
@@ -134553,7 +134683,7 @@
       },
       {
         "name": "Latin",
-        "count": 113
+        "count": 114
       },
       {
         "name": "Soft Rock",
@@ -134561,18 +134691,18 @@
       },
       {
         "name": "Acoustic",
-        "count": 108
+        "count": 109
       },
       {
         "name": "Experimental",
         "count": 89
       },
       {
-        "name": "Ballad",
-        "count": 86
+        "name": "Downtempo",
+        "count": 88
       },
       {
-        "name": "Downtempo",
+        "name": "Ballad",
         "count": 86
       },
       {
@@ -134588,12 +134718,12 @@
         "count": 75
       },
       {
-        "name": "Power Pop",
+        "name": "Blues",
         "count": 74
       },
       {
-        "name": "Blues",
-        "count": 73
+        "name": "Power Pop",
+        "count": 74
       },
       {
         "name": "Country Rock",
@@ -134609,7 +134739,7 @@
       },
       {
         "name": "General Rock",
-        "count": 60
+        "count": 63
       },
       {
         "name": "Alternative",
@@ -134645,7 +134775,7 @@
       },
       {
         "name": "Rhythm & Blues",
-        "count": 47
+        "count": 48
       },
       {
         "name": "Country",
@@ -134661,7 +134791,7 @@
       },
       {
         "name": "Indie",
-        "count": 37
+        "count": 38
       },
       {
         "name": "Punk",
@@ -134681,6 +134811,10 @@
       },
       {
         "name": "House",
+        "count": 34
+      },
+      {
+        "name": "Leftfield",
         "count": 33
       },
       {
@@ -134688,15 +134822,11 @@
         "count": 33
       },
       {
-        "name": "Leftfield",
+        "name": "Stage & Screen",
         "count": 32
       },
       {
         "name": "Avantgarde",
-        "count": 31
-      },
-      {
-        "name": "Stage & Screen",
         "count": 31
       },
       {
@@ -134736,12 +134866,12 @@
         "count": 25
       },
       {
-        "name": "Garage Rock",
+        "name": "Classical",
         "count": 24
       },
       {
-        "name": "Classical",
-        "count": 23
+        "name": "Garage Rock",
+        "count": 24
       },
       {
         "name": "Flamenco",
@@ -134800,6 +134930,10 @@
         "count": 16
       },
       {
+        "name": "Singer/Songwriter",
+        "count": 16
+      },
+      {
         "name": "Baroque Pop",
         "count": 15
       },
@@ -134813,10 +134947,6 @@
       },
       {
         "name": "Jazz-Funk",
-        "count": 15
-      },
-      {
-        "name": "Singer/Songwriter",
         "count": 15
       },
       {
@@ -134868,6 +134998,10 @@
         "count": 10
       },
       {
+        "name": "BritPop",
+        "count": 10
+      },
+      {
         "name": "Contemporary",
         "count": 10
       },
@@ -134893,10 +135027,6 @@
       },
       {
         "name": "Bossa Nova",
-        "count": 9
-      },
-      {
-        "name": "BritPop",
         "count": 9
       },
       {
@@ -134932,11 +135062,19 @@
         "count": 8
       },
       {
+        "name": "Alt-Folk",
+        "count": 8
+      },
+      {
         "name": "Krautrock",
         "count": 8
       },
       {
         "name": "Latin Jazz",
+        "count": 8
+      },
+      {
+        "name": "Modern Classical",
         "count": 8
       },
       {
@@ -134965,10 +135103,6 @@
       },
       {
         "name": "Hard Bop",
-        "count": 7
-      },
-      {
-        "name": "Modern Classical",
         "count": 7
       },
       {
@@ -135008,11 +135142,19 @@
         "count": 6
       },
       {
+        "name": "Ambient/Dream Pop",
+        "count": 6
+      },
+      {
         "name": "Avant-garde Jazz",
         "count": 6
       },
       {
         "name": "Big Band",
+        "count": 6
+      },
+      {
+        "name": "Bluegrass",
         "count": 6
       },
       {
@@ -135044,18 +135186,6 @@
         "count": 5
       },
       {
-        "name": "Alt-Folk",
-        "count": 5
-      },
-      {
-        "name": "Ambient/Dream Pop",
-        "count": 5
-      },
-      {
-        "name": "Bluegrass",
-        "count": 5
-      },
-      {
         "name": "Bolero",
         "count": 5
       },
@@ -135069,6 +135199,10 @@
       },
       {
         "name": "General R&B",
+        "count": 5
+      },
+      {
+        "name": "New Age",
         "count": 5
       },
       {
@@ -135089,6 +135223,10 @@
       },
       {
         "name": "Space Rock",
+        "count": 5
+      },
+      {
+        "name": "Spoken Word",
         "count": 5
       },
       {
@@ -135188,7 +135326,7 @@
         "count": 4
       },
       {
-        "name": "New Age",
+        "name": "Non-Music",
         "count": 4
       },
       {
@@ -135209,10 +135347,6 @@
       },
       {
         "name": "Rockabilly",
-        "count": 4
-      },
-      {
-        "name": "Spoken Word",
         "count": 4
       },
       {
@@ -135281,6 +135415,10 @@
       },
       {
         "name": "Catalan Music",
+        "count": 3
+      },
+      {
+        "name": "Chicago Blues",
         "count": 3
       },
       {
@@ -135373,10 +135511,6 @@
       },
       {
         "name": "Non Classical, non Jazz",
-        "count": 3
-      },
-      {
-        "name": "Non-Music",
         "count": 3
       },
       {
@@ -135497,10 +135631,6 @@
       },
       {
         "name": "Chamber Pop",
-        "count": 2
-      },
-      {
-        "name": "Chicago Blues",
         "count": 2
       },
       {
@@ -136488,6 +136618,10 @@
         "count": 1
       },
       {
+        "name": "Nueva Trova",
+        "count": 1
+      },
+      {
         "name": "Old School",
         "count": 1
       },
@@ -136932,6 +137066,10 @@
         "count": 1
       },
       {
+        "name": "World music",
+        "count": 1
+      },
+      {
         "name": "Xmas",
         "count": 1
       },
@@ -136944,11 +137082,11 @@
     "formats": [
       {
         "name": "Vinyl",
-        "count": 2507
+        "count": 2512
       },
       {
         "name": "CD",
-        "count": 2432
+        "count": 2474
       },
       {
         "name": "Box Set",
@@ -136994,7 +137132,7 @@
       },
       {
         "name": "2020s",
-        "count": 1191
+        "count": 1193
       },
       {
         "name": "2000s",
@@ -137002,11 +137140,11 @@
       },
       {
         "name": "1990s",
-        "count": 643
+        "count": 644
       },
       {
         "name": "1980s",
-        "count": 555
+        "count": 557
       },
       {
         "name": "1970s",
@@ -137030,8 +137168,8 @@
       }
     ],
     "metadataQuality": {
-      "basic": 248,
-      "partial": 4977,
+      "basic": 206,
+      "partial": 5024,
       "enriched": 0
     }
   }
