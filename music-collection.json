@@ -1,8 +1,32 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-11-12T12:02:08.411Z",
-  "total": 5263,
+  "syncedAt": "2026-11-12T22:00:05.996Z",
+  "total": 5264,
   "albums": [
+    {
+      "id": "12150809",
+      "title": "Dejamos Que Las Estrellas Se Fueran",
+      "artist": "Various",
+      "year": "2026",
+      "cover": "https://clzmusic.r.sizr.io/cloud/covers/md/2x/71/71_12150809_0_VariousDejamosQueLasEstrellasS.jpg",
+      "genres": [
+        "Indie Pop"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "Vinyl",
+      "edition": "Rick Blaine Records",
+      "addedAt": null,
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "12148807",
       "title": "Sue",
@@ -4177,7 +4201,7 @@
       "format": null,
       "edition": "Meritorio Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -9934,7 +9958,7 @@
       "format": null,
       "edition": "Discos Centeneros",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -17355,7 +17379,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19198,7 +19222,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19713,7 +19737,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -22283,7 +22307,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -22619,7 +22643,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -23900,16 +23924,15 @@
       ],
       "styles": [],
       "moods": [],
-      "format": null,
+      "format": "CD",
       "edition": "Alkilo Discos",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
           "styles",
           "moods",
-          "format",
           "addedAt"
         ]
       }
@@ -26442,7 +26465,7 @@
       "format": null,
       "edition": "Fikasound",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -28984,7 +29007,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -30395,7 +30418,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -30420,7 +30443,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -31384,7 +31407,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -32551,7 +32574,7 @@
       "format": null,
       "edition": "El Genio Equivocado",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -34801,7 +34824,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -37567,7 +37590,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -38838,7 +38861,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -38863,7 +38886,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -38888,7 +38911,7 @@
       "format": null,
       "edition": "No Aloha Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -45499,7 +45522,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -48324,7 +48347,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -61204,7 +61227,7 @@
       "format": null,
       "edition": "Warner Bros. Records Inc.",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -66029,7 +66052,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -68346,7 +68369,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -68530,7 +68553,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -69666,14 +69689,14 @@
       "title": "Violética",
       "artist": "Nacho Vegas",
       "year": null,
-      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d4/d4_12106836_0_Violtica.jpg",
       "genres": [],
       "styles": [],
       "moods": [],
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -71813,7 +71836,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -71838,7 +71861,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73591,7 +73614,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73641,7 +73664,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74056,7 +74079,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74361,7 +74384,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74611,7 +74634,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74730,14 +74753,14 @@
       "title": "Los Secretos Edición 35 Aniversario",
       "artist": "Los Secretos",
       "year": null,
-      "cover": "https://app-assets.clz.com/static/images/placeholders/music.svg",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/d1/d1_12149841_0_LosSecretosEdicion35Aniversari.jpg",
       "genres": [],
       "styles": [],
       "moods": [],
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74837,7 +74860,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74862,7 +74885,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74936,7 +74959,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75127,7 +75150,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75374,7 +75397,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76030,7 +76053,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76206,7 +76229,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76387,7 +76410,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76440,7 +76463,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76491,7 +76514,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76516,7 +76539,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76713,7 +76736,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76840,7 +76863,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77238,7 +77261,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77287,7 +77310,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77592,7 +77615,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77721,7 +77744,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78028,7 +78051,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78436,7 +78459,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78807,7 +78830,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78905,7 +78928,7 @@
       "format": null,
       "edition": "Elefant",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -79029,7 +79052,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -79054,7 +79077,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -79456,7 +79479,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80361,7 +80384,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80707,7 +80730,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81055,7 +81078,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81229,7 +81252,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81302,7 +81325,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81653,7 +81676,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82008,7 +82031,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82864,7 +82887,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -83116,7 +83139,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -83621,7 +83644,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -83729,7 +83752,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86196,7 +86219,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86247,7 +86270,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86272,7 +86295,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -87834,7 +87857,7 @@
       "format": null,
       "edition": "Lovemonk",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-12T12:01:39.424Z",
+      "detailCheckedAt": "2026-11-12T21:59:46.980Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -135578,7 +135601,7 @@
       },
       {
         "name": "Indie Pop",
-        "count": 371
+        "count": 372
       },
       {
         "name": "Synth-pop",
@@ -138045,11 +138068,11 @@
     "formats": [
       {
         "name": "CD",
-        "count": 2623
+        "count": 2624
       },
       {
         "name": "Vinyl",
-        "count": 2542
+        "count": 2543
       },
       {
         "name": "Box Set",
@@ -138095,7 +138118,7 @@
       },
       {
         "name": "2020s",
-        "count": 1215
+        "count": 1216
       },
       {
         "name": "2000s",
@@ -138132,7 +138155,7 @@
     ],
     "metadataQuality": {
       "basic": 59,
-      "partial": 5204,
+      "partial": 5205,
       "enriched": 0
     }
   }
