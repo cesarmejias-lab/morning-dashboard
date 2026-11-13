@@ -1,8 +1,47 @@
 {
   "username": "cesarmejias",
-  "syncedAt": "2026-11-13T04:26:22.307Z",
-  "total": 5264,
+  "syncedAt": "2026-11-13T15:50:22.311Z",
+  "total": 5265,
   "albums": [
+    {
+      "id": "12157430",
+      "title": "Did You D:Qliq No.2",
+      "artist": "Various Artists",
+      "year": "2008",
+      "cover": "https://clzmusic.r.sizr.io/discogs/md/2x/a3/a3_17540437_0_DidYouDQliqNo2.jpg",
+      "genres": [
+        "Alternative Rock",
+        "Ambient",
+        "Disco",
+        "Downtempo",
+        "Electro",
+        "Electronic",
+        "Folk Rock",
+        "Hip Hop",
+        "IDM",
+        "Indie Rock",
+        "New Wave",
+        "Pop Rock",
+        "Post Rock",
+        "Punk",
+        "Rock",
+        "Synth-pop"
+      ],
+      "styles": [],
+      "moods": [],
+      "format": "CD",
+      "edition": "Grand Duchy Grooves",
+      "addedAt": null,
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
+      "metadataQuality": {
+        "level": "partial",
+        "missing": [
+          "styles",
+          "moods",
+          "addedAt"
+        ]
+      }
+    },
     {
       "id": "12150809",
       "title": "Dejamos Que Las Estrellas Se Fueran",
@@ -4201,7 +4240,7 @@
       "format": null,
       "edition": "Meritorio Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -9958,7 +9997,7 @@
       "format": null,
       "edition": "Discos Centeneros",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -17379,7 +17418,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19222,7 +19261,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -19737,7 +19776,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -22307,7 +22346,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -22643,7 +22682,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -26465,7 +26504,7 @@
       "format": null,
       "edition": "Fikasound",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -29007,7 +29046,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -30418,7 +30457,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -30443,7 +30482,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -31407,7 +31446,7 @@
       "format": null,
       "edition": "Bobo Integral",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -32574,7 +32613,7 @@
       "format": null,
       "edition": "El Genio Equivocado",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -34824,7 +34863,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -37590,7 +37629,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -38861,7 +38900,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -38886,7 +38925,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -38911,7 +38950,7 @@
       "format": null,
       "edition": "No Aloha Records",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -45522,7 +45561,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -48347,7 +48386,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -61227,7 +61266,7 @@
       "format": null,
       "edition": "Warner Bros. Records Inc.",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -66052,7 +66091,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -68369,7 +68408,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -68553,7 +68592,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -69696,7 +69735,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -71836,7 +71875,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -71861,7 +71900,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73614,7 +73653,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -73664,7 +73703,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74079,7 +74118,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74384,7 +74423,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74634,7 +74673,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74760,7 +74799,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74860,7 +74899,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74885,7 +74924,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -74959,7 +74998,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75150,7 +75189,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -75397,7 +75436,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76053,7 +76092,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76229,7 +76268,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76410,7 +76449,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76463,7 +76502,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76514,7 +76553,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76539,7 +76578,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76736,7 +76775,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -76863,7 +76902,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77261,7 +77300,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77310,7 +77349,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77615,7 +77654,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -77744,7 +77783,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78051,7 +78090,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78459,7 +78498,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78830,7 +78869,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -78928,7 +78967,7 @@
       "format": null,
       "edition": "Elefant",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -79052,7 +79091,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -79077,7 +79116,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -79479,7 +79518,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80384,7 +80423,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -80730,7 +80769,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81078,7 +81117,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81252,7 +81291,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81325,7 +81364,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -81676,7 +81715,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82031,7 +82070,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -82887,7 +82926,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -83139,7 +83178,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -83644,7 +83683,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -83752,7 +83791,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86219,7 +86258,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86270,7 +86309,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -86295,7 +86334,7 @@
       "format": null,
       "edition": null,
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "basic",
         "missing": [
@@ -87857,7 +87896,7 @@
       "format": null,
       "edition": "Lovemonk",
       "addedAt": null,
-      "detailCheckedAt": "2026-11-13T04:26:01.459Z",
+      "detailCheckedAt": "2026-11-13T15:50:03.934Z",
       "metadataQuality": {
         "level": "partial",
         "missing": [
@@ -135573,7 +135612,7 @@
     "genres": [
       {
         "name": "Rock",
-        "count": 2527
+        "count": 2528
       },
       {
         "name": "Pop",
@@ -135581,15 +135620,15 @@
       },
       {
         "name": "Indie Rock",
-        "count": 669
+        "count": 670
       },
       {
         "name": "Electronic",
-        "count": 663
+        "count": 664
       },
       {
         "name": "Pop Rock",
-        "count": 532
+        "count": 533
       },
       {
         "name": "Folk, World, & Country",
@@ -135597,7 +135636,7 @@
       },
       {
         "name": "Alternative Rock",
-        "count": 389
+        "count": 390
       },
       {
         "name": "Indie Pop",
@@ -135605,11 +135644,11 @@
       },
       {
         "name": "Synth-pop",
-        "count": 334
+        "count": 335
       },
       {
         "name": "Folk Rock",
-        "count": 309
+        "count": 310
       },
       {
         "name": "Funk / Soul",
@@ -135629,7 +135668,7 @@
       },
       {
         "name": "New Wave",
-        "count": 160
+        "count": 161
       },
       {
         "name": "Pop/Rock",
@@ -135653,7 +135692,7 @@
       },
       {
         "name": "Downtempo",
-        "count": 94
+        "count": 95
       },
       {
         "name": "Experimental",
@@ -135705,7 +135744,7 @@
       },
       {
         "name": "Ambient",
-        "count": 61
+        "count": 62
       },
       {
         "name": "Brit Pop",
@@ -135736,11 +135775,11 @@
         "count": 49
       },
       {
-        "name": "Country",
-        "count": 42
+        "name": "Hip Hop",
+        "count": 43
       },
       {
-        "name": "Hip Hop",
+        "name": "Country",
         "count": 42
       },
       {
@@ -135753,18 +135792,18 @@
       },
       {
         "name": "Disco",
-        "count": 38
+        "count": 39
       },
       {
         "name": "Jangle Pop",
         "count": 38
       },
       {
-        "name": "Dream Pop",
-        "count": 36
+        "name": "Punk",
+        "count": 37
       },
       {
-        "name": "Punk",
+        "name": "Dream Pop",
         "count": 36
       },
       {
@@ -135789,7 +135828,7 @@
       },
       {
         "name": "Post Rock",
-        "count": 30
+        "count": 31
       },
       {
         "name": "Ethereal",
@@ -135800,16 +135839,16 @@
         "count": 28
       },
       {
+        "name": "Electro",
+        "count": 27
+      },
+      {
         "name": "Folk-Rock",
         "count": 27
       },
       {
         "name": "R&B",
         "count": 27
-      },
-      {
-        "name": "Electro",
-        "count": 26
       },
       {
         "name": "Prog Rock",
@@ -136004,6 +136043,10 @@
         "count": 9
       },
       {
+        "name": "IDM",
+        "count": 9
+      },
+      {
         "name": "Latin Jazz",
         "count": 9
       },
@@ -136025,10 +136068,6 @@
       },
       {
         "name": "Adult Alternative Pop/Rock",
-        "count": 8
-      },
-      {
-        "name": "IDM",
         "count": 8
       },
       {
@@ -138068,7 +138107,7 @@
     "formats": [
       {
         "name": "CD",
-        "count": 2624
+        "count": 2625
       },
       {
         "name": "Vinyl",
@@ -138122,7 +138161,7 @@
       },
       {
         "name": "2000s",
-        "count": 791
+        "count": 792
       },
       {
         "name": "1990s",
@@ -138155,7 +138194,7 @@
     ],
     "metadataQuality": {
       "basic": 59,
-      "partial": 5205,
+      "partial": 5206,
       "enriched": 0
     }
   }
